@@ -1,4 +1,4 @@
-package views;
+package groupe1.views;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
