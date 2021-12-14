@@ -4,16 +4,17 @@ import java.io.*;
 import java.net.Socket;
 
 public class Conversation extends Thread {
-    private Socket socket;
-    private int numeroClient;
+    protected Socket socket;
+    protected int numeroClient;
+    protected ServeurMT server;
     /**
      * Tout le code ci-dessous s'éxécute de manière indépandante du reste du code.
      */
-    public Conversation (Socket socket, int num){
+    public Conversation (Socket socket, int num, ServeurMT server){
         // super(); Utility ???
         this.socket = socket; // Permet de communiquer avec le client.
         this.numeroClient = num;
-
+        this.server = server;
     }
     @Override
     public void run() {
@@ -37,19 +38,23 @@ public class Conversation extends Thread {
             // Conversation (Requête-Réponse), toute la conversation se fait avec la même socket pour cahque client.
 
             while(true){
-                String req=br.readLine();// Envoit requête
-                System.out.println(IP + "a envoyé  " + req);
-                if(req != null) {
-                    String rep = "Size= " + req.length();
-                    pw.println(rep); // Envoit réponse
+                String req;
+                while((req= br.readLine()) != null){
+                    String[] t = req.split("-");  // séparer le message des destinataires
+                    String message = t[0];
+                    String[] t2 = t[1].replace(" ", "").split(",");  // séparer les destinataires
+                    //System.out.println("J'imprime la longueur de la liste: " + t2.length);
+                    int[] numeroClients = new int[t2.length];
+                    for(int i=0; i<t2.length; i++){
+                        //System.out.println("J'imprime les éléments de la liste à l'index: " + i + ": t2[i] " + t2[i]);
+                        numeroClients[i] = Integer.parseInt(t2[i]); // " 1"
+                    }
+                    server.broadCast(message, numeroClients); // envoie le message au destinataire spécifiés
                 }
             }
-
-
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
     }
+
 }

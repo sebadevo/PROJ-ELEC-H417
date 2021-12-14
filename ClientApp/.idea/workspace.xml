@@ -2,59 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="12fc5682-fb86-4ba5-97a4-d90e8a1ffa6b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../ServerApp/src/groupe1/models/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ServerApp/src/groupe1/models/databases/Database.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ServerApp/src/groupe1/models/databases/UserDatabase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ServerApp/src/groupe1/models/databases/exceptions/DatabaseLoadException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ServerApp/src/groupe1/models/databases/exceptions/DatabaseSaveException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/PROJ-ELEC-H417.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/qaplug_profiles.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../database/UserDB.serial" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../doc/ELEC_H417_Project.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../image/meta.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../image/meta_logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/PROJ-ELEC-H417/groupe1/models/Client.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/PROJ-ELEC-H417/groupe1/models/Conversation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/PROJ-ELEC-H417/groupe1/models/Server.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/PROJ-ELEC-H417/groupe1/models/ServeurMT.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/controllers/UserController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/controllers/VisitorController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/controllers/user/ProfileModificationController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/controllers/user/UserPageController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/controllers/visitor/ConditionsController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/controllers/visitor/LogInController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/controllers/visitor/RegisterController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/models/Client.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/models/Conversation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/models/Conversation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/models/Node.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/models/Server.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/models/ServeurMT.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/models/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/models/databases/Database.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/models/databases/UserDatabase.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/models/databases/exceptions/DatabaseLoadException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/models/databases/exceptions/DatabaseSaveException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/views/LogInView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/views/LogInViewController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/views/user/ProfileModificationView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/views/user/ProfileModificationViewController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/views/user/UserPageView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/views/user/UserPageViewController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/views/visitor/ConditionsView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/views/visitor/ConditionsViewController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/views/visitor/LogInView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/views/visitor/LogInViewController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/views/visitor/RegisterView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/views/visitor/RegisterViewController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/test/Lien video.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/test/client.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/test/server.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/groupe1/models/Conversation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/groupe1/models/Conversation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/groupe1/models/Server.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/groupe1/models/ServeurMT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/groupe1/models/ServeurMT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+    </list>
+    <list id="d5b41036-87fd-4009-abaa-d2618f770d99" name="Changes by Aurelien" comment="">
+      <change beforePath="$PROJECT_DIR$/src/groupe1/models/Conversation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/groupe1/models/Conversation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/groupe1/models/ServeurMT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/groupe1/models/ServeurMT.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +26,30 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/groupe1/models/ServeurMT.java">
+      <ranges>
+        <range start1="3" end1="3" start2="3" end2="4" changelist="12fc5682-fb86-4ba5-97a4-d90e8a1ffa6b" />
+        <range start1="5" end1="5" start2="6" end2="8" changelist="12fc5682-fb86-4ba5-97a4-d90e8a1ffa6b" />
+        <range start1="9" end1="9" start2="12" end2="13" changelist="12fc5682-fb86-4ba5-97a4-d90e8a1ffa6b" />
+        <range start1="15" end1="16" start2="19" end2="20" changelist="12fc5682-fb86-4ba5-97a4-d90e8a1ffa6b" />
+        <range start1="21" end1="22" start2="25" end2="28" changelist="d5b41036-87fd-4009-abaa-d2618f770d99" />
+        <range start1="29" end1="29" start2="35" end2="55" changelist="12fc5682-fb86-4ba5-97a4-d90e8a1ffa6b" />
+        <range start1="33" end1="34" start2="59" end2="59" changelist="d5b41036-87fd-4009-abaa-d2618f770d99" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/groupe1/models/Conversation.java">
+      <ranges>
+        <range start1="6" end1="8" start2="6" end2="9" changelist="d5b41036-87fd-4009-abaa-d2618f770d99" />
+        <range start1="11" end1="12" start2="12" end2="13" changelist="d5b41036-87fd-4009-abaa-d2618f770d99" />
+        <range start1="15" end1="16" start2="16" end2="17" changelist="d5b41036-87fd-4009-abaa-d2618f770d99" />
+        <range start1="39" end1="44" start2="40" end2="52" changelist="d5b41036-87fd-4009-abaa-d2618f770d99" />
+        <range start1="46" end1="48" start2="54" end2="54" changelist="d5b41036-87fd-4009-abaa-d2618f770d99" />
+        <range start1="51" end1="53" start2="57" end2="57" changelist="d5b41036-87fd-4009-abaa-d2618f770d99" />
+        <range start1="54" end1="54" start2="58" end2="59" changelist="12fc5682-fb86-4ba5-97a4-d90e8a1ffa6b" />
+      </ranges>
+    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -103,7 +83,28 @@
       <recent name="models" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.client">
+  <component name="RunManager" selected="Application.ServeurMT">
+    <configuration name="Client" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="groupe1.models.Client" />
+      <module name="PROJ-ELEC-H417" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Serveur" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="groupe1.models.ServeurMT" />
+      <module name="PROJ-ELEC-H417" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServeurMT" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="groupe1.models.ServeurMT" />
+      <module name="PROJ-ELEC-H417" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="test.client" />
       <module name="PROJ-ELEC-H417" />
@@ -139,6 +140,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.network app" />
+      <item itemvalue="Application.Client" />
+      <item itemvalue="Application.Serveur" />
+      <item itemvalue="Application.ServeurMT" />
+      <item itemvalue="Application.client" />
+      <item itemvalue="Application.server" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.client" />
@@ -178,6 +187,7 @@
       <workItem from="1639305147705" duration="30000" />
       <workItem from="1639469974418" duration="389000" />
       <workItem from="1639470815657" duration="2222000" />
+      <workItem from="1639473965155" duration="4798000" />
     </task>
     <servers />
   </component>

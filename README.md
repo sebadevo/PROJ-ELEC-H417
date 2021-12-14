@@ -35,10 +35,11 @@ On utilise telnet installé par défaut avec Windows, pour l'activer:
 * Cocher case Client Telnet. 
  
 
-Pour utiliser telnet : on doit entrer en premier l'adresse IP, ensuite le port.  
+Pour utiliser telnet : on doit entrer en premier l'adresse IP (localhost), ensuite le port.  
 
 
 ### Remarques 
 
 * Ce qui fait la différence entre différents serveurs c'est le protocol. 
+
 
