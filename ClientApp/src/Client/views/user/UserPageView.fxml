@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane prefHeight="480.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/8.0.202-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.views.user.UserPageViewController">
+    <Button fx:id="logOutButton" layoutX="556.0" layoutY="440.0" mnemonicParsing="false" onAction="#onLogOutButton" prefHeight="25.0" prefWidth="149.0" text="Log Out" />
+    <Button fx:id="modifyButton" layoutX="556.0" layoutY="407.0" mnemonicParsing="false" onAction="#onUserModificationButton" prefHeight="25.0" prefWidth="149.0" text="Modify Profile" />
+    <Label layoutX="49.0" layoutY="39.0" text="Welcome Back.">
+        <font>
+            <Font size="30.0" />
+        </font>
+    </Label>
+    <Label fx:id="errorMessageLabel" layoutX="286.0" layoutY="38.0" prefHeight="46.0" prefWidth="244.0" text="errorMessage" textFill="RED" visible="false" />
+</AnchorPane>
