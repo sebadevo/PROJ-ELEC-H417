@@ -1,5 +1,7 @@
 package clientgroupe1.models;
 
+import java.net.*; // TODO improve
+import java.io.*;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -7,31 +9,53 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.Scanner;
 
-public class Client {
-    public static void main(String[] args){
-        try{
-            Socket s = new Socket("localhost", 4321); //Au lieu de localhost on peut: 127.0.0.1
-            InputStream is = s.getInputStream(); // Lit des octets.
-            OutputStream os = s.getOutputStream(); // Envoie des octets.
+public class Client extends Thread {
 
-            // pour lire une info clavier
-            String input;
-            String output;
-            Scanner scanner = new Scanner(System.in);  // Create a Scanner object
+    private static Socket socket;
 
-            while(true) {
-                System.out.println("Je suis un client");
-                input = scanner.nextLine();  // Read user
-                // envoie vers le server:
-                os.write(Byte.parseByte(input)); // caster String en liste de Byte[]
-                // On inverse les choses au niveau de Client/server.
-                output = String.valueOf(is.read()); // or : output = new String(bytes);
-                System.out.println(output);
-                
-            }
-
+    Client() {
+        try {
+            this.socket = new Socket("localhost", 4321); //Au lieu de localhost on peut: 127.0.0.1;
         } catch (UnknownHostException e) { // Par exemple quand on spécifie une mauvaise adresse ip.
             e.printStackTrace();
+        } catch (IOException e) { // Server n'est pas démarré (pour cela il faut que le n° de port soit utilisé qualque part au niveau du server.)
+            e.printStackTrace();
+        }
+    }
+
+
+    public static void main(String[] args){
+        Client client = new Client();
+        client.start();
+        try{
+            //Socket s = new Socket("localhost", 4321); //Au lieu de localhost on peut: 127.0.0.1
+
+            BufferedReader is = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            
+            String output;
+
+            while(true) {
+                // On inverse les choses au niveau de Client/server.
+                output = is.readLine();
+                //output = String.valueOf(is.read()); // or : 
+                System.out.println(output);
+            }
+        } catch (IOException e) { // Server n'est pas démarré (pour cela il faut que le n° de port soit utilisé qualque part au niveau du server.)
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void run() {
+        try{
+            PrintWriter os = new PrintWriter(this.socket.getOutputStream(), true);
+            String input;
+            Scanner scanner = new Scanner(System.in);  // Create a Scanner object
+            while(true) {
+                    input = scanner.nextLine();  // Read user
+                    // envoie vers le server:
+                    os.println(input);     
+            }
         } catch (IOException e) { // Server n'est pas démarré (pour cela il faut que le n° de port soit utilisé qualque part au niveau du server.)
             e.printStackTrace();
         }
