@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="12fc5682-fb86-4ba5-97a4-d90e8a1ffa6b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../ServerApp/image/meta.png" afterDir="false" />
+    <list default="true" id="964b2424-20b9-4121-b49e-479622fd7c8b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/qaplug_profiles.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../out/production/PROJ-ELEC-H417/client.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../out/production/PROJ-ELEC-H417/server.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../out/production/PROJ-ELEC-H417/test/Lien video.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerApp/src/groupe1/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerApp/src/groupe1/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ServerApp/src/groupe1/controllers/ServerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerApp/src/groupe1/controllers/ServerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/groupe1/models/Conversation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/groupe1/models/Conversation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/groupe1/models/ServeurMT.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/groupe1/models/ServeurMT.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/groupe1/models/Conversation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/groupe1/models/Conversation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/groupe1/models/ServeurMT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/groupe1/models/ServeurMT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ServerApp/src/groupe1/views/ServerView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerApp/src/groupe1/views/ServerView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -13,23 +22,13 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="21PdeEqyNlKvWPwbl9cjqcE2rwU" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="1" id="Add" />
-  </component>
+  <component name="ProjectId" id="22MxWoU11S9s88nU4TrRrBXCkwI" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -38,53 +37,14 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="jdk.selected.JAVA_MODULE" value="1.8" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ServerApp" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/models" />
-      <recent name="$PROJECT_DIR$/src/views" />
-      <recent name="$PROJECT_DIR$/src/controllers" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="models" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Application.network app">
-    <configuration name="client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="test.client" />
-      <module name="PROJ-ELEC-H417" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="network app" type="Application" factoryName="Application">
-      <option name="ALTERNATIVE_JRE_PATH" value="corretto-1.8" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="groupe1.Main" />
       <module name="PROJ-ELEC-H417" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="test.server" />
-      <module name="PROJ-ELEC-H417" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.*" />
+          <option name="PATTERN" value="groupe1.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -94,79 +54,23 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.client" />
-        <item itemvalue="Application.server" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="12fc5682-fb86-4ba5-97a4-d90e8a1ffa6b" name="Changes" comment="" />
-      <created>1637846749842</created>
+      <changelist id="964b2424-20b9-4121-b49e-479622fd7c8b" name="Changes" comment="" />
+      <created>1639661303833</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1637846749842</updated>
-      <workItem from="1637846762804" duration="2747000" />
-      <workItem from="1637849796206" duration="2614000" />
-      <workItem from="1637852687122" duration="126000" />
-      <workItem from="1637852828260" duration="1977000" />
-      <workItem from="1637869620962" duration="2565000" />
-      <workItem from="1637872230874" duration="1805000" />
-      <workItem from="1637939361913" duration="533000" />
-      <workItem from="1637939915187" duration="101000" />
-      <workItem from="1637947730336" duration="161000" />
-      <workItem from="1638023314761" duration="193000" />
-      <workItem from="1638612796789" duration="765000" />
-      <workItem from="1638884297156" duration="23000" />
-      <workItem from="1638951431764" duration="1305000" />
-      <workItem from="1638953780513" duration="82000" />
-      <workItem from="1638953876019" duration="2036000" />
-      <workItem from="1638956164887" duration="443000" />
-      <workItem from="1638956626603" duration="157000" />
-      <workItem from="1638956846387" duration="152000" />
-      <workItem from="1638957012003" duration="131000" />
-      <workItem from="1638957173340" duration="1500000" />
-      <workItem from="1639130838428" duration="613000" />
-      <workItem from="1639305147705" duration="30000" />
-      <workItem from="1639469974418" duration="389000" />
-      <workItem from="1639470815657" duration="2222000" />
-      <workItem from="1639473269293" duration="320000" />
-      <workItem from="1639475021405" duration="520000" />
-      <workItem from="1639475718192" duration="187000" />
-      <workItem from="1639476778829" duration="297000" />
-      <workItem from="1639477096664" duration="933000" />
-      <workItem from="1639577636206" duration="499000" />
+      <updated>1639661303833</updated>
+      <workItem from="1639661307229" duration="364000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>jar://$USER_HOME$/.jdks/corretto-1.8.0_292/javafx-src.zip!/javafx/application/Application.java</url>
-          <line>304</line>
-          <properties class="javafx.application.Application" method="start">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

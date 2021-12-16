@@ -1,20 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.2" fx:controller="groupe1.views.ServerViewController">
-    <left>
-        <AnchorPane prefHeight="500.0" prefWidth="350.0" style="-fx-background-color: #0598ff;" BorderPane.alignment="CENTER" />
-    </left>
-    <right>
-        <AnchorPane prefHeight="500.0" prefWidth="787.0" BorderPane.alignment="CENTER">
-            <children>
-                <TextField layoutX="71.0" layoutY="172.0" promptText="User Name" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" />
-                <PasswordField layoutX="71.0" layoutY="237.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" />
-                <Button layoutX="110.0" layoutY="307.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="93.0" style="-fx-background-color: #0598ff;" text="Login" textFill="WHITE" />
-            </children>
-        </AnchorPane>
-    </right>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="groupe1.views.ServerViewController">
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
 </BorderPane>
