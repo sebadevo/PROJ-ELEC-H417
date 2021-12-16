@@ -10,7 +10,7 @@ Project du cours de Network protocols de l'ULB
 
 ### Fonctionnement d'un serveur. 
 
-Pour démarrer il faut commencer par démarrer un objet *serveurSocket*. Ensuite on démarre un thread. Ce thread ve s'occuper de la communication Client. 
+Pour démarrer il faut commencer par démarrer un objet *serveurSocket*. Ensuite on démarre un thread. Ce thread ve s'occuper de la communication clientgroupe1. 
 Pour qu'un client puisse se connecter au serveur, il va créer une *Socket*. Qaund le client demande une connexion, l'objet *Socket* crée une Socket et un thread et ce thread va se charger de lire les entrées et sorties. 
 Donc ce sera ce thread qui lira la requête et enverra la réponse vers le client. Pendant ce temps le premier thread attend toujours la connectiond un nouveau client. 
 Donc si on a un autre client qui veut se connecter l'objet *Socket* va créer un socket et autre thread (qui gère entrées et sorties pour ce client). 
@@ -32,7 +32,7 @@ On utilise telnet installé par défaut avec Windows, pour l'activer:
 * Panneau de configuration. 
 * Programmes
 * Fonctionnalités Windows
-* Cocher case Client Telnet. 
+* Cocher case clientgroupe1 Telnet. 
  
 
 Pour utiliser telnet : on doit entrer en premier l'adresse IP (localhost), ensuite le port.  

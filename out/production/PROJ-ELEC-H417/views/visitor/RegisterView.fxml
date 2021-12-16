@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane prefHeight="480.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/8.0.202-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.visitor.RegisterViewController">
+    <Label layoutX="235.0" layoutY="60.0" prefHeight="18.0" prefWidth="150.0" text="First name" />
+    <Label layoutX="235.0" layoutY="120.0" prefHeight="18.0" prefWidth="150.0" text="Last name" />
+    <Label layoutX="235.0" layoutY="180.0" prefHeight="18.0" prefWidth="150.0" text="Username" />
+    <Label layoutX="235.0" layoutY="240.0" prefHeight="18.0" prefWidth="150.0" text="Email address" />
+    <Label layoutX="235.0" layoutY="300.0" prefHeight="18.0" prefWidth="150.0" text="Password" />
+    <TextField fx:id="firstnameTextField" layoutX="235.0" layoutY="80.0" prefHeight="26.0" prefWidth="250.0" promptText="Enter your first name" />
+    <TextField fx:id="lastnameTextField" layoutX="235.0" layoutY="140.0" prefHeight="26.0" prefWidth="250.0" promptText="Enter your last name" />
+    <TextField fx:id="usernameTextField" layoutX="235.0" layoutY="200.0" prefHeight="26.0" prefWidth="250.0" promptText="Enter your username" />
+    <TextField fx:id="emailTextField" layoutX="235.0" layoutY="260.0" prefHeight="26.0" prefWidth="250.0" promptText="Enter your email address" />
+    <PasswordField fx:id="passwordField" layoutX="235.0" layoutY="320.0" prefHeight="26.0" prefWidth="250.0" promptText="Enter your password" />
+    <CheckBox fx:id="conditionsCheckBox" layoutX="235.0" layoutY="363.0" mnemonicParsing="false" onAction="#onConditionsCheckBox" prefHeight="25.0" prefWidth="250.0" text="I agree to the conditions below" />
+    <Button fx:id="registerButton" disable="true" layoutX="235.0" layoutY="394.0" mnemonicParsing="false" onAction="#onRegisterButton" prefHeight="42.0" prefWidth="250.0" text="Register">
+        <font>
+            <Font size="18.0" />
+        </font>
+    </Button>
+    <Button fx:id="backButton" layoutX="168.0" layoutY="400.0" mnemonicParsing="false" onAction="#onBackButton" prefHeight="26.0" prefWidth="60.0" text="Back" />
+    <Button fx:id="conditionsButton" layoutX="235.0" layoutY="442.0" mnemonicParsing="false" onAction="#onConditionsButton" prefHeight="26.0" prefWidth="250.0" text="Click here to see our conditions" />
+    <Label layoutX="304.0" layoutY="14.0" text="Register">
+        <font>
+            <Font size="25.0" />
+        </font>
+    </Label>
+    <Label fx:id="errorMessageLabel" layoutX="137.0" layoutY="343.0" prefHeight="20.0" prefWidth="312.0" text="errorMessage" textFill="RED" visible="false" />
+</AnchorPane>
