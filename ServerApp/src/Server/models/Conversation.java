@@ -1,16 +1,18 @@
-package Client.models;
+package Server.models;
+
+import Server.MainServer;
 
 import java.io.*;
 import java.net.Socket;
 
 public class Conversation extends Thread {
-    protected Socket socket;
-    protected int numeroClient;
-    protected ServeurMT server;
+    private Socket socket;
+    private int numeroClient;
+    private MainServer server;
     /**
      * Tout le code ci-dessous s'éxécute de manière indépandante du reste du code.
      */
-    public Conversation (Socket socket, int num, ServeurMT server){
+    public Conversation (Socket socket, int num, MainServer server){
         // super(); Utility ???
         this.socket = socket; // Permet de communiquer avec le client.
         this.numeroClient = num;
@@ -18,7 +20,7 @@ public class Conversation extends Thread {
     }
     @Override
     public void run() {
-    // Code de la conversation.
+        // Code de la conversation.
         try {
             InputStream is = socket.getInputStream(); // Octets
             InputStreamReader isr = new InputStreamReader(is); // Octets qui forment un charactères
@@ -55,6 +57,17 @@ public class Conversation extends Thread {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public Socket getSocket() {
+        return socket;
+    }
+    public int getNumeroClient() {
+        return numeroClient;
+    }
+
+    public MainServer getServer() {
+        return server;
     }
 
 }

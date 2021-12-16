@@ -2,133 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a2457536-8182-44bb-af5f-6d6859d358f9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PROJ-ELEC-H417.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/qaplug_profiles.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ServerApp/src/Server/models/Conversation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/.idea/PROJ-ELEC-H417.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/.idea/qaplug_profiles.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/database/UserDB.serial" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/image/meta_logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/out/production/PROJ-ELEC-H417/groupe1/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/out/production/PROJ-ELEC-H417/groupe1/controllers/UserController$UserListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/out/production/PROJ-ELEC-H417/groupe1/controllers/UserController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/out/production/PROJ-ELEC-H417/groupe1/controllers/VisitorController$VisitorListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/out/production/PROJ-ELEC-H417/groupe1/controllers/VisitorController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/out/production/PROJ-ELEC-H417/groupe1/controllers/user/ProfileModificationController$ProfileModificationListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/out/production/PROJ-ELEC-H417/groupe1/controllers/user/ProfileModificationController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/out/production/PROJ-ELEC-H417/groupe1/controllers/user/UserPageController$UserPageListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/out/production/PROJ-ELEC-H417/groupe1/controllers/user/UserPageController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/out/production/PROJ-ELEC-H417/groupe1/controllers/visitor/ConditionsController$ConditionsListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/out/production/PROJ-ELEC-H417/groupe1/controllers/visitor/ConditionsController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/out/production/PROJ-ELEC-H417/groupe1/controllers/visitor/LogInController$LogInListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/out/production/PROJ-ELEC-H417/groupe1/controllers/visitor/LogInController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/out/production/PROJ-ELEC-H417/groupe1/controllers/visitor/RegisterController$RegisterListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/out/production/PROJ-ELEC-H417/groupe1/controllers/visitor/RegisterController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/out/production/PROJ-ELEC-H417/groupe1/models/Client.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/out/production/PROJ-ELEC-H417/groupe1/models/Conversation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/out/production/PROJ-ELEC-H417/groupe1/models/Node.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/out/production/PROJ-ELEC-H417/groupe1/models/Server.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/out/production/PROJ-ELEC-H417/groupe1/models/ServeurMT.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/out/production/PROJ-ELEC-H417/groupe1/models/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/out/production/PROJ-ELEC-H417/groupe1/models/databases/Database.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/out/production/PROJ-ELEC-H417/groupe1/models/databases/UserDatabase.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/out/production/PROJ-ELEC-H417/groupe1/models/databases/exceptions/DatabaseLoadException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/out/production/PROJ-ELEC-H417/groupe1/models/databases/exceptions/DatabaseSaveException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/out/production/PROJ-ELEC-H417/groupe1/views/LogInView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/out/production/PROJ-ELEC-H417/groupe1/views/LogInViewController$LogInViewListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/out/production/PROJ-ELEC-H417/groupe1/views/LogInViewController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/out/production/PROJ-ELEC-H417/groupe1/views/user/ProfileModificationView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/out/production/PROJ-ELEC-H417/groupe1/views/user/ProfileModificationViewController$ProfileModificationViewListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/out/production/PROJ-ELEC-H417/groupe1/views/user/ProfileModificationViewController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/out/production/PROJ-ELEC-H417/groupe1/views/user/UserPageView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/out/production/PROJ-ELEC-H417/groupe1/views/user/UserPageViewController$UserPageViewListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/out/production/PROJ-ELEC-H417/groupe1/views/user/UserPageViewController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/out/production/PROJ-ELEC-H417/groupe1/views/visitor/ConditionsView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/out/production/PROJ-ELEC-H417/groupe1/views/visitor/ConditionsViewController$ConditionsViewListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/out/production/PROJ-ELEC-H417/groupe1/views/visitor/ConditionsViewController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/out/production/PROJ-ELEC-H417/groupe1/views/visitor/LogInView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/out/production/PROJ-ELEC-H417/groupe1/views/visitor/LogInViewController$LogInViewListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/out/production/PROJ-ELEC-H417/groupe1/views/visitor/LogInViewController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/out/production/PROJ-ELEC-H417/groupe1/views/visitor/RegisterView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/out/production/PROJ-ELEC-H417/groupe1/views/visitor/RegisterViewController$RegisterViewListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/out/production/PROJ-ELEC-H417/groupe1/views/visitor/RegisterViewController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/out/production/PROJ-ELEC-H417/test/Lien video.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/out/production/PROJ-ELEC-H417/test/client.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/out/production/PROJ-ELEC-H417/test/server.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/groupe1/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApp/src/Client/MainClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/groupe1/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApp/src/Client/controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/groupe1/controllers/VisitorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApp/src/Client/controllers/VisitorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/groupe1/controllers/user/ProfileModificationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApp/src/Client/controllers/user/ProfileModificationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/groupe1/controllers/user/UserPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApp/src/Client/controllers/user/UserPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/groupe1/controllers/visitor/ConditionsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApp/src/Client/controllers/visitor/ConditionsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/groupe1/controllers/visitor/LogInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApp/src/Client/controllers/visitor/LogInController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/groupe1/controllers/visitor/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApp/src/Client/controllers/visitor/RegisterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/groupe1/models/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApp/src/Client/models/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/groupe1/models/Conversation.class" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApp/src/Client/models/Conversation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/groupe1/models/Conversation.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApp/src/Client/models/Conversation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/groupe1/models/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApp/src/Client/models/Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/groupe1/models/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApp/src/Client/models/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/groupe1/models/ServeurMT.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApp/src/Client/models/ServeurMT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/groupe1/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApp/src/Client/models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/groupe1/models/databases/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApp/src/Client/models/databases/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/groupe1/models/databases/UserDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApp/src/Client/models/databases/UserDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/groupe1/models/databases/exceptions/DatabaseLoadException.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApp/src/Client/models/databases/exceptions/DatabaseLoadException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/groupe1/models/databases/exceptions/DatabaseSaveException.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApp/src/Client/models/databases/exceptions/DatabaseSaveException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/groupe1/views/LogInView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApp/src/Client/views/LogInView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/groupe1/views/LogInViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApp/src/Client/views/LogInViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/groupe1/views/user/ProfileModificationView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApp/src/Client/views/user/ProfileModificationView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/groupe1/views/user/ProfileModificationViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApp/src/Client/views/user/ProfileModificationViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/groupe1/views/user/UserPageView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApp/src/Client/views/user/UserPageView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/groupe1/views/user/UserPageViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApp/src/Client/views/user/UserPageViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/groupe1/views/visitor/ConditionsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApp/src/Client/views/visitor/ConditionsView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/groupe1/views/visitor/ConditionsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApp/src/Client/views/visitor/ConditionsViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/groupe1/views/visitor/LogInView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApp/src/Client/views/visitor/LogInView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/groupe1/views/visitor/LogInViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApp/src/Client/views/visitor/LogInViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/groupe1/views/visitor/RegisterView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApp/src/Client/views/visitor/RegisterView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/groupe1/views/visitor/RegisterViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApp/src/Client/views/visitor/RegisterViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServerApp/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServerApp/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServerApp/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServerApp/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServerApp/ServerApp.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServerApp/out/production/ServerApp/groupe1/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServerApp/out/production/ServerApp/groupe1/controllers/ServerController$ServerListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServerApp/out/production/ServerApp/groupe1/controllers/ServerController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServerApp/out/production/ServerApp/groupe1/models/Connection.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServerApp/out/production/ServerApp/groupe1/models/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServerApp/out/production/ServerApp/groupe1/models/databases/Database.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServerApp/out/production/ServerApp/groupe1/models/databases/UserDatabase.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServerApp/out/production/ServerApp/groupe1/models/databases/exceptions/DatabaseLoadException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServerApp/out/production/ServerApp/groupe1/models/databases/exceptions/DatabaseSaveException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServerApp/out/production/ServerApp/groupe1/views/ServerView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServerApp/out/production/ServerApp/groupe1/views/ServerViewController$ServerViewListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServerApp/out/production/ServerApp/groupe1/views/ServerViewController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServerApp/src/groupe1/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServerApp/src/Server/MainServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServerApp/src/groupe1/controllers/ServerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServerApp/src/Server/controllers/ServerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServerApp/src/groupe1/models/Connection.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServerApp/src/Server/models/Connection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServerApp/src/groupe1/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServerApp/src/Server/models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServerApp/src/groupe1/models/databases/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServerApp/src/Server/models/databases/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServerApp/src/groupe1/models/databases/UserDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServerApp/src/Server/models/databases/UserDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServerApp/src/groupe1/models/databases/exceptions/DatabaseLoadException.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServerApp/src/Server/models/databases/exceptions/DatabaseLoadException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServerApp/src/groupe1/models/databases/exceptions/DatabaseSaveException.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServerApp/src/Server/models/databases/exceptions/DatabaseSaveException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServerApp/src/groupe1/views/ServerView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/ServerApp/src/Server/views/ServerView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServerApp/src/groupe1/views/ServerViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServerApp/src/Server/views/ServerViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/client.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/server.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClientApp/src/Client/models/Server.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClientApp/src/Client/models/ServeurMT.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApp/src/Client/models/ServeurMT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClientApp/src/test/Lien video.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClientApp/src/test/client.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClientApp/src/test/server.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServerApp/src/Server/MainServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServerApp/src/Server/MainServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServerApp/src/Server/models/Connection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/UserDB.serial" beforeDir="false" afterPath="$PROJECT_DIR$/database/UserDB.serial" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/Client/models/Server.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/Client/models/ServeurMT.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/Client/models/ServeurMT.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/Server/MainServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/Server/MainServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/Server/models/Connection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/test/Lien video.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/test/client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/test/server.class" beforeDir="false" />
     </list>
+    <list id="a6848362-ad76-4da8-bd53-4f56e5bbcfac" name="Changes by Aurelien" comment="" />
+    <list id="466e5364-6971-46eb-8f35-668d9ed5a8bd" name="Changes by takira" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -146,11 +50,25 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager" selected="Application.MainClient">
+  <component name="RunManager" selected="Application.MainServer">
+    <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Client.models.Client" />
+      <module name="PROJ-ELEC-H417" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Client.models.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MainClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Client.MainClient" />
       <module name="PROJ-ELEC-H417" />
@@ -179,8 +97,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MainClient" />
         <item itemvalue="Application.MainServer" />
+        <item itemvalue="Application.Client" />
+        <item itemvalue="Application.MainClient" />
       </list>
     </recent_temporary>
   </component>
@@ -192,7 +111,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1639662416927</updated>
-      <workItem from="1639662419126" duration="457000" />
+      <workItem from="1639662419126" duration="3176000" />
     </task>
     <servers />
   </component>
