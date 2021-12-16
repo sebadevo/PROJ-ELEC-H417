@@ -2,59 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="12fc5682-fb86-4ba5-97a4-d90e8a1ffa6b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../ServerApp/src/groupe1/models/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ServerApp/src/groupe1/models/databases/Database.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ServerApp/src/groupe1/models/databases/UserDatabase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ServerApp/src/groupe1/models/databases/exceptions/DatabaseLoadException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ServerApp/src/groupe1/models/databases/exceptions/DatabaseSaveException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/PROJ-ELEC-H417.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/qaplug_profiles.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../database/UserDB.serial" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../doc/ELEC_H417_Project.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../image/meta.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../image/meta_logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/PROJ-ELEC-H417/groupe1/models/Client.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/PROJ-ELEC-H417/groupe1/models/Conversation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/PROJ-ELEC-H417/groupe1/models/Server.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/PROJ-ELEC-H417/groupe1/models/ServeurMT.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/controllers/UserController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/controllers/VisitorController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/controllers/user/ProfileModificationController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/controllers/user/UserPageController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/controllers/visitor/ConditionsController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/controllers/visitor/LogInController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/controllers/visitor/RegisterController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/models/Client.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/models/Conversation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/models/Conversation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/models/Node.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/models/Server.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/models/ServeurMT.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/models/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/models/databases/Database.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/models/databases/UserDatabase.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/models/databases/exceptions/DatabaseLoadException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/models/databases/exceptions/DatabaseSaveException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/views/LogInView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/views/LogInViewController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/views/user/ProfileModificationView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/views/user/ProfileModificationViewController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/views/user/UserPageView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/views/user/UserPageViewController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/views/visitor/ConditionsView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/views/visitor/ConditionsViewController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/views/visitor/LogInView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/views/visitor/LogInViewController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/views/visitor/RegisterView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/groupe1/views/visitor/RegisterViewController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/test/Lien video.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/test/client.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/test/server.java" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ServerApp/image/meta.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerApp/src/groupe1/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerApp/src/groupe1/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerApp/src/groupe1/controllers/ServerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerApp/src/groupe1/controllers/ServerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ServerApp/src/groupe1/views/ServerView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../ServerApp/src/groupe1/views/ServerView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,11 +39,12 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ServerApp" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -103,7 +56,7 @@
       <recent name="models" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.client">
+  <component name="RunManager" selected="Application.network app">
     <configuration name="client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="test.client" />
       <module name="PROJ-ELEC-H417" />
@@ -178,6 +131,12 @@
       <workItem from="1639305147705" duration="30000" />
       <workItem from="1639469974418" duration="389000" />
       <workItem from="1639470815657" duration="2222000" />
+      <workItem from="1639473269293" duration="320000" />
+      <workItem from="1639475021405" duration="520000" />
+      <workItem from="1639475718192" duration="187000" />
+      <workItem from="1639476778829" duration="297000" />
+      <workItem from="1639477096664" duration="933000" />
+      <workItem from="1639577636206" duration="499000" />
     </task>
     <servers />
   </component>

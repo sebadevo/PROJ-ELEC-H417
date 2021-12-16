@@ -19,7 +19,7 @@ public class ServerController implements ServerViewController.ServerViewListener
     }
 
     public void show() throws IOException {
-        FXMLLoader loader = new FXMLLoader(ServerController.class.getResource("ServerView.fxml"));
+        FXMLLoader loader = new FXMLLoader(ServerViewController.class.getResource("ServerView.fxml"));
         loader.load();
         serverViewController = loader.getController();
         serverViewController.setListener(this);
