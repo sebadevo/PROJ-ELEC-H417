@@ -40,7 +40,6 @@ public class Conversation extends Thread {
             pw.println("Bienvenue, vous etes le client : " + numeroClient); // Le serveur envoit au Client.
 
             // Conversation (Requête-Réponse), toute la conversation se fait avec la même socket pour cahque client.
-
             while(true){
                 String req;
                 while((req= br.readLine()) != null){
@@ -55,6 +54,9 @@ public class Conversation extends Thread {
                             numeroClients[i] = Integer.parseInt(t2[i]); // " 1"
                         }
                         server.broadCast(message, numeroClients); // envoie le message au destinataire spécifiés
+                    }
+                    else if ("exit".equalsIgnoreCase(br.readLine())){
+                        socket.close();
                     }
                     else {
                         int[] source = new int[] {numeroClient};
