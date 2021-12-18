@@ -6,6 +6,8 @@ import java.io.*;
 import java.net.Socket;
 
 public class Conversation extends Thread {
+
+    private static final String DELIMITER = "-";
     private Socket socket;
     private int numeroClient;
     private ServerController server;

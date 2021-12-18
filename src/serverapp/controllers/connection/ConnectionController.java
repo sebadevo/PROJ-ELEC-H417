@@ -3,6 +3,7 @@ package serverapp.controllers.connection;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.net.Socket;
 import serverapp.models.User;
 import serverapp.models.databases.UserDatabase;
@@ -11,9 +12,12 @@ import serverapp.models.databases.exceptions.DatabaseSaveException;
 import static serverapp.models.User.checkSyntax;
 
 public class ConnectionController extends Thread{
+
+    private static final String DELIMITER = "-";
     private final ConnectionListener listener;
     private final Socket socket;
-    private static final String separator = "-";
+    private PrintWriter printWriter;
+    private BufferedReader bufferedReader;
 
     private boolean running = true;
 
@@ -21,6 +25,9 @@ public class ConnectionController extends Thread{
         this.listener = listener;
         this.socket = socket;
         this.start();
+        try {
+            printWriter = new PrintWriter(this.socket.getOutputStream(), true);
+        } catch (Exception ignore){}
     }
 
     // source : moi Sébastien le Grand.
@@ -40,7 +47,7 @@ public class ConnectionController extends Thread{
                 } catch (DatabaseSaveException e) {
                     System.out.println("Error saving user to database");
                 }
-
+                printWriter.println(true);
                 listener.clientConversation(socket);
                 shutdownTread();
 
@@ -65,24 +72,28 @@ public class ConnectionController extends Thread{
                 System.out.println("Error saving user to database");
             }
             User user = UserDatabase.getInstance().getUser(username);
-
+            printWriter.println(true);
+            printWriter.println(user.getFirstname() + DELIMITER + user.getLastname() + DELIMITER + user.getEmailAddress());
             listener.clientConversation(socket);
             shutdownTread();
-            //listener.onLogInAsked(user);
         } else {
-            System.out.println("Wrong username or password"); // TODO erreur dans le mot de passe ou le username a communiqué au client.
+            sendErrorMessage("Wrong username or password");
         }
+    }
+
+    public void sendErrorMessage(String message){
+        printWriter.println(message);
     }
 
     @Override
     public void run() {
         try {
-            BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             while(running){
 
-                String completeMessage=br.readLine();
+                String completeMessage=bufferedReader.readLine();
                 if(completeMessage != null && !completeMessage.equals("exit")){
-                    String[] message = completeMessage.split(separator);  // séparer le message des destinataires
+                    String[] message = completeMessage.split(DELIMITER);  // séparer le message des destinataires
                     if (message[0].equals("1")){
                         createNewUser(message);
                     }else if (message[0].equals("0")){
@@ -102,9 +113,7 @@ public class ConnectionController extends Thread{
         running = false;
         try {
             socket.close();
-        } catch (IOException ignored) {
-            System.out.println("sheh");
-        }
+        } catch (IOException ignored) {}
     }
 
 

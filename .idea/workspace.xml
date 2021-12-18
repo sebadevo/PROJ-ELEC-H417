@@ -1,8 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a2457536-8182-44bb-af5f-6d6859d358f9" name="Changes" comment="test" />
-    <list id="a6848362-ad76-4da8-bd53-4f56e5bbcfac" name="Changes by Aurelien" comment="" />
+    <list default="true" id="a2457536-8182-44bb-af5f-6d6859d358f9" name="Changes" comment="test">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/clientapp/models/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/serverapp/MainServer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/serverapp/controllers/ServerController$ServerListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/serverapp/controllers/ServerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/serverapp/controllers/connection/ConnectionController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/serverapp/models/Conversation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/serverapp/models/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/serverapp/models/databases/Database.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/serverapp/models/databases/UserDatabase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/serverapp/models/databases/exceptions/DatabaseLoadException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/serverapp/models/databases/exceptions/DatabaseSaveException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/serverapp/views/ServerViewController$ServerViewListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/serverapp/views/ServerViewController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/UserDB.serial" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/clientapp.jar" beforeDir="false" afterPath="$PROJECT_DIR$/dist/clientapp.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/serverapp.jar" beforeDir="false" afterPath="$PROJECT_DIR$/dist/serverapp.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/MainClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/MainClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/controllers/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/controllers/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/controllers/VisitorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/controllers/VisitorController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/controllers/user/UserPageController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/controllers/visitor/LogInController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/controllers/visitor/LogInController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/models/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/models/Node.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/views/LogInView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/views/LogInViewController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/views/user/ProfileModificationView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/views/user/UserPageView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/views/user/UserPageView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/views/user/UserPageViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/views/user/UserPageViewController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/views/visitor/LogInView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/views/visitor/LogInView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/views/visitor/RegisterView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/views/visitor/RegisterView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/views/visitor/image/meta.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/serverapp/MainServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/serverapp/MainServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/serverapp/models/Conversation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/serverapp/models/Conversation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clientapp/MainClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/MainClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clientapp/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clientapp/controllers/VisitorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/controllers/VisitorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clientapp/controllers/visitor/LogInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/controllers/visitor/LogInController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clientapp/controllers/visitor/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/controllers/visitor/RegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clientapp/views/user/UserPageView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/views/user/UserPageView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clientapp/views/visitor/LogInView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/views/visitor/LogInView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clientapp/views/visitor/RegisterView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/views/visitor/RegisterView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/serverapp/MainServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/serverapp/MainServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/serverapp/controllers/connection/ConnectionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/serverapp/controllers/connection/ConnectionController.java" afterDir="false" />
+    </list>
+    <list id="cbde1fd3-1a01-4c20-85cb-2b19ec4bb165" name="Changes by Aurelien" comment="">
+      <change beforePath="$PROJECT_DIR$/src/clientapp/controllers/visitor/LogInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/controllers/visitor/LogInController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clientapp/controllers/visitor/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/controllers/visitor/RegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/serverapp/controllers/connection/ConnectionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/serverapp/controllers/connection/ConnectionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/serverapp/models/Conversation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/serverapp/models/Conversation.java" afterDir="false" />
+    </list>
     <list id="f38526b5-676c-499e-9e56-ba2b4b439470" name="Changes by takira" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +79,55 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/serverapp/controllers/connection/ConnectionController.java">
+      <ranges>
+        <range start1="5" end1="5" start2="5" end2="6" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="13" end1="13" start2="14" end2="16" changelist="cbde1fd3-1a01-4c20-85cb-2b19ec4bb165" />
+        <range start1="15" end1="16" start2="18" end2="20" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="23" end1="23" start2="27" end2="30" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="42" end1="43" start2="49" end2="50" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="67" end1="68" start2="74" end2="76" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="70" end1="71" start2="78" end2="78" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="72" end1="73" start2="79" end2="80" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="75" end1="75" start2="82" end2="86" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="79" end1="80" start2="90" end2="91" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="82" end1="83" start2="93" end2="94" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="84" end1="85" start2="95" end2="96" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="104" end1="107" start2="115" end2="116" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/clientapp/controllers/visitor/LogInController.java">
+      <ranges>
+        <range start1="2" end1="2" start2="2" end2="3" changelist="cbde1fd3-1a01-4c20-85cb-2b19ec4bb165" />
+        <range start1="3" end1="3" start2="4" end2="5" changelist="cbde1fd3-1a01-4c20-85cb-2b19ec4bb165" />
+        <range start1="8" end1="8" start2="10" end2="11" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="9" end1="9" start2="12" end2="14" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="12" end1="12" start2="17" end2="18" changelist="cbde1fd3-1a01-4c20-85cb-2b19ec4bb165" />
+        <range start1="15" end1="15" start2="21" end2="24" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="18" end1="19" start2="27" end2="28" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="21" end1="21" start2="30" end2="33" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="29" end1="29" start2="41" end2="45" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="52" end1="59" start2="68" end2="85" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="60" end1="61" start2="86" end2="90" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="72" end1="73" start2="101" end2="102" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/clientapp/controllers/visitor/RegisterController.java">
+      <ranges>
+        <range start1="2" end1="2" start2="2" end2="3" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="3" end1="3" start2="4" end2="5" changelist="cbde1fd3-1a01-4c20-85cb-2b19ec4bb165" />
+        <range start1="8" end1="8" start2="10" end2="11" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="9" end1="9" start2="12" end2="14" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="12" end1="12" start2="17" end2="18" changelist="cbde1fd3-1a01-4c20-85cb-2b19ec4bb165" />
+        <range start1="15" end1="15" start2="21" end2="24" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="18" end1="19" start2="27" end2="28" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="21" end1="21" start2="30" end2="33" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="55" end1="62" start2="67" end2="79" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="81" end1="82" start2="98" end2="99" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+      </ranges>
+    </file>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -41,7 +141,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../BA3/INFO-F307/2021-groupe-13" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/bin/serverapp/views" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -49,6 +149,12 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/bin/serverapp/views" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/serverapp/controllers" />
+    </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="serverapp.controllers" />
     </key>
@@ -57,7 +163,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MainServer">
+  <component name="RunManager" selected="Application.MainClient (1)">
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="models.Client" />
       <module name="PROJ-ELEC-H417" />
@@ -112,8 +218,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MainServer" />
         <item itemvalue="Application.MainClient (1)" />
+        <item itemvalue="Application.MainServer" />
         <item itemvalue="Application.Client" />
         <item itemvalue="Application.MainClient" />
       </list>
@@ -136,7 +242,8 @@
       <workItem from="1639824594161" duration="2428000" />
       <workItem from="1639827031458" duration="307000" />
       <workItem from="1639828121361" duration="614000" />
-      <workItem from="1639846850641" duration="5091000" />
+      <workItem from="1639846850641" duration="14351000" />
+      <workItem from="1639867149274" duration="3516000" />
     </task>
     <servers />
   </component>

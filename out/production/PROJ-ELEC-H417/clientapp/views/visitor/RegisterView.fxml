@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="480.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clientapp.views.visitor.RegisterViewController">
+<AnchorPane prefHeight="480.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/8.0.202-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clientapp.views.visitor.RegisterViewController">
     <Label layoutX="235.0" layoutY="60.0" prefHeight="18.0" prefWidth="150.0" text="First name" />
     <Label layoutX="235.0" layoutY="120.0" prefHeight="18.0" prefWidth="150.0" text="Last name" />
     <Label layoutX="235.0" layoutY="180.0" prefHeight="18.0" prefWidth="150.0" text="Username" />
@@ -21,7 +21,7 @@
             <Font size="18.0" />
         </font>
     </Button>
-    <Button fx:id="backButton" layoutX="168.0" layoutY="400.0" mnemonicParsing="false" onAction="#onBackButton" prefHeight="26.0" prefWidth="60.0" text="Back" />
+    <Button fx:id="backButton" layoutX="167.0" layoutY="402.0" mnemonicParsing="false" onAction="#onBackButton" prefHeight="26.0" prefWidth="60.0" text="Back" />
     <Button fx:id="conditionsButton" layoutX="235.0" layoutY="442.0" mnemonicParsing="false" onAction="#onConditionsButton" prefHeight="26.0" prefWidth="250.0" text="Click here to see our conditions" />
     <Label layoutX="304.0" layoutY="14.0" text="Register">
         <font>

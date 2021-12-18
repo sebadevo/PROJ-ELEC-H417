@@ -1,6 +1,7 @@
 package clientapp;
 
 import clientapp.controllers.UserController;
+import clientapp.models.User;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.scene.control.Alert;
@@ -8,6 +9,11 @@ import javafx.stage.Stage;
 
 import clientapp.controllers.VisitorController;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.Socket;
 
 
 public class MainClient extends Application implements UserController.UserPageListener, VisitorController.VisitorListener{
@@ -15,6 +21,9 @@ public class MainClient extends Application implements UserController.UserPageLi
     private VisitorController visitorController;
     private UserController userController;
     private Stage stage;
+    private Socket socket;
+    private PrintWriter printWriter;
+    private BufferedReader bufferedReader;
 
     /**
      * Démarrage de l'application.
@@ -31,8 +40,13 @@ public class MainClient extends Application implements UserController.UserPageLi
     @Override
     public void start(Stage stage) {
         this.stage = stage;
-        visitorController = new VisitorController(this, stage);
-        visitorController.show();
+        try {
+            socket = new Socket("localhost", 4321);
+            printWriter = new PrintWriter(this.socket.getOutputStream(), true);
+            bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            visitorController = new VisitorController(this, stage, socket, printWriter, bufferedReader);
+            visitorController.show();
+        } catch (IOException ignore) {}
     }
 
     /**
@@ -54,8 +68,8 @@ public class MainClient extends Application implements UserController.UserPageLi
      * d'afficher la page du menu principal.
      */
     @Override
-    public void logIn(String username, String password) {
-        userController = new UserController(this, stage);
+    public void logIn(User user) {
+        userController = new UserController(this, user, stage, socket, printWriter, bufferedReader);
         try {
             userController.show();
         } catch (Exception e) {
@@ -73,15 +87,5 @@ public class MainClient extends Application implements UserController.UserPageLi
         try {
             visitorController.show();
         } catch (Exception e) { System.out.println(e); }
-    }
-
-    @Override
-    public void sendMessage(String message) {
-        receiveMessage(message); // DEBUG
-        // TODO send message to the server
-    }
-
-    public void receiveMessage(String message) {
-        userController.receiveText(message);
     }
 }

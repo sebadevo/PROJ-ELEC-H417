@@ -1,24 +1,36 @@
 package clientapp.controllers.visitor;
 
+import clientapp.models.User;
 import clientapp.views.visitor.RegisterViewController;
+
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.net.Socket;
 
 public class RegisterController implements RegisterViewController.RegisterViewListener {
 
+    private static final String DELIMITER = "-";
     private final RegisterListener listener;
     private final Stage stage;
     private RegisterViewController registerViewController;
+    private Socket socket;
+    private PrintWriter printWriter;
+    private BufferedReader bufferedReader;
 
     public static final String LOAD_REGISTER_PAGE_ERROR = "the register window had to be displayed";
 
-    public RegisterController(RegisterListener listener, Stage stage) {
+    public RegisterController(RegisterListener listener, Stage stage, Socket socket, PrintWriter printWriter, BufferedReader bufferedReader) {
         this.stage = stage;
         this.listener = listener;
+        this.socket = socket;
+        this.printWriter = printWriter;
+        this.bufferedReader = bufferedReader;
     }
 
     /**
@@ -53,13 +65,18 @@ public class RegisterController implements RegisterViewController.RegisterViewLi
      */
     @Override
     public void onRegisterButton(String firstname, String lastname, String username, String email, String password) {
-        listener.onRegisterAsked();
-        // TODO send info to server to save the user
-        /*
-        if (error ...) {
-            registerViewController.setErrorMessage("Error saving user to database");
-        }
-        }*/
+        printWriter.println("1"+DELIMITER+firstname+DELIMITER+lastname+DELIMITER+username+DELIMITER+email+DELIMITER+password);
+        try {
+            String answer = bufferedReader.readLine();
+            System.out.println("voici ce qui est en string " + answer);
+            if (answer.equals("true")){
+                User user = new User(firstname, lastname, username, email, password);
+                listener.onRegisterAsked(user);
+            }
+            else {
+                registerViewController.setErrorMessage(answer);
+            }
+        } catch (IOException ignore) {}
     }
 
     /**
@@ -79,7 +96,7 @@ public class RegisterController implements RegisterViewController.RegisterViewLi
     }
 
     public interface RegisterListener {
-        void onRegisterAsked();
+        void onRegisterAsked(User user);
         void onBackToLogInAsked();
         void onConditionsAsked();
     }

@@ -36,6 +36,7 @@ public class MainServer extends Application implements ServerController.ServerLi
             showError(Database.LOAD_ERROR);
         }
         serverController = new ServerController(this, stage);
+
         serverController.startServer();
     }
 
