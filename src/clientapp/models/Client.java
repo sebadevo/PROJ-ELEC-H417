@@ -1,12 +1,8 @@
 package clientapp.models;
 
-import java.net.*; // TODO improve
 import java.io.*;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.net.Socket;
-import java.net.UnknownHostException;
 import java.util.Scanner;
 
 public class Client extends Thread {
@@ -16,9 +12,7 @@ public class Client extends Thread {
     Client() {
         try {
             this.socket = new Socket("localhost", 4321); //Au lieu de localhost on peut: 127.0.0.1;
-        } catch (UnknownHostException e) { // Par exemple quand on spécifie une mauvaise adresse ip.
-            e.printStackTrace();
-        } catch (IOException e) { // Server n'est pas démarré (pour cela il faut que le n° de port soit utilisé qualque part au niveau du server.)
+        } catch (Exception e) { // Par exemple quand on spécifie une mauvaise adresse ip.
             e.printStackTrace();
         }
     }

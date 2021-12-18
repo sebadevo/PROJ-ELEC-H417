@@ -1,6 +1,6 @@
 package serverapp.models;
 
-import serverapp.MainServer;
+import serverapp.controllers.ServerController;
 
 import java.io.*;
 import java.net.Socket;
@@ -8,11 +8,11 @@ import java.net.Socket;
 public class Conversation extends Thread {
     private Socket socket;
     private int numeroClient;
-    private MainServer server;
+    private ServerController server;
     /**
      * Tout le code ci-dessous s'éxécute de manière indépandante du reste du code.
      */
-    public Conversation (Socket socket, int num, MainServer server){
+    public Conversation (Socket socket, int num, ServerController server){
         // super(); Utility ???
         this.socket = socket; // Permet de communiquer avec le client.
         this.numeroClient = num;
@@ -74,7 +74,7 @@ public class Conversation extends Thread {
         return numeroClient;
     }
 
-    public MainServer getServer() {
+    public ServerController getServer() {
         return server;
     }
 

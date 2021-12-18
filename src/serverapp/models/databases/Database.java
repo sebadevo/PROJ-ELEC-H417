@@ -1,7 +1,7 @@
 package serverapp.models.databases;
 
-import clientapp.models.databases.exceptions.DatabaseLoadException;
-import clientapp.models.databases.exceptions.DatabaseSaveException;
+import serverapp.models.databases.exceptions.DatabaseLoadException;
+import serverapp.models.databases.exceptions.DatabaseSaveException;
 
 import java.io.*;
 import java.util.ArrayList;
