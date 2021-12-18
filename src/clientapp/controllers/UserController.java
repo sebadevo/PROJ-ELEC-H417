@@ -1,101 +1,84 @@
 package clientapp.controllers;
 
-import clientapp.controllers.user.ProfileModificationController;
-import clientapp.controllers.user.UserPageController;;
-import serverapp.models.User;
+import clientapp.MainClient;
+import clientapp.views.user.UserPageViewController;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
-import static clientapp.MainClient.showError;
+public class UserController implements UserPageViewController.UserPageViewListener {
 
-public class UserController implements ProfileModificationController.ProfileModificationListener, UserPageController.UserPageListener {
-
-    private final UserListener listener;
+    private final UserPageListener listener;
     private final Stage stage;
-    private User user;
-    private ProfileModificationController profileModificationController;
-    private UserPageController userPageController;
+    private UserPageViewController userPageViewController;
 
+    public static final String LOAD_PRINCIPAL_USER_PAGE_ERROR = "the principal user window had to be displayed";
 
-    public UserController(UserListener listener, Stage stage, User user) {
-        this.listener = listener;
+    public UserController(UserPageListener listener, Stage stage) {
         this.stage = stage;
-        this.user = user;
+        this.listener = listener;
     }
 
     /**
-     * Demande à la classe UserPageController d'afficher le menu principal.
+     * Permet l'affichage de UserPageView.
+     * @throws IOException erreur d'affichage
      */
-    public void show() {
-        userPageController = new UserPageController(this, stage, user);
-        try {
-            userPageController.show();
-        } catch (Exception e) {
-            showError(UserPageController.LOAD_PRINCIPAL_USER_PAGE_ERROR);
-        }
+    public void show() throws IOException {
+        FXMLLoader loader = new FXMLLoader(UserPageViewController.class.getResource("UserPageView.fxml"));
+        loader.load();
+
+        userPageViewController = loader.getController();
+        userPageViewController.setListener(this);
+        Parent page = loader.getRoot();
+        stage.setScene(new Scene(page));
+        stage.show();
+        onCloseRequest();
     }
 
     /**
-     * Demande au groupe1.Main d'afficher la page de connexion.
+     * Permet de détecter si on ferme la fenêtre et d'en notifier la classe UserController.
+     */
+    private void onCloseRequest() {
+        stage.setOnCloseRequest(e -> {
+            try {
+                listener.logOut(); // avant : listener.onClose();
+            } catch (Exception exception) {
+                MainClient.showError("la fenêtre a dû être fermée");
+            }
+        });
+    }
+
+    /**
+     * Permet de fermer la page du menu principal.
+     */
+    public void hide() {
+        stage.hide();
+    }
+
+    /**
+     * Permet de déconnecter un User et de demander à la classe UserController de changer de fenêtre.
      */
     @Override
-    public void onLogOutAsked() {
+    public void onLogOutButtonPressed() {
+        // TODO send deconnection to server -> server must handle the thing
         listener.logOut();
     }
 
-
-    /**
-     * Demande à la classe ProfileModificationController d'afficher la page de modification du profil.
-     */
     @Override
-    public void onModifyUserAsked() {
-        profileModificationController = new ProfileModificationController(this, stage, user);
-        try{
-            profileModificationController.show();
-        } catch (IOException e) {
-            showError(ProfileModificationController.LOAD_PROFILE_MODIFICATION_PAGE_ERROR);
-
-        }
+    public void onSendButtonPressed(String message){
+        listener.sendMessage(message);
     }
 
-    /**
-     * Demande à la classe UserPageController d'afficher le menu principal.
-     * @param user utilisateur après avoir modifié ses informations
-     */
-    @Override
-    public void onConfirmModificationsAsked(User user) {
-        this.user = user;
-        try {
-            userPageController.show();
-        } catch (IOException e) {
-            showError(UserPageController.LOAD_PRINCIPAL_USER_PAGE_ERROR);
-        }
+    public void receiveText(String message) {
+        userPageViewController.addReadingArea(message);
     }
 
-    /**
-     * Demande à la classe UserPageController d'afficher le menu principal.
-     */
-    @Override
-    public void onBackToUserAsked() {
-        try {
-            userPageController.show();
-        } catch (IOException e) {
-            showError(UserPageController.LOAD_PRINCIPAL_USER_PAGE_ERROR);
-        }
-    }
-
-    /**
-     * Demande au groupe1.Main de fermer l'application.
-     * @throws Exception exception lié à la fermeture d'une scène
-     */
-    @Override
-    public void onClose() throws Exception {
-        listener.onClose();
-    }
-
-    public interface UserListener {
+    public interface UserPageListener {
+        void sendMessage(String message);
         void logOut();
-        void onClose() throws Exception;
     }
 }
+

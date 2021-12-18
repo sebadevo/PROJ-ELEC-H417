@@ -1,12 +1,15 @@
 package clientapp.views.user;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.control.TextArea;
 
 public class UserPageViewController {
 
     @FXML
-    private Label errorMessageLabel;
+    private TextField writtingField;
+    @FXML
+    private TextArea readingArea;
 
     private UserPageViewListener listener;
 
@@ -22,25 +25,19 @@ public class UserPageViewController {
         listener.onLogOutButtonPressed();
     }
 
-    /**
-     * Détecte si on a appuyé sur le bouton "Modify profile" et notifie le controller.
-     */
-    public void onUserModificationButton() {
-        listener.onModifyUserButtonPressed();
+    public void onSendButton(){
+        String message = writtingField.getText();
+        writtingField.setText("");
+        listener.onSendButtonPressed(message);
     }
 
-
-    /**
-     * Affiche le message d'erreur.
-     * @param errorMessage string
-     */
-    public void setErrorMessage(String errorMessage) {
-        errorMessageLabel.setText(errorMessage);
-        errorMessageLabel.setVisible(true);
+    public void addReadingArea(String message){
+        // TODO check comment ça fonctionne
+        readingArea.appendText(message + "\n");
     }
 
     public interface UserPageViewListener {
         void onLogOutButtonPressed() throws Exception;
-        void onModifyUserButtonPressed();
+        void onSendButtonPressed(String message);
     }
 }

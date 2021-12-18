@@ -1,9 +1,5 @@
 package clientapp.controllers.visitor;
 
-import serverapp.models.User;
-import serverapp.models.databases.UserDatabase;
-import serverapp.models.databases.exceptions.DatabaseSaveException;
-
 import clientapp.views.visitor.RegisterViewController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -11,8 +7,6 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-
-import static serverapp.models.User.checkSyntax;
 
 public class RegisterController implements RegisterViewController.RegisterViewListener {
 
@@ -31,7 +25,6 @@ public class RegisterController implements RegisterViewController.RegisterViewLi
      * Permet d'afficher la page register
      * @throws IOException erreur d'affichage
      */
-
     public void show() throws IOException {
         FXMLLoader loader = new FXMLLoader(RegisterViewController.class.getResource("RegisterView.fxml"));
         loader.load();
@@ -60,26 +53,14 @@ public class RegisterController implements RegisterViewController.RegisterViewLi
      */
     @Override
     public void onRegisterButton(String firstname, String lastname, String username, String email, String password) {
-        if (checkSyntax(firstname, lastname, username, email, password)) {
-            User user = new User(firstname, lastname, username, email, password);
-            if (!UserDatabase.getInstance().checkExistingUser(user)) {
-                UserDatabase.getInstance().add(user);
-                try {
-                    UserDatabase.getInstance().save();
-                } catch (DatabaseSaveException e) {
-                    registerViewController.setErrorMessage("Error saving user to database");
-                }
-                listener.onRegisterAsked();
-            } else if (UserDatabase.getInstance().checkExistingEmail(user.getEmailAddress())){
-                registerViewController.setErrorMessage("Email already taken");
-            } else {
-                registerViewController.setErrorMessage("Username already taken");
-            }
-        } else {
-            registerViewController.setErrorMessage("Wrong email address or empty fields");
+        listener.onRegisterAsked();
+        // TODO send info to server to save the user
+        /*
+        if (error ...) {
+            registerViewController.setErrorMessage("Error saving user to database");
         }
+        }*/
     }
-
 
     /**
      * Demande au VisitorController d'afficher la page de connexion.

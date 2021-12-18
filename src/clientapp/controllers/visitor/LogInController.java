@@ -1,9 +1,5 @@
 package clientapp.controllers.visitor;
 
-import serverapp.models.User;
-import serverapp.models.databases.UserDatabase;
-import serverapp.models.databases.exceptions.DatabaseSaveException;
-
 import clientapp.views.visitor.LogInViewController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -54,17 +50,15 @@ public class LogInController implements LogInViewController.LogInViewListener {
      */
     @Override
     public void onLogInButton(String username, String password) {
-        if (UserDatabase.getInstance().logIn(username, password)) {
+        listener.onLogInAsked(username, password);
+        // TODO
+        /*
             try {
-                UserDatabase.getInstance().save();
-            } catch (DatabaseSaveException e) {
-                logInViewController.setErrorMessage("Error saving user to database");
+                Connection
+            } catch () {
+                logInViewController.setErrorMessage("Wrong username or password");
             }
-            User user = UserDatabase.getInstance().getUser(username);
-            listener.onLogInAsked(user);
-        } else {
-            logInViewController.setErrorMessage("Wrong username or password");
-        }
+         */
     }
 
     /**
@@ -76,7 +70,7 @@ public class LogInController implements LogInViewController.LogInViewListener {
     }
 
     public interface LogInListener {
-        void onLogInAsked(User user);
+        void onLogInAsked(String username, String password);
         void onRegisterLinkAsked();
     }
 }

@@ -4,7 +4,7 @@ package clientapp.controllers;
 import clientapp.controllers.visitor.ConditionsController;
 import clientapp.controllers.visitor.LogInController;
 import clientapp.controllers.visitor.RegisterController;
-import serverapp.models.User;
+
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -38,12 +38,11 @@ public class VisitorController implements ConditionsController.ConditionsListene
     }
 
     /**
-     * Demande au groupe1.Main de connecter le user.
-     * @param user user qui va se connecter.
+     * Demande au Main de connecter le user.
      */
     @Override
-    public void onLogInAsked(User user) {
-        listener.logIn(user);
+    public void onLogInAsked(String username, String password) {
+        listener.logIn(username, password);
     }
 
     /**
@@ -109,7 +108,7 @@ public class VisitorController implements ConditionsController.ConditionsListene
     }
 
     public interface VisitorListener {
-        void logIn(User user);
+        void logIn(String username, String password);
     }
 }
 

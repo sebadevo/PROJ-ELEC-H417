@@ -1,25 +1,20 @@
 package clientapp;
 
+import clientapp.controllers.UserController;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 
-import clientapp.controllers.UserController;
 import clientapp.controllers.VisitorController;
 
-import serverapp.models.User;
-import serverapp.models.databases.UserDatabase;
-import serverapp.models.databases.Database;
-import serverapp.models.databases.exceptions.*;
 
 
-public class MainClient extends Application implements UserController.UserListener, VisitorController.VisitorListener{
+public class MainClient extends Application implements UserController.UserPageListener, VisitorController.VisitorListener{
 
     private VisitorController visitorController;
     private UserController userController;
     private Stage stage;
-    private User user;
 
     /**
      * Démarrage de l'application.
@@ -30,16 +25,11 @@ public class MainClient extends Application implements UserController.UserListen
     }
 
     /**
-     * Charge les databases et demande à la classe VisitorController d'afficher la page de connexion.
+     * Demande à la classe VisitorController d'afficher la page de connexion.
      * @param stage le stage de l'application
      */
     @Override
     public void start(Stage stage) {
-        try {
-            UserDatabase.getInstance().load();
-        } catch (DatabaseLoadException e){
-            showError(Database.LOAD_ERROR); // DB must exist before running (if error, run without this line, create a user, then run again)
-        }
         this.stage = stage;
         visitorController = new VisitorController(this, stage);
         visitorController.show();
@@ -59,17 +49,18 @@ public class MainClient extends Application implements UserController.UserListen
         Platform.exit();
     }
 
-
     /**
      * Permet d'assigner à l'attribut user du main le user qui est connecté et demande à la classe UserCotnroller
      * d'afficher la page du menu principal.
-     * @param user le user connecté
      */
     @Override
-    public void logIn(User user) {
-        this.user = user;
-        userController = new UserController(this, stage, user);
-        userController.show();
+    public void logIn(String username, String password) {
+        userController = new UserController(this, stage);
+        try {
+            userController.show();
+        } catch (Exception e) {
+            showError(UserController.LOAD_PRINCIPAL_USER_PAGE_ERROR);
+        }
     }
 
     /**
@@ -77,23 +68,20 @@ public class MainClient extends Application implements UserController.UserListen
      */
     @Override
     public void logOut() {
-        visitorController.show();
-    }
-
-    /**
-     * Permet de sauvegarder les databases et de déconnecter le user connecté quand on ferme l'application.
-     */
-    @Override
-    public void onClose() {
-        if (user.isConnected()){
-            user.setConnected(false);
-            UserDatabase.getInstance().logOut(user);
-        }
+        System.out.println("LOG OUT"); // DEBUG
+        // TODO déconnection au server
         try {
-            UserDatabase.getInstance().save();
-        } catch (DatabaseSaveException e) {
-            showError(Database.SAVE_ERROR);
-        }
+            visitorController.show();
+        } catch (Exception e) { System.out.println(e); }
     }
 
+    @Override
+    public void sendMessage(String message) {
+        receiveMessage(message); // DEBUG
+        // TODO send message to the server
+    }
+
+    public void receiveMessage(String message) {
+        userController.receiveText(message);
+    }
 }
