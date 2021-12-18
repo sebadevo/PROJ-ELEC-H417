@@ -1,24 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a2457536-8182-44bb-af5f-6d6859d358f9" name="Changes" comment="test">
-      <change afterPath="$PROJECT_DIR$/src/serverapp/views/ServerView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/serverapp/MainServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/serverapp/MainServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/serverapp/controllers/ServerController$ServerListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/serverapp/controllers/ServerController$ServerListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/serverapp/controllers/ServerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/serverapp/controllers/ServerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/serverapp/models/databases/exceptions/DatabaseLoadException.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/serverapp/models/databases/exceptions/DatabaseLoadException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/UserDB.serial" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/clientapp.jar" beforeDir="false" afterPath="$PROJECT_DIR$/dist/clientapp.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/serverapp.jar" beforeDir="false" afterPath="$PROJECT_DIR$/dist/serverapp.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/views/LogInView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/views/LogInView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/views/user/UserPageView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/views/user/UserPageView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/views/visitor/RegisterView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/views/visitor/RegisterView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/serverapp/MainServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/serverapp/MainServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/serverapp/controllers/ServerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/serverapp/controllers/ServerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/serverapp/models/Conversation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/serverapp/models/Conversation.java" afterDir="false" />
-    </list>
+    <list default="true" id="a2457536-8182-44bb-af5f-6d6859d358f9" name="Changes" comment="test" />
     <list id="a6848362-ad76-4da8-bd53-4f56e5bbcfac" name="Changes by Aurelien" comment="" />
     <list id="f38526b5-676c-499e-9e56-ba2b4b439470" name="Changes by takira" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -153,7 +136,7 @@
       <workItem from="1639824594161" duration="2428000" />
       <workItem from="1639827031458" duration="307000" />
       <workItem from="1639828121361" duration="614000" />
-      <workItem from="1639846850641" duration="4343000" />
+      <workItem from="1639846850641" duration="5091000" />
     </task>
     <servers />
   </component>
