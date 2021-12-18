@@ -10,3 +10,9 @@ server:
 	javac -d bin -cp src/ src/serverapp/MainServer.java
 	jar cfe dist/serverapp.jar serverapp/MainServer -C bin .
 	java -jar dist/serverapp.jar
+
+gui:
+	javac -d bin -cp src/ src/clientapp/models/MainClient.java
+	jar cfe dist/clientappgui.jar clientapp/models/MainClient -C bin .
+	java -jar dist/clientappgui.jar
+

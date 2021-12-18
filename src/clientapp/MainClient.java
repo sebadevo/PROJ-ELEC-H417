@@ -7,10 +7,9 @@ import javafx.stage.Stage;
 import clientapp.controllers.UserController;
 import clientapp.controllers.VisitorController;
 import clientapp.models.User;
-import clientapp.models.databases.Database;
-import clientapp.models.databases.UserDatabase;
-import clientapp.models.databases.exceptions.DatabaseLoadException;
-import clientapp.models.databases.exceptions.DatabaseSaveException;
+
+import serverapp.models.databases.UserDatabase;
+import serverapp.models.databases.Database;
 
 
 public class MainClient extends Application implements UserController.UserListener, VisitorController.VisitorListener{
