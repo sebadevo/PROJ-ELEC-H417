@@ -9,40 +9,32 @@ public class Conversation extends Thread {
     private Socket socket;
     private int numeroClient;
     private ServerController server;
+    private boolean running = true;
     /**
      * Tout le code ci-dessous s'éxécute de manière indépandante du reste du code.
      */
     public Conversation (Socket socket, int num, ServerController server){
-        // super(); Utility ???
         this.socket = socket; // Permet de communiquer avec le client.
         this.numeroClient = num;
         this.server = server;
     }
     @Override
     public void run() {
-        // Code de la conversation.
         try {
-            //InputStream is = socket.getInputStream(); // Octets
-            //InputStreamReader isr = new InputStreamReader(is); // Octets qui forment un charactères
-            //BufferedReader br = new BufferedReader(isr); // caractères qui forment une phrase, pas de limite.
+
             BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
-            //OutputStream os = socket.getOutputStream();
-            //PrintWriter pw = new PrintWriter(os, true); // true permet d'envoyer la donnée.
             PrintWriter pw = new PrintWriter(socket.getOutputStream(), true);
 
-            // Quand est ce que cette opération se fait :
-            // On récupère l'adresse IP du client.
             String IP = socket.getRemoteSocketAddress().toString();
-            // Les adresses seront récupérées dans un log, on pourra savoir quelles machines se sont connectées.
 
             System.out.println("Connection du client numero " + numeroClient + " IP= " +IP);
             pw.println("Bienvenue, vous etes le client : " + numeroClient); // Le serveur envoit au Client.
 
-            // Conversation (Requête-Réponse), toute la conversation se fait avec la même socket pour cahque client.
-            while(true){
+
+            while(running){
                 String req;
-                while((req= br.readLine()) != null){
+                if((req= br.readLine()) != null){
                     String[] t = req.split("-");  // séparer le message des destinataires
                     if (t.length == 2) {
                         String message = t[0];
@@ -55,8 +47,10 @@ public class Conversation extends Thread {
                         }
                         server.broadCast(message, numeroClients); // envoie le message au destinataire spécifiés
                     }
-                    else if ("exit".equalsIgnoreCase(br.readLine())){
+                    else if (req.equals("exit")){
                         socket.close();
+                        System.out.println("the socket has been terminated");
+                        running = false;
                     }
                     else {
                         int[] source = new int[] {numeroClient};
@@ -64,8 +58,14 @@ public class Conversation extends Thread {
                     }
                 }
             }
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (Exception ignored) {}
+    }
+
+    public void shutdownThread(){
+        running = false;
+        try {
+            socket.close();
+        }catch(Exception ignore){
         }
     }
 

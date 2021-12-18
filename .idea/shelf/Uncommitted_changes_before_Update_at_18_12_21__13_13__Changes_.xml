@@ -1,0 +1,9 @@
+<changelist name="Uncommitted_changes_before_Update_at_18_12_21,_13_13_[Changes]" date="1639829624859" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_12_21,_13_13_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 18.12.21, 13:13 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="dist/clientapp.jar" />
+    <option name="AFTER_PATH" value="dist/clientapp.jar" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_18_12_21,_13_13_[Changes]/clientapp.jar" />
+  </binary>
+</changelist>

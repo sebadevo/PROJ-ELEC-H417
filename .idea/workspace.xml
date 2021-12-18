@@ -1,28 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a2457536-8182-44bb-af5f-6d6859d358f9" name="Changes" comment="">
+    <list default="true" id="a2457536-8182-44bb-af5f-6d6859d358f9" name="Changes" comment="test">
+      <change afterPath="$PROJECT_DIR$/src/serverapp/views/ServerView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/clientapp/models/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/clientapp/models/Client.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/serverapp/MainServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/serverapp/MainServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/serverapp/models/Conversation.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/serverapp/models/Conversation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/serverapp/controllers/ServerController$ServerListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/serverapp/controllers/ServerController$ServerListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/serverapp/controllers/ServerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/serverapp/controllers/ServerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/serverapp/models/databases/exceptions/DatabaseLoadException.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/serverapp/models/databases/exceptions/DatabaseLoadException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/UserDB.serial" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/clientapp.jar" beforeDir="false" afterPath="$PROJECT_DIR$/dist/clientapp.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/serverapp.jar" beforeDir="false" afterPath="$PROJECT_DIR$/dist/serverapp.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/meta.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/views/visitor/image/meta.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clientapp/MainClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/MainClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clientapp/models/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/models/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clientapp/models/databases/Database.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clientapp/models/databases/UserDatabase.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clientapp/views/LogInView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/views/LogInView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clientapp/views/visitor/RegisterView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/views/visitor/RegisterView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/views/LogInView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/views/LogInView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/views/user/UserPageView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/views/user/UserPageView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/views/visitor/RegisterView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/views/visitor/RegisterView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/serverapp/MainServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/serverapp/MainServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/serverapp/models/databases/exceptions/DatabaseLoadException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/serverapp/models/databases/exceptions/DatabaseLoadException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/serverapp/models/databases/exceptions/DatabaseSaveException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/serverapp/models/databases/exceptions/DatabaseSaveException.java" afterDir="false" />
-    </list>
-    <list id="a6848362-ad76-4da8-bd53-4f56e5bbcfac" name="Changes by Aurelien" comment="" />
-    <list id="f38526b5-676c-499e-9e56-ba2b4b439470" name="Changes by takira" comment="">
+      <change beforePath="$PROJECT_DIR$/src/serverapp/controllers/ServerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/serverapp/controllers/ServerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/serverapp/models/Conversation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/serverapp/models/Conversation.java" afterDir="false" />
     </list>
+    <list id="a6848362-ad76-4da8-bd53-4f56e5bbcfac" name="Changes by Aurelien" comment="" />
+    <list id="f38526b5-676c-499e-9e56-ba2b4b439470" name="Changes by takira" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,6 +30,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -67,18 +66,34 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="serverapp.controllers" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="serverapp" />
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Client">
+  <component name="RunManager" selected="Application.MainServer">
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="models.Client" />
       <module name="PROJ-ELEC-H417" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="serverapp.models.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainClient (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="clientapp.MainClient" />
+      <module name="PROJ-ELEC-H417" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="clientapp.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -114,8 +129,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Client" />
         <item itemvalue="Application.MainServer" />
+        <item itemvalue="Application.MainClient (1)" />
+        <item itemvalue="Application.Client" />
         <item itemvalue="Application.MainClient" />
       </list>
     </recent_temporary>
@@ -137,6 +153,7 @@
       <workItem from="1639824594161" duration="2428000" />
       <workItem from="1639827031458" duration="307000" />
       <workItem from="1639828121361" duration="614000" />
+      <workItem from="1639846850641" duration="4343000" />
     </task>
     <servers />
   </component>
