@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-<AnchorPane prefHeight="480.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/8.0.202-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.user.ProfileModificationViewController">
+<AnchorPane prefHeight="480.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/8.0.202-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clientapp.views.user.ProfileModificationViewController">
     <Label layoutX="235.0" layoutY="65.0" prefHeight="17.0" prefWidth="150.0" text="First name" />
     <Label layoutX="235.0" layoutY="120.0" prefHeight="17.0" prefWidth="150.0" text="Last name" />
     <Label layoutX="235.0" layoutY="175.0" prefHeight="17.0" prefWidth="150.0" text="Username" />

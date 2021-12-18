@@ -2,7 +2,7 @@ package clientapp.controllers;
 
 import clientapp.controllers.user.ProfileModificationController;
 import clientapp.controllers.user.UserPageController;;
-import clientapp.models.User;
+import serverapp.models.User;
 import javafx.stage.Stage;
 
 import java.io.IOException;

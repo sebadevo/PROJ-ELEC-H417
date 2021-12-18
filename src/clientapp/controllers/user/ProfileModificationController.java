@@ -1,7 +1,5 @@
 package clientapp.controllers.user;
 
-import clientapp.models.User;
-import clientapp.models.databases.UserDatabase;
 import clientapp.views.user.ProfileModificationViewController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,7 +8,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-import static clientapp.models.User.checkSyntax;
+import serverapp.models.User;
+import serverapp.models.databases.UserDatabase;
+import static serverapp.models.User.checkSyntax;
 
 public class ProfileModificationController implements ProfileModificationViewController.ProfileModificationViewListener {
 

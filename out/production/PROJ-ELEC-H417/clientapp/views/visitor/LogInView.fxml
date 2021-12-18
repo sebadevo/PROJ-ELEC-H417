@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-<AnchorPane prefHeight="480.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/8.0.202-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.visitor.LogInViewController">
+<AnchorPane prefHeight="480.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/8.0.202-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clientapp.views.visitor.LogInViewController">
     <Label layoutX="250.0" layoutY="173.0" prefHeight="18.0" prefWidth="102.0" text="Username" />
     <Label layoutX="250.0" layoutY="238.0" prefHeight="18.0" prefWidth="95.0" text="Password" />
     <TextField fx:id="usernameTextField" layoutX="250.0" layoutY="193.0" prefHeight="26.0" prefWidth="220.0" promptText="Enter your username" />

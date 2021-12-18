@@ -4,7 +4,7 @@ package clientapp.controllers;
 import clientapp.controllers.visitor.ConditionsController;
 import clientapp.controllers.visitor.LogInController;
 import clientapp.controllers.visitor.RegisterController;
-import clientapp.models.User;
+import serverapp.models.User;
 import javafx.stage.Stage;
 
 import java.io.IOException;

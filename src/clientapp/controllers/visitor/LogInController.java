@@ -1,8 +1,9 @@
 package clientapp.controllers.visitor;
 
-import clientapp.models.User;
-import clientapp.models.databases.UserDatabase;
-import clientapp.models.databases.exceptions.DatabaseSaveException;
+import serverapp.models.User;
+import serverapp.models.databases.UserDatabase;
+import serverapp.models.databases.exceptions.DatabaseSaveException;
+
 import clientapp.views.visitor.LogInViewController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
