@@ -4,12 +4,14 @@ import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
+
 import clientapp.controllers.UserController;
 import clientapp.controllers.VisitorController;
-import clientapp.models.User;
 
+import serverapp.models.User;
 import serverapp.models.databases.UserDatabase;
 import serverapp.models.databases.Database;
+import serverapp.models.databases.exceptions.*;
 
 
 public class MainClient extends Application implements UserController.UserListener, VisitorController.VisitorListener{
@@ -36,7 +38,7 @@ public class MainClient extends Application implements UserController.UserListen
         try {
             UserDatabase.getInstance().load();
         } catch (DatabaseLoadException e){
-            showError(Database.LOAD_ERROR);
+            showError(Database.LOAD_ERROR); // DB must exist before running (if error, run without this line, create a user, then run again)
         }
         this.stage = stage;
         visitorController = new VisitorController(this, stage);

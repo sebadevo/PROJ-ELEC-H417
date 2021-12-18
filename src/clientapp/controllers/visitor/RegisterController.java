@@ -1,8 +1,9 @@
 package clientapp.controllers.visitor;
 
-import clientapp.models.User;
-import clientapp.models.databases.UserDatabase;
-import clientapp.models.databases.exceptions.DatabaseSaveException;
+import serverapp.models.User;
+import serverapp.models.databases.UserDatabase;
+import serverapp.models.databases.exceptions.DatabaseSaveException;
+
 import clientapp.views.visitor.RegisterViewController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -11,7 +12,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-import static clientapp.models.User.checkSyntax;
+import static serverapp.models.User.checkSyntax;
 
 public class RegisterController implements RegisterViewController.RegisterViewListener {
 
