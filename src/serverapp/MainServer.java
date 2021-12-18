@@ -14,6 +14,11 @@ public class MainServer extends Thread implements ServerController.ServerListene
 
     @Override
     public void run() {
+        // try {
+        //     UserDatabase.getInstance().load();
+        // } catch (DatabaseLoadException e){
+        //     System.out.println(Database.LOAD_ERROR);
+        // }
         serverController = new ServerController(this);
         serverController.startServer();
     }
