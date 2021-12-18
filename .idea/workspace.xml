@@ -3,39 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="a2457536-8182-44bb-af5f-6d6859d358f9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/clientgroupe1/MainClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/MainClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/clientgroupe1/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/clientgroupe1/controllers/VisitorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/controllers/VisitorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/clientgroupe1/controllers/user/ProfileModificationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/controllers/user/ProfileModificationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/clientgroupe1/controllers/user/UserPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/controllers/user/UserPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/clientgroupe1/controllers/visitor/ConditionsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/controllers/visitor/ConditionsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/clientgroupe1/controllers/visitor/LogInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/controllers/visitor/LogInController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/clientgroupe1/controllers/visitor/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/controllers/visitor/RegisterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/clientgroupe1/models/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/models/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/clientgroupe1/models/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/models/Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/clientgroupe1/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/clientgroupe1/models/databases/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/models/databases/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/clientgroupe1/models/databases/UserDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/models/databases/UserDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/clientgroupe1/views/LogInView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/views/LogInView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/clientgroupe1/views/LogInViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/views/LogInViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/clientgroupe1/views/user/ProfileModificationView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/views/user/ProfileModificationView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/clientgroupe1/views/user/ProfileModificationViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/views/user/ProfileModificationViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/clientgroupe1/views/user/UserPageView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/views/user/UserPageView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/clientgroupe1/views/user/UserPageViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/views/user/UserPageViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/clientgroupe1/views/visitor/ConditionsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/views/visitor/ConditionsView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/clientgroupe1/views/visitor/ConditionsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/views/visitor/ConditionsViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/clientgroupe1/views/visitor/LogInView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/views/visitor/LogInView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/clientgroupe1/views/visitor/LogInViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/views/visitor/LogInViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/clientgroupe1/views/visitor/RegisterView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/views/visitor/RegisterView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientApp/src/clientgroupe1/views/visitor/RegisterViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/views/visitor/RegisterViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServerApp/src/servergroupe1/MainServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/serverapp/MainServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServerApp/src/servergroupe1/controllers/ServerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/serverapp/controllers/ServerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServerApp/src/servergroupe1/models/Conversation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/serverapp/models/Conversation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServerApp/src/servergroupe1/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/serverapp/models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServerApp/src/servergroupe1/models/databases/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/serverapp/models/databases/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServerApp/src/servergroupe1/models/databases/UserDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/serverapp/models/databases/UserDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ELEC_H417_Project.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/clientapp/models/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/clientapp/models/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/serverapp/MainServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/serverapp/MainServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/serverapp/controllers/ServerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/serverapp/controllers/ServerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/serverapp/models/Conversation.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/serverapp/models/Conversation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/clientapp.jar" beforeDir="false" afterPath="$PROJECT_DIR$/dist/clientapp.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/serverapp.jar" beforeDir="false" afterPath="$PROJECT_DIR$/dist/serverapp.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clientapp/models/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/models/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/serverapp/MainServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/serverapp/MainServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/serverapp/controllers/ServerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/serverapp/controllers/ServerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/serverapp/models/Conversation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/serverapp/models/Conversation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/serverapp/models/databases/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/serverapp/models/databases/Database.java" afterDir="false" />
     </list>
     <list id="a6848362-ad76-4da8-bd53-4f56e5bbcfac" name="Changes by Aurelien" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -136,7 +115,10 @@
       <updated>1639662416927</updated>
       <workItem from="1639662419126" duration="7332000" />
       <workItem from="1639819868684" duration="179000" />
-      <workItem from="1639820054968" duration="194000" />
+      <workItem from="1639820054968" duration="887000" />
+      <workItem from="1639821088712" duration="501000" />
+      <workItem from="1639821596921" duration="306000" />
+      <workItem from="1639822066989" duration="1711000" />
     </task>
     <servers />
   </component>
