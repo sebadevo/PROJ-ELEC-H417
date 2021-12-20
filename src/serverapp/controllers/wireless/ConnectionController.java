@@ -38,7 +38,7 @@ public class ConnectionController extends Thread{
         String username = message[3];
         String email = message[4];
         String password = message[5];
-        System.out.println(firstname +" "+ lastname +" "+ username +" "+ email +" "+ password);
+        System.out.println("Voici les infos du user:" + firstname +" "+ lastname +" "+ username +" "+ email +" "+ password);
         if (checkSyntax(firstname, lastname, username, email, password)) {
             User user = new User(firstname, lastname, username, email, password);
             if (!UserDatabase.getInstance().checkExistingUser(user)) {
@@ -51,7 +51,7 @@ public class ConnectionController extends Thread{
                     }
                     printWriter.println(true);
                     listener.clientConversation(socket);
-                    shutdownTread();
+                    shutdownTread(); // TODO DEBUG
                 }
             } else if (UserDatabase.getInstance().checkExistingEmail(user.getEmailAddress())){
                 printWriter.println("Email already taken");
@@ -64,11 +64,14 @@ public class ConnectionController extends Thread{
         }
     }
 
-    public void disconnectUser(User user, String username){
-        //if(UserDatabase.getInstance().getUser(username) == user.getUsername()){
-        //
-//
-        //}
+    public void disconnectUser(String username){
+        User user = UserDatabase.getInstance().getUser(username);
+        if(user.getUsername().equals(username)){
+            printWriter.println();
+        }
+        else{
+            System.out.println("Error can't log out"); //TODO, deal with the error.
+        }
     }
 
 
@@ -102,19 +105,27 @@ public class ConnectionController extends Thread{
     @Override
     public void run() {
         try {
+            int i = 0;
+            System.out.println("Running :" + running);
             while(running){
+                System.out.println("Je compte :" + i);
+                i++;
                 String completeMessage=bufferedReader.readLine();
-                if(completeMessage != null && !completeMessage.equals("exit")){
+                System.out.println("Voici ce que le client envoit :" + completeMessage); // DEBUG
+                if(completeMessage != null ) { // TODO see if this is useful :  && !completeMessage.equals("exit")
                     String[] message = completeMessage.split(DELIMITER);  // séparer le message des destinataires
-                    if (message[0].equals("1")){
+                    if (message[0].equals("1")) {
                         createNewUser(message);
-                    }else if (message[0].equals("0")){
+                    } else if (message[0].equals("0")) {
                         checkValidConnect(message);
-                    }
-                    else {
+                    } else if (message[0].equals("exit()")) {
+                        System.out.println("DECONNECTION");
+                        disconnectUser(message[1]);
+                    } else {
                         System.out.println("the user has sent something unexpected, it has thus been ignored");
                     }
-                }else{
+                }
+                else {
                     running = false;
                 }
             }

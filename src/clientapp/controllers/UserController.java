@@ -26,7 +26,7 @@ public class UserController implements UserPageViewController.UserPageViewListen
 
     public static final String LOAD_PRINCIPAL_USER_PAGE_ERROR = "the principal user window had to be displayed";
 
-    public UserController(UserPageListener listener, User user, Stage stage, Socket socket, PrintWriter printWriter, BufferedReader bufferedReader) {
+    public UserController(UserPageListener listener, Stage stage, User user, Socket socket, PrintWriter printWriter, BufferedReader bufferedReader) {
         this.stage = stage;
         this.listener = listener;
         this.user = user;

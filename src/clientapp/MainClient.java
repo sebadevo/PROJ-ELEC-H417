@@ -69,7 +69,13 @@ public class MainClient extends Application implements UserController.UserPageLi
      */
     @Override
     public void logIn(User user) {
-        userController = new UserController(this, user, stage, socket, printWriter, bufferedReader);
+        try {
+            socket = new Socket("localhost", 4321);
+            printWriter = new PrintWriter(this.socket.getOutputStream(), true);
+            bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            userController = new UserController(this, stage, user, socket, printWriter, bufferedReader);
+            visitorController.show();
+        } catch (IOException ignore) {}
         try {
             userController.show();
         } catch (Exception e) {
