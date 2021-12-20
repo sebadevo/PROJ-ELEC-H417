@@ -74,10 +74,8 @@ public class MainClient extends Application implements UserController.UserPageLi
             printWriter = new PrintWriter(this.socket.getOutputStream(), true);
             bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             userController = new UserController(this, stage, user, socket, printWriter, bufferedReader);
-            visitorController.show();
-        } catch (IOException ignore) {}
-        try {
             userController.show();
+            userController.start();
         } catch (Exception e) {
             showError(UserController.LOAD_PRINCIPAL_USER_PAGE_ERROR);
         }

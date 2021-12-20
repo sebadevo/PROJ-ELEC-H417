@@ -9,17 +9,19 @@ import serverapp.models.User;
 import serverapp.models.databases.UserDatabase;
 import serverapp.models.databases.exceptions.DatabaseSaveException;
 
+
+import static serverapp.MainServer.DELIMITER;
+
 import static serverapp.models.User.checkSyntax;
 
 public class ConnectionController extends Thread{
 
-    private static final String DELIMITER = "-";
     private final ConnectionListener listener;
     private final Socket socket;
     private PrintWriter printWriter;
     private BufferedReader bufferedReader;
 
-    private boolean running = true;
+    private volatile boolean running = false;
 
     public ConnectionController(ConnectionListener listener, Socket socket) {
         this.listener = listener;
@@ -29,10 +31,9 @@ public class ConnectionController extends Thread{
             bufferedReader = new BufferedReader(new InputStreamReader(this.socket.getInputStream()));
         } catch (Exception ignore){}
         this.start();
-
     }
 
-    private void createNewUser(String[] message){
+    private boolean createNewUser(String[] message){
         String firstname = message[1];
         String lastname = message[2];
         String username = message[3];
@@ -50,24 +51,27 @@ public class ConnectionController extends Thread{
                         System.out.println("Error saving user to database");
                     }
                     printWriter.println(true);
-                    listener.clientConversation(socket);
-                    shutdownTread(); // TODO DEBUG
+
+                    setRunning(false);
+                    listener.addClientConversation(user, socket);
+                    // TODO DEBUG
+                    return true;
                 }
             } else if (UserDatabase.getInstance().checkExistingEmail(user.getEmailAddress())){
                 printWriter.println("Email already taken");
-
             } else {
                 printWriter.println("Username already taken");
             }
         } else {
             printWriter.println("Wrong email address or empty fields");
         }
+        return false;
     }
 
     public void disconnectUser(String username){
         User user = UserDatabase.getInstance().getUser(username);
         if(user.getUsername().equals(username)){
-            printWriter.println();
+            printWriter.println("dce");
         }
         else{
             System.out.println("Error can't log out"); //TODO, deal with the error.
@@ -75,7 +79,7 @@ public class ConnectionController extends Thread{
     }
 
 
-    private void checkValidConnect(String[] message) {
+    private boolean checkValidConnect(String[] message) {
         String username = message[1];
         String password = message[2];
         if (!UserDatabase.getInstance().alreadyConnected(username)){
@@ -88,13 +92,16 @@ public class ConnectionController extends Thread{
                 User user = UserDatabase.getInstance().getUser(username);
                 printWriter.println(true);
                 printWriter.println(user.getFirstname() + DELIMITER + user.getLastname() + DELIMITER + user.getEmailAddress());
-                listener.clientConversation(socket);
-                shutdownTread();
+                setRunning(false);
+                listener.addClientConversation(user, socket);
+                return true;
             } else {
                 sendErrorMessage("Wrong username or password");
+                return false;
             }
         }else{
             sendErrorMessage("User already connected");
+            return false;
         }
     }
 
@@ -104,10 +111,11 @@ public class ConnectionController extends Thread{
 
     @Override
     public void run() {
+        running = true;
         try {
             int i = 0;
-            System.out.println("Running :" + running);
             while(running){
+                System.out.println("Running :" + running);
                 System.out.println("Je compte :" + i);
                 i++;
                 String completeMessage=bufferedReader.readLine();
@@ -115,12 +123,15 @@ public class ConnectionController extends Thread{
                 if(completeMessage != null ) { // TODO see if this is useful :  && !completeMessage.equals("exit")
                     String[] message = completeMessage.split(DELIMITER);  // séparer le message des destinataires
                     if (message[0].equals("1")) {
-                        createNewUser(message);
+                        running = !createNewUser(message);
+                        running = false;
                     } else if (message[0].equals("0")) {
-                        checkValidConnect(message);
+                        running = !checkValidConnect(message);
+                        running = false;
                     } else if (message[0].equals("exit()")) {
                         System.out.println("DECONNECTION");
                         disconnectUser(message[1]);
+                        running = false;
                     } else {
                         System.out.println("the user has sent something unexpected, it has thus been ignored");
                     }
@@ -128,13 +139,21 @@ public class ConnectionController extends Thread{
                 else {
                     running = false;
                 }
+                System.out.println("Running end :" + running);
+
             }
-        } catch (IOException ignored) {
+        } catch (IOException ignored) { // todo exception
         }
     }
 
-    public void shutdownTread(){
-        running = false;
+    public void setRunning(boolean bool){
+        System.out.println("Set Running to " + bool);
+        //running = bool;
+    }
+
+    public void forceShutDown(){
+        System.out.println("SHUTDOWN");
+        //running = false;
         try {
             socket.close();
         } catch (IOException ignored) {}
@@ -142,7 +161,7 @@ public class ConnectionController extends Thread{
 
 
     public interface ConnectionListener {
-        void clientConversation(Socket socket);
+
         void addClientConversation(User user, Socket socket);
     }
 }

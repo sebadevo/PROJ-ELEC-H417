@@ -13,6 +13,7 @@ import javafx.application.Application;
 
 public class MainServer extends Application implements ServerController.ServerListener{
     private ServerController serverController;
+    public static final String DELIMITER = "-";
 
 
     public static void main(String[] args){

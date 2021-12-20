@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.Socket;
 
-public class UserController implements UserPageViewController.UserPageViewListener {
+public class UserController extends Thread implements UserPageViewController.UserPageViewListener {
 
     private static final String DELIMITER = "-";
     private final UserPageListener listener;
@@ -23,6 +23,7 @@ public class UserController implements UserPageViewController.UserPageViewListen
     private Socket socket;
     private PrintWriter printWriter;
     private BufferedReader bufferedReader;
+    private boolean running = true;
 
     public static final String LOAD_PRINCIPAL_USER_PAGE_ERROR = "the principal user window had to be displayed";
 
@@ -83,12 +84,24 @@ public class UserController implements UserPageViewController.UserPageViewListen
 
     @Override
     public void onSendButtonPressed(String message){
+        printWriter.println(message);
         message = user.getUsername() + " : " + message;
         receiveText(message);
     }
 
     public void receiveText(String message) {
         userPageViewController.addReadingArea(message);
+    }
+
+    @Override
+    public void run(){
+        while(running){
+            try{
+                String[] text = bufferedReader.readLine().split(DELIMITER);
+                receiveText(text[0]+" : "+text[1]);
+            } catch (Exception ignore){}
+
+        }
     }
 
     public interface UserPageListener {

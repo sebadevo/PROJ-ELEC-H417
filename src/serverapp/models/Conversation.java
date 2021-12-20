@@ -47,7 +47,7 @@ public class Conversation extends Thread {
                             //System.out.println("J'imprime les éléments de la liste à l'index: " + i + ": t2[i] " + t2[i]);
                             numeroClients[i] = Integer.parseInt(t2[i]); // " 1"
                         }
-                        server.broadCast(message, numeroClients); // envoie le message au destinataire spécifiés
+                        //server.broadCast(message, numeroClients); // envoie le message au destinataire spécifiés
                     }
                     else if (req.equals("exit")){
                         socket.close();
@@ -56,7 +56,7 @@ public class Conversation extends Thread {
                     }
                     else {
                         int[] source = new int[] {numeroClient};
-                        server.broadCast("ERROR", source);
+                        //server.broadCast("ERROR", source);
                     }
                 }
             }

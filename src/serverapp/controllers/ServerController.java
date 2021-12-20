@@ -4,12 +4,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import serverapp.MainServer;
 import serverapp.controllers.wireless.ConnectionController;
 import serverapp.controllers.wireless.ConversationController;
-import serverapp.models.Conversation;
 import serverapp.models.User;
 import serverapp.views.ServerViewController;
+import serverapp.models.databases.UserDatabase;
 
 
 import java.io.PrintWriter;
@@ -19,6 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.io.IOException;
 
+import static serverapp.MainServer.DELIMITER;
+import static serverapp.MainServer.showError;
 
 
 public class ServerController extends Thread implements ConnectionController.ConnectionListener,
@@ -27,9 +28,7 @@ public class ServerController extends Thread implements ConnectionController.Con
     private ConnectionController connectionController;
     private final ServerListener listener;
     private final Stage stage;
-    int nbClients;
-    private final List<ConnectionController> connectedControllers = new ArrayList<>(); // Liste de sockets.
-    private final List<Conversation> connectedClients = new ArrayList<>(); // Liste de sockets.
+    private final List<ConversationController> connectedControllers = new ArrayList<>(); // Liste de sockets.
     private ServerSocket serverSocket;
     private boolean running = true;
 
@@ -63,8 +62,6 @@ public class ServerController extends Thread implements ConnectionController.Con
         }
     }
 
-
-
     public void show() throws IOException {
         FXMLLoader loader = new FXMLLoader(ServerViewController.class.getResource("ServerView.fxml"));
         loader.load();
@@ -81,80 +78,62 @@ public class ServerController extends Thread implements ConnectionController.Con
         stage.setOnCloseRequest(e -> {
             try {
                 exterminateAll();
+
             } catch (Exception exception) {
-                MainServer.showError("la fenêtre a dû être fermée");
+                showError("la fenêtre a dû être fermée");
             }
         });
     }
 
     public void addConnection(){
-        while(running){ //todo faire que quand on ecrit exit dans le terminal, alors le serveur s'arrete.
+        while(running){
             try {
-                System.out.println("je suis le client : 1");
                 Socket socket = serverSocket.accept();
+                System.out.println("client :" + connectedControllers.size() + "connected");
                 if (socket.isConnected()) {
                     connectionController = new ConnectionController(this, socket);
+                    // todo conversationController = new ConversationController(this, socket);
+                    // todo ConversationController possède une fonction pour démarrer et le connectionController l'appel pour passer  relais;
                 }
             } catch (IOException ignored){}
         }
     }
 
 
-    public void interuptConversation(){
-        for (Conversation c:connectedClients) {
-            c.shutdownThread();
-            System.out.println(c.isAlive());
+    public void interuptAllConversation(){
+        for (ConversationController conversation:connectedControllers) {
+            PrintWriter printWriter = conversation.getPrintWrinter();
+            printWriter.println("forceExit");
+            conversation.forceShutDown();
         }
     }
 
+    @Override
+    public void disconnectUser(User user){
+        if (user.isConnected()){
+            user.setConnected(false);
+            UserDatabase.getInstance().logOut(user);
+        }
+    }
+
+    @Override
+    public void sendMessage(String message, User user, String destination){
+        for (ConversationController conversation:connectedControllers){
+            if (conversation.getUser().getUsername().equals(destination)){
+                PrintWriter printWriter = conversation.getPrintWrinter();
+                printWriter.println(user.getUsername()+DELIMITER+message);
+                System.out.printf("Do I arrive here when I send a message ? ");
+            }
+        }
+    }
 
     @Override
     public void addClientConversation(User user, Socket socket){
         ConversationController conversationController = new ConversationController(this, user, socket);
-        //conversationController.start();
-        connectedControllers.add(connectionController);
+        connectedControllers.add(conversationController);
+        conversationController.start();
     }
 
-
-//
-    //@Override
-    //public void disconnectClientConversation(User user, Socket socket){
-//
-    //}
-
-    @Override
-    public void clientConversation(Socket socket){
-        ++ nbClients;
-        System.out.println("je suis dans client conversation");
-        // On compte le nb de clients.
-        // On ne va pas mettre le code de la conversation ici sinon on empêcherait le Serveur d'accepter de
-        // nouvelles connections. Le seul moyen est de démarrer un nouveau thread qui va s'occuper des conversations.
-        Conversation c = new Conversation(socket, nbClients, this);
-
-        // TODO libérer thread à la fin de la convo
-        c.start(); // Si Conversation hérite de thread à chaque fois qu'on start on lance un thread qui s'occupe de la conversation.
-        connectedClients.add(c);
-    }
-
-    public void broadCast(String message, int[] numeroClients){
-        /**
-         * Boucle sur toutes les conversations pour trouver les clients spécifiés pour leur envoyer le message
-         */
-        // TODO envoyer erreur si le client n'existe pas
-        try {
-            for (Conversation c:connectedClients) { // Boucle sur les conversations -> TODO Optimiser
-
-                for (int i=0; i<numeroClients.length; i++){ // Boucle sur les destinataires
-                    if (c.getNumeroClient()==numeroClients[i]) {
-                        PrintWriter pw = new PrintWriter(c.getSocket().getOutputStream(), true);
-                        pw.println(message);
-                    }
-                }
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
     @Override
     public void onDisconnectButton() {
@@ -163,17 +142,24 @@ public class ServerController extends Thread implements ConnectionController.Con
 
     public void exterminateAll(){
         try {
+            disconnectAllUser();
             listener.onClose();
             running = false;
             if (connectionController != null) {
-                connectionController.shutdownTread();
+                connectionController.forceShutDown();
             }
+            interuptAllConversation();
             serverSocket.close();
-            interuptConversation();
             stage.hide();
             System.out.println("i've killed everything that exists");
         }catch (Exception ignore){
             // do nothing
+        }
+    }
+
+    private void disconnectAllUser() {
+        for (ConversationController conversation:connectedControllers){
+            disconnectUser(conversation.getUser());
         }
     }
 
