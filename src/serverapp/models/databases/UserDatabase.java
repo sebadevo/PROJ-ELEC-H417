@@ -93,7 +93,21 @@ public class UserDatabase extends Database<User> {
     }
 
     /**
-     * Notifie un utilisateur comme étant déconnecté
+     * Vérifie si un utilisateur est connecté.
+     * @param username string username écrit par l'utilisateur lorsqu'il veut se connecter
+     * @return boolean
+     */
+    public boolean alreadyConnected(String username){
+        for (User databaseUser : data){
+            if (databaseUser.getUsername().equals(username) && databaseUser.isConnected()){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Marque un utilisateur comme étant déconnecté
      * @param user utilisateur actuellement connecté
      */
     public void logOut(User user){

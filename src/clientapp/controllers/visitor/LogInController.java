@@ -39,10 +39,6 @@ public class LogInController implements LogInViewController.LogInViewListener {
      */
     public void show() throws IOException {
         FXMLLoader loader = new FXMLLoader(LogInViewController.class.getResource("LogInView.fxml"));
-
-        System.out.println(LogInViewController.class.getResource(""));
-        System.out.println(LogInViewController.class.getResource("../../views/visitor/LogInView.fxml"));
-        System.out.println(LogInViewController.class.getResource("visitor/LogInView.fxml"));
         loader.load();
         logInViewController = loader.getController();
         logInViewController.setListener(this);
@@ -66,28 +62,29 @@ public class LogInController implements LogInViewController.LogInViewListener {
      */
     @Override
     public void onLogInButton(String username, String password) {
-        printWriter.println("0"+DELIMITER+username+DELIMITER+password);
-        try {
-            String answer = bufferedReader.readLine();
-            System.out.println("voici ce qui est en string " + answer);
-            if (answer.equals("true")){
-                String Id = bufferedReader.readLine();
-                if (!Id.isEmpty()) {
-                    String[] userInfo = Id.split(DELIMITER);
-                    String firstname =userInfo[0];
-                    String lastname = userInfo[1];
-                    String email = userInfo[2];
-                    User user = new User(firstname,lastname, username, email, password);
-                    listener.onLogInAsked(user);
+        if (!username.isEmpty() && !password.isEmpty()) {
+            printWriter.println("0" + DELIMITER + username + DELIMITER + password);
+            try {
+                String answer = bufferedReader.readLine();
+                if (answer.equals("true")) {
+                    String Id = bufferedReader.readLine();
+                    if (!Id.isEmpty()) {
+                        String[] userInfo = Id.split(DELIMITER);
+                        String firstname = userInfo[0];
+                        String lastname = userInfo[1];
+                        String email = userInfo[2];
+                        User user = new User(firstname, lastname, username, email, password);
+                        listener.onLogInAsked(user);
+                    } else {
+                        //TODO gerer le faite que le packet à pris trop de temps pour être envoyé.
+                    }
+                } else {
+                    logInViewController.setErrorMessage(answer);
                 }
-                else{
-                    //TODO gerer le faite que le packet à pris trop de temps pour être envoyé.
-                }
-            }
-            else {
-                logInViewController.setErrorMessage(answer);
-            }
-        } catch (IOException ignore) {}
+            } catch (IOException ignore) {}
+        }else{
+            logInViewController.setErrorMessage("One or more fields are empty");
+        }
     }
 
     /**

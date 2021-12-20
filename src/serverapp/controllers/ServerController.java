@@ -5,8 +5,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import serverapp.MainServer;
-import serverapp.controllers.connection.ConnectionController;
+import serverapp.controllers.wireless.ConnectionController;
+import serverapp.controllers.wireless.ConversationController;
 import serverapp.models.Conversation;
+import serverapp.models.User;
 import serverapp.views.ServerViewController;
 
 
@@ -19,12 +21,14 @@ import java.io.IOException;
 
 
 
-public class ServerController extends Thread implements ConnectionController.ConnectionListener, ServerViewController.ServerViewListener, Runnable {
+public class ServerController extends Thread implements ConnectionController.ConnectionListener,
+        ServerViewController.ServerViewListener, ConversationController.ConversationListener{
     private ServerViewController ServerViewController;
     private ConnectionController connectionController;
     private final ServerListener listener;
     private final Stage stage;
     int nbClients;
+    private final List<ConnectionController> connectedControllers = new ArrayList<>(); // Liste de sockets.
     private final List<Conversation> connectedClients = new ArrayList<>(); // Liste de sockets.
     private ServerSocket serverSocket;
     private boolean running = true;
@@ -105,10 +109,23 @@ public class ServerController extends Thread implements ConnectionController.Con
 
 
     @Override
+    public void addClientConversation(User user, Socket socket){
+        ConversationController conversationController = new ConversationController(this, user, socket);
+        //conversationController.start();
+        connectedControllers.add(connectionController);
+    }
+
+
+//
+    //@Override
+    //public void disconnectClientConversation(User user, Socket socket){
+//
+    //}
+
+    @Override
     public void clientConversation(Socket socket){
         ++ nbClients;
         System.out.println("je suis dans client conversation");
-
         // On compte le nb de clients.
         // On ne va pas mettre le code de la conversation ici sinon on empêcherait le Serveur d'accepter de
         // nouvelles connections. Le seul moyen est de démarrer un nouveau thread qui va s'occuper des conversations.

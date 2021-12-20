@@ -82,8 +82,6 @@ public class MainClient extends Application implements UserController.UserPageLi
      */
     @Override
     public void logOut() {
-        System.out.println("LOG OUT"); // DEBUG
-        // TODO déconnection au server
         try {
             visitorController.show();
         } catch (Exception e) { System.out.println(e); }

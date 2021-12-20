@@ -65,18 +65,21 @@ public class RegisterController implements RegisterViewController.RegisterViewLi
      */
     @Override
     public void onRegisterButton(String firstname, String lastname, String username, String email, String password) {
-        printWriter.println("1"+DELIMITER+firstname+DELIMITER+lastname+DELIMITER+username+DELIMITER+email+DELIMITER+password);
-        try {
-            String answer = bufferedReader.readLine();
-            System.out.println("voici ce qui est en string " + answer);
-            if (answer.equals("true")){
-                User user = new User(firstname, lastname, username, email, password);
-                listener.onRegisterAsked(user);
-            }
-            else {
-                registerViewController.setErrorMessage(answer);
-            }
-        } catch (IOException ignore) {}
+        if (!firstname.isEmpty() && !lastname.isEmpty() && !username.isEmpty() && !email.isEmpty() && !password.isEmpty()) {
+            printWriter.println("1" + DELIMITER + firstname + DELIMITER + lastname + DELIMITER + username + DELIMITER + email + DELIMITER + password);
+            try {
+                String answer = bufferedReader.readLine();
+                System.out.println("voici ce qui est en string " + answer);
+                if (answer.equals("true")) {
+                    User user = new User(firstname, lastname, username, email, password);
+                    listener.onRegisterAsked(user);
+                } else {
+                    registerViewController.setErrorMessage(answer);
+                }
+            } catch (IOException ignore) {}
+        }else{
+            registerViewController.setErrorMessage("One or more fields are empty");
+        }
     }
 
     /**

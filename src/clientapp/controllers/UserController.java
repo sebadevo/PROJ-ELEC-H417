@@ -15,6 +15,7 @@ import java.net.Socket;
 
 public class UserController implements UserPageViewController.UserPageViewListener {
 
+    private static final String DELIMITER = "-";
     private final UserPageListener listener;
     private final Stage stage;
     private UserPageViewController userPageViewController;
@@ -75,11 +76,14 @@ public class UserController implements UserPageViewController.UserPageViewListen
     @Override
     public void onLogOutButtonPressed() {
         // TODO send deconnection to server -> server must handle the thing
+        printWriter.println("exit()" + DELIMITER + user.getUsername());
+        //TODO handle exception
         listener.logOut();
     }
 
     @Override
     public void onSendButtonPressed(String message){
+        message = user.getUsername() + " : " + message;
         receiveText(message);
     }
 

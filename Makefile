@@ -9,5 +9,5 @@ client:
 server:
 	javac -d bin -cp src/ src/serverapp/MainServer.java
 	jar cfe dist/serverapp.jar serverapp.MainServer -C bin .
-	java -cp src/ -jar dist/serverapp.jar
+	java -cp src/serverapp/ -jar dist/serverapp.jar
 

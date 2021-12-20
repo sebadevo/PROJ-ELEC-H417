@@ -1,4 +1,4 @@
-package serverapp.controllers.connection;
+package serverapp.controllers.wireless;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -24,14 +24,15 @@ public class ConnectionController extends Thread{
     public ConnectionController(ConnectionListener listener, Socket socket) {
         this.listener = listener;
         this.socket = socket;
-        this.start();
         try {
             printWriter = new PrintWriter(this.socket.getOutputStream(), true);
+            bufferedReader = new BufferedReader(new InputStreamReader(this.socket.getInputStream()));
         } catch (Exception ignore){}
+        this.start();
+
     }
 
-    // source : moi Sébastien le Grand.
-    public void createNewUser(String[] message){
+    private void createNewUser(String[] message){
         String firstname = message[1];
         String lastname = message[2];
         String username = message[3];
@@ -42,55 +43,66 @@ public class ConnectionController extends Thread{
             User user = new User(firstname, lastname, username, email, password);
             if (!UserDatabase.getInstance().checkExistingUser(user)) {
                 UserDatabase.getInstance().add(user);
+                if (UserDatabase.getInstance().logIn(username, password)) {
+                    try {
+                        UserDatabase.getInstance().save();
+                    } catch (DatabaseSaveException e) {
+                        System.out.println("Error saving user to database");
+                    }
+                    printWriter.println(true);
+                    listener.clientConversation(socket);
+                    shutdownTread();
+                }
+            } else if (UserDatabase.getInstance().checkExistingEmail(user.getEmailAddress())){
+                printWriter.println("Email already taken");
+
+            } else {
+                printWriter.println("Username already taken");
+            }
+        } else {
+            printWriter.println("Wrong email address or empty fields");
+        }
+    }
+
+    public void disconnectUser(User user, String username){
+        //if(UserDatabase.getInstance().getUser(username) == user.getUsername()){
+        //
+//
+        //}
+    }
+
+
+    private void checkValidConnect(String[] message) {
+        String username = message[1];
+        String password = message[2];
+        if (!UserDatabase.getInstance().alreadyConnected(username)){
+            if (UserDatabase.getInstance().logIn(username, password)) {
                 try {
                     UserDatabase.getInstance().save();
                 } catch (DatabaseSaveException e) {
                     System.out.println("Error saving user to database");
                 }
+                User user = UserDatabase.getInstance().getUser(username);
                 printWriter.println(true);
+                printWriter.println(user.getFirstname() + DELIMITER + user.getLastname() + DELIMITER + user.getEmailAddress());
                 listener.clientConversation(socket);
                 shutdownTread();
-
-            } else if (UserDatabase.getInstance().checkExistingEmail(user.getEmailAddress())){
-                System.out.println("Email already taken"); // TODO envoye message au client comme quoi l'adresse email est déjà prise.
-
             } else {
-                System.out.println("Username already taken"); // TODO envoye message au client comme quoi le username est déjà pris.
+                sendErrorMessage("Wrong username or password");
             }
-        } else {
-            System.out.println("Wrong email address or empty fields"); // TODO erreur de syntax a envoyer au client
+        }else{
+            sendErrorMessage("User already connected");
         }
     }
 
-    private void checkValidConnect(String[] message) {
-        String username = message[1];
-        String password = message[2];
-        if (UserDatabase.getInstance().logIn(username, password)) {
-            try {
-                UserDatabase.getInstance().save();
-            } catch (DatabaseSaveException e) {
-                System.out.println("Error saving user to database");
-            }
-            User user = UserDatabase.getInstance().getUser(username);
-            printWriter.println(true);
-            printWriter.println(user.getFirstname() + DELIMITER + user.getLastname() + DELIMITER + user.getEmailAddress());
-            listener.clientConversation(socket);
-            shutdownTread();
-        } else {
-            sendErrorMessage("Wrong username or password");
-        }
-    }
-
-    public void sendErrorMessage(String message){
+    private void sendErrorMessage(String message){
         printWriter.println(message);
     }
 
     @Override
     public void run() {
         try {
-            bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             while(running){
-
                 String completeMessage=bufferedReader.readLine();
                 if(completeMessage != null && !completeMessage.equals("exit")){
                     String[] message = completeMessage.split(DELIMITER);  // séparer le message des destinataires
@@ -98,7 +110,8 @@ public class ConnectionController extends Thread{
                         createNewUser(message);
                     }else if (message[0].equals("0")){
                         checkValidConnect(message);
-                    }else {
+                    }
+                    else {
                         System.out.println("the user has sent something unexpected, it has thus been ignored");
                     }
                 }else{
@@ -119,5 +132,6 @@ public class ConnectionController extends Thread{
 
     public interface ConnectionListener {
         void clientConversation(Socket socket);
+        void addClientConversation(User user, Socket socket);
     }
 }
