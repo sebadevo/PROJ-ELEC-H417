@@ -12,6 +12,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 public class UserController extends Thread implements UserPageViewController.UserPageViewListener {
 
@@ -57,7 +59,9 @@ public class UserController extends Thread implements UserPageViewController.Use
     private void onCloseRequest() {
         stage.setOnCloseRequest(e -> {
             try {
-                listener.logOut(); // avant : listener.onClose();
+                printWriter.println("exit");
+                running =false;
+                listener.onClose();
             } catch (Exception exception) {
                 MainClient.showError("la fenêtre a dû être fermée");
             }
@@ -76,36 +80,63 @@ public class UserController extends Thread implements UserPageViewController.Use
      */
     @Override
     public void onLogOutButtonPressed() {
-        // TODO send deconnection to server -> server must handle the thing
-        printWriter.println("exit()" + DELIMITER + user.getUsername());
-        //TODO handle exception
+        printWriter.println("exit");
+        running =false;
         listener.logOut();
     }
 
     @Override
-    public void onSendButtonPressed(String message){
+    public void onSendButtonPressed(String message) throws NoSuchAlgorithmException {
+        //printWriter.println(message);
+        message = hashing(user.getUsername())+DELIMITER+message + " (from " + user.getUsername() + ")";
         printWriter.println(message);
-        message = user.getUsername() + " : " + message;
         receiveText(message);
     }
 
     public void receiveText(String message) {
+        System.out.println(message);
+        System.out.println("does forceExit = forceExit? : " + message.equals("forceExit"));
+        if ("forceExit".equals(message)) {
+            running = false;
+            listener.logOut();
+        }
         userPageViewController.addReadingArea(message);
+    }
+
+    /**
+     * We hash the messages send for more security .
+     * @param message is the text send from a user to another.
+     * @return
+     * @throws NoSuchAlgorithmException
+     */
+    public String hashing(String message) throws NoSuchAlgorithmException {
+        MessageDigest md = MessageDigest.getInstance("SHA-256");
+
+        //Passing data to the created MessageDigest Object
+        md.update(message.getBytes());
+
+        //Compute the message digest
+        byte[] digest = md.digest();
+
+        //Converting the byte array in to HexString format
+        StringBuilder hexString = new StringBuilder();
+
+        for (byte b : digest) hexString.append(Integer.toHexString(0xFF & b));
+        return hexString.toString();
     }
 
     @Override
     public void run(){
         while(running){
             try{
-                String[] text = bufferedReader.readLine().split(DELIMITER);
-                receiveText(text[0]+" : "+text[1]);
+                receiveText(bufferedReader.readLine());
             } catch (Exception ignore){}
-
         }
     }
 
     public interface UserPageListener {
         void logOut();
+        void onClose();
     }
 }
 

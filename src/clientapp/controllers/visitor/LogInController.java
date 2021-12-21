@@ -12,6 +12,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 public class LogInController implements LogInViewController.LogInViewListener {
 
@@ -56,14 +58,36 @@ public class LogInController implements LogInViewController.LogInViewListener {
     }
 
     /**
+     * We hash the messages send for more security .
+     * @param message is the text send from a user to another.
+     * @return
+     * @throws NoSuchAlgorithmException
+     */
+    public String hashing(String message) throws NoSuchAlgorithmException {
+        MessageDigest md = MessageDigest.getInstance("SHA-256");
+
+        //Passing data to the created MessageDigest Object
+        md.update(message.getBytes());
+
+        //Compute the message digest
+        byte[] digest = md.digest();
+
+        //Converting the byte array in to HexString format
+        StringBuilder hexString = new StringBuilder();
+
+        for (byte b : digest) hexString.append(Integer.toHexString(0xFF & b));
+        return hexString.toString();
+    }
+
+    /**
      * Permet de connecter un user à la l'application et demande de changer de page au VisitorController
      * @param username string
      * @param password string
      */
     @Override
-    public void onLogInButton(String username, String password) {
+    public void onLogInButton(String username, String password) throws NoSuchAlgorithmException {
         if (!username.isEmpty() && !password.isEmpty()) {
-            printWriter.println("0" + DELIMITER + username + DELIMITER + password);
+            printWriter.println("0" + DELIMITER + hashing(username) + DELIMITER + hashing(password));
             try {
                 String answer = bufferedReader.readLine();
                 if (answer.equals("true")) {

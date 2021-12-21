@@ -5,27 +5,27 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="480.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/8.0.202-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clientapp.views.user.UserPageViewController">
+<AnchorPane prefHeight="480.0" prefWidth="778.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clientapp.views.user.UserPageViewController">
     <Button fx:id="logOutButton" layoutX="497.0" layoutY="431.0" mnemonicParsing="false" onAction="#onLogOutButton" prefHeight="25.0" prefWidth="149.0" text="Log Out" />
-    <Label layoutX="533.0" layoutY="14.0" text="META">
+    <Label layoutX="549.0" layoutY="24.0" style="-fx-background-color: white;" text="META">
         <font>
             <Font size="30.0" />
         </font>
     </Label>
-   <VBox layoutX="9.0" layoutY="7.0" prefHeight="450.0" prefWidth="427.0">
-      <children>
-         <TextArea fx:id="readingArea" editable="false" prefHeight="426.0" prefWidth="454.0" wrapText="true" />
-         <HBox prefHeight="10.0" prefWidth="415.0">
-            <children>
-               <TextField fx:id="writtingField" prefHeight="26.0" prefWidth="372.0" promptText="say hello" />
-             <Button mnemonicParsing="false" onAction="#onSendButton" prefHeight="26.0" text="Send" />
-            </children>
-         </HBox>
-      </children>
-   </VBox>
-   <ImageView fitHeight="223.0" fitWidth="278.0" layoutX="448.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
-      <image>
-         <Image url="@meta.png" />
-      </image>
-   </ImageView>
+    <VBox layoutX="9.0" layoutY="7.0" prefHeight="450.0" prefWidth="427.0">
+        <children>
+            <TextArea fx:id="readingArea" editable="false" prefHeight="426.0" prefWidth="454.0" wrapText="true" />
+            <HBox prefHeight="10.0" prefWidth="415.0">
+                <children>
+                    <TextField fx:id="writtingField" prefHeight="26.0" prefWidth="372.0" promptText="say hello" />
+                    <Button mnemonicParsing="false" onAction="#onSendButton" prefHeight="26.0" text="Send" />
+                </children>
+            </HBox>
+        </children>
+    </VBox>
+    <ImageView fitHeight="79.0" fitWidth="140.0" layoutX="655.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+        <image>
+            <Image url="@meta.png" />
+        </image>
+    </ImageView>
 </AnchorPane>

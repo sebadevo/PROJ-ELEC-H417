@@ -89,8 +89,8 @@ public class ServerController extends Thread implements ConnectionController.Con
         while(running){
             try {
                 Socket socket = serverSocket.accept();
-                System.out.println("client :" + connectedControllers.size() + "connected");
                 if (socket.isConnected()) {
+                    System.out.println("NEW CONNECTION CONTROLLER");
                     connectionController = new ConnectionController(this, socket);
                     // todo conversationController = new ConversationController(this, socket);
                     // todo ConversationController possède une fonction pour démarrer et le connectionController l'appel pour passer  relais;
@@ -109,11 +109,13 @@ public class ServerController extends Thread implements ConnectionController.Con
     }
 
     @Override
-    public void disconnectUser(User user){
+    public void disconnectUser(User user, Socket socket){
         if (user.isConnected()){
             user.setConnected(false);
             UserDatabase.getInstance().logOut(user);
         }
+        connectionController = new ConnectionController(this, socket);
+
     }
 
     @Override
@@ -131,6 +133,7 @@ public class ServerController extends Thread implements ConnectionController.Con
     public void addClientConversation(User user, Socket socket){
         ConversationController conversationController = new ConversationController(this, user, socket);
         connectedControllers.add(conversationController);
+        System.out.println("client :" + connectedControllers.size() + " is connected");
         conversationController.start();
     }
 
@@ -159,7 +162,11 @@ public class ServerController extends Thread implements ConnectionController.Con
 
     private void disconnectAllUser() {
         for (ConversationController conversation:connectedControllers){
-            disconnectUser(conversation.getUser());
+            User user =conversation.getUser();
+            if (user.isConnected()){
+                user.setConnected(false);
+                UserDatabase.getInstance().logOut(user);
+            }
         }
     }
 

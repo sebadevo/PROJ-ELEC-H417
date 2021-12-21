@@ -47,14 +47,10 @@ public class User implements Serializable {
      * @return boolean
      */
     public static boolean checkSyntax(String firstname, String lastname, String username, String emailAddress, String password){
-        if ((firstname == null || lastname == null || username == null || password == null)){
+        if ((firstname == null || lastname == null || username == null || password == null) || emailAddress == null){
             return false;
-        } else if (Objects.equals(firstname, "") || Objects.equals(lastname, "") || Objects.equals(username, "")
-                || Objects.equals(password, "")){
-            return false;
-        } else {
-            return emailAddress.contains("@");
-        }
+        } else return !Objects.equals(firstname, "") && !Objects.equals(lastname, "") && !Objects.equals(username, "")
+                && !Objects.equals(emailAddress, "") && !Objects.equals(password, "");
     }
 
     // Getters and setters

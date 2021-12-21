@@ -4,6 +4,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextArea;
 
+import java.security.NoSuchAlgorithmException;
+
 public class UserPageViewController {
 
     @FXML
@@ -25,7 +27,7 @@ public class UserPageViewController {
         listener.onLogOutButtonPressed();
     }
 
-    public void onSendButton(){
+    public void onSendButton() throws NoSuchAlgorithmException {
         String message = writtingField.getText();
         writtingField.setText("");
         listener.onSendButtonPressed(message);
@@ -38,6 +40,6 @@ public class UserPageViewController {
 
     public interface UserPageViewListener {
         void onLogOutButtonPressed() throws Exception;
-        void onSendButtonPressed(String message);
+        void onSendButtonPressed(String message) throws NoSuchAlgorithmException;
     }
 }

@@ -2,7 +2,6 @@ package clientapp.controllers.visitor;
 
 import clientapp.models.User;
 import clientapp.views.visitor.RegisterViewController;
-
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -12,6 +11,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 
 public class RegisterController implements RegisterViewController.RegisterViewListener {
 
@@ -64,9 +66,10 @@ public class RegisterController implements RegisterViewController.RegisterViewLi
      * @param password string
      */
     @Override
-    public void onRegisterButton(String firstname, String lastname, String username, String email, String password) {
+    public void onRegisterButton(String firstname, String lastname, String username, String email, String password) throws NoSuchAlgorithmException {
         if (!firstname.isEmpty() && !lastname.isEmpty() && !username.isEmpty() && !email.isEmpty() && !password.isEmpty()) {
-            printWriter.println("1" + DELIMITER + firstname + DELIMITER + lastname + DELIMITER + username + DELIMITER + email + DELIMITER + password);
+            System.out.println(hashing("test"));
+            printWriter.println("1" + DELIMITER + hashing(firstname) + DELIMITER + hashing(lastname) + DELIMITER + hashing(username) + DELIMITER + hashing(email) + DELIMITER + hashing(password));
             try {
                 String answer = bufferedReader.readLine();
                 System.out.println("voici ce qui est en string " + answer);
@@ -81,6 +84,29 @@ public class RegisterController implements RegisterViewController.RegisterViewLi
             registerViewController.setErrorMessage("One or more fields are empty");
         }
     }
+
+    /**
+     * We hash the messages send for more security .
+     * @param message is the text send from a user to another.
+     * @return
+     * @throws NoSuchAlgorithmException
+     */
+    public String hashing(String message) throws NoSuchAlgorithmException {
+        MessageDigest md = MessageDigest.getInstance("SHA-256");
+
+        //Passing data to the created MessageDigest Object
+        md.update(message.getBytes());
+
+        //Compute the message digest
+        byte[] digest = md.digest();
+
+        //Converting the byte array in to HexString format
+        StringBuilder hexString = new StringBuilder();
+
+        for (byte b : digest) hexString.append(Integer.toHexString(0xFF & b));
+        return hexString.toString();
+    }
+
 
     /**
      * Demande au VisitorController d'afficher la page de connexion.
@@ -103,4 +129,5 @@ public class RegisterController implements RegisterViewController.RegisterViewLi
         void onBackToLogInAsked();
         void onConditionsAsked();
     }
+
 }

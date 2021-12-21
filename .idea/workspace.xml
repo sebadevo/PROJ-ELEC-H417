@@ -2,31 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a2457536-8182-44bb-af5f-6d6859d358f9" name="Changes" comment="test">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/UserDB.serial" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/MainClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/MainClient.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/controllers/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/controllers/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/serverapp/MainServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/serverapp/MainServer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/serverapp/controllers/ServerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/serverapp/controllers/ServerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/serverapp/controllers/wireless/ConnectionController$ConnectionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/serverapp/controllers/wireless/ConnectionController$ConnectionListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/serverapp/controllers/wireless/ConnectionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/serverapp/controllers/wireless/ConnectionController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/serverapp/controllers/wireless/ConversationController$ConversationListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/serverapp/controllers/wireless/ConversationController$ConversationListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/serverapp/controllers/wireless/ConversationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/serverapp/controllers/wireless/ConversationController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/serverapp/models/Conversation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/serverapp/models/Conversation.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/clientapp/MainClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/MainClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/clientapp/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/serverapp/MainServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/serverapp/MainServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clientapp/controllers/visitor/LogInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/controllers/visitor/LogInController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clientapp/controllers/visitor/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/controllers/visitor/RegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clientapp/views/user/UserPageViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/views/user/UserPageViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/serverapp/controllers/ServerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/serverapp/controllers/ServerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/serverapp/controllers/wireless/ConnectionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/serverapp/controllers/wireless/ConnectionController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/serverapp/controllers/wireless/ConversationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/serverapp/controllers/wireless/ConversationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/serverapp/models/Conversation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/serverapp/models/Conversation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/serverapp/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/serverapp/models/User.java" afterDir="false" />
     </list>
     <list id="893766ae-7225-4231-a8b7-689e7c056833" name="Changes by Aurelien" comment="">
+      <change beforePath="$PROJECT_DIR$/src/clientapp/MainClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/MainClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clientapp/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/controllers/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/serverapp/controllers/ServerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/serverapp/controllers/ServerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/serverapp/controllers/wireless/ConnectionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/serverapp/controllers/wireless/ConnectionController.java" afterDir="false" />
     </list>
-    <list id="deeb886f-6f92-4aef-97ee-d7745dd53def" name="Changes by takira" comment="" />
+    <list id="deeb886f-6f92-4aef-97ee-d7745dd53def" name="Changes by takira" comment="">
+      <change beforePath="$PROJECT_DIR$/src/clientapp/controllers/visitor/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/controllers/visitor/RegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clientapp/views/user/UserPageView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/views/user/UserPageView.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,56 +54,75 @@
     </file-type-list>
   </component>
   <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/serverapp/controllers/wireless/ConnectionController.java">
-      <ranges>
-        <range start1="11" end1="11" start2="11" end2="14" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="15" end1="16" start2="18" end2="18" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="21" end1="22" start2="23" end2="24" changelist="893766ae-7225-4231-a8b7-689e7c056833" />
-        <range start1="31" end1="32" start2="33" end2="33" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="34" end1="35" start2="35" end2="36" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="52" end1="54" start2="53" end2="58" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="57" end1="58" start2="61" end2="61" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="64" end1="64" start2="67" end2="68" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="69" end1="70" start2="73" end2="74" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="77" end1="78" start2="81" end2="82" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="90" end1="92" start2="94" end2="97" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="94" end1="94" start2="99" end2="100" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="97" end1="97" start2="103" end2="104" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="106" end1="106" start2="113" end2="114" changelist="893766ae-7225-4231-a8b7-689e7c056833" />
-        <range start1="108" end1="109" start2="116" end2="116" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="110" end1="110" start2="117" end2="118" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="117" end1="118" start2="125" end2="127" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="119" end1="120" start2="128" end2="130" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="123" end1="123" start2="133" end2="134" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="130" end1="130" start2="141" end2="143" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="131" end1="132" start2="144" end2="145" changelist="893766ae-7225-4231-a8b7-689e7c056833" />
-        <range start1="135" end1="137" start2="148" end2="156" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="144" end1="145" start2="163" end2="164" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-      </ranges>
-    </file>
     <file path="$PROJECT_DIR$/src/serverapp/controllers/ServerController.java">
       <ranges>
-        <range start1="6" end1="7" start2="6" end2="6" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="9" end1="10" start2="8" end2="8" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="12" end1="12" start2="10" end2="11" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="21" end1="21" start2="20" end2="22" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="29" end1="32" start2="30" end2="31" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="64" end1="66" start2="63" end2="63" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="83" end1="83" start2="80" end2="81" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="84" end1="85" start2="82" end2="83" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="90" end1="91" start2="88" end2="89" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="92" end1="93" start2="90" end2="90" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="94" end1="94" start2="91" end2="92" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="96" end1="96" start2="94" end2="96" changelist="893766ae-7225-4231-a8b7-689e7c056833" />
-        <range start1="102" end1="106" start2="102" end2="107" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="109" end1="109" start2="110" end2="128" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="113" end1="115" start2="132" end2="134" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="118" end1="158" start2="137" end2="137" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="165" end1="165" start2="144" end2="145" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="168" end1="169" start2="148" end2="149" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="170" end1="170" start2="150" end2="151" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="171" end1="172" start2="152" end2="152" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="178" end1="178" start2="158" end2="164" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="91" end1="92" start2="91" end2="91" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="93" end1="93" start2="92" end2="93" changelist="893766ae-7225-4231-a8b7-689e7c056833" />
+        <range start1="111" end1="112" start2="111" end2="112" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="116" end1="116" start2="116" end2="118" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="133" end1="133" start2="135" end2="136" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="161" end1="162" start2="164" end2="169" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/clientapp/MainClient.java">
+      <ranges>
+        <range start1="72" end1="75" start2="72" end2="72" changelist="893766ae-7225-4231-a8b7-689e7c056833" />
+        <range start1="78" end1="81" start2="75" end2="76" changelist="893766ae-7225-4231-a8b7-689e7c056833" />
+        <range start1="92" end1="92" start2="87" end2="94" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/clientapp/controllers/visitor/RegisterController.java">
+      <ranges>
+        <range start1="4" end1="5" start2="4" end2="4" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="14" end1="14" start2="13" end2="16" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="66" end1="67" start2="68" end2="69" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="68" end1="69" start2="70" end2="72" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="84" end1="84" start2="87" end2="110" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="105" end1="105" start2="131" end2="132" changelist="deeb886f-6f92-4aef-97ee-d7745dd53def" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/clientapp/controllers/UserController.java">
+      <ranges>
+        <range start1="14" end1="14" start2="14" end2="16" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="59" end1="60" start2="61" end2="64" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="78" end1="81" start2="82" end2="84" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="85" end1="86" start2="88" end2="91" changelist="893766ae-7225-4231-a8b7-689e7c056833" />
+        <range start1="87" end1="88" start2="92" end2="92" changelist="893766ae-7225-4231-a8b7-689e7c056833" />
+        <range start1="92" end1="92" start2="96" end2="102" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="94" end1="94" start2="104" end2="126" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="99" end1="101" start2="131" end2="132" changelist="893766ae-7225-4231-a8b7-689e7c056833" />
+        <range start1="102" end1="103" start2="133" end2="133" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="108" end1="108" start2="138" end2="139" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/serverapp/controllers/wireless/ConnectionController.java">
+      <ranges>
+        <range start1="23" end1="24" start2="23" end2="24" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="28" end1="28" start2="28" end2="29" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="35" end1="36" start2="36" end2="37" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="53" end1="56" start2="54" end2="55" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="57" end1="58" start2="56" end2="57" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="61" end1="61" start2="60" end2="61" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="63" end1="63" start2="63" end2="64" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="66" end1="66" start2="67" end2="68" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="67" end1="68" start2="69" end2="69" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="81" end1="82" start2="82" end2="83" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="94" end1="95" start2="95" end2="95" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="96" end1="97" start2="96" end2="97" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="99" end1="100" start2="99" end2="100" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="103" end1="104" start2="103" end2="104" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="113" end1="114" start2="113" end2="113" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="115" end1="116" start2="114" end2="114" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="117" end1="120" start2="115" end2="115" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="121" end1="122" start2="116" end2="116" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="124" end1="136" start2="118" end2="131" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="137" end1="140" start2="132" end2="135" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="141" end1="143" start2="136" end2="136" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="144" end1="146" start2="137" end2="138" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="147" end1="147" start2="139" end2="140" changelist="893766ae-7225-4231-a8b7-689e7c056833" />
+        <range start1="149" end1="151" start2="142" end2="143" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="155" end1="156" start2="147" end2="148" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="163" end1="164" start2="155" end2="155" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
       </ranges>
     </file>
   </component>
@@ -215,6 +236,7 @@
       <workItem from="1639920961170" duration="609000" />
       <workItem from="1640001298934" duration="957000" />
       <workItem from="1640005630091" duration="11792000" />
+      <workItem from="1640077494280" duration="8462000" />
     </task>
     <servers />
   </component>

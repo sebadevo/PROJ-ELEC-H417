@@ -28,9 +28,7 @@ public class ConversationController extends Thread {
         try {
             printWriter = new PrintWriter(this.socket.getOutputStream(), true);
             bufferedReader = new BufferedReader(new InputStreamReader(this.socket.getInputStream()));
-        } catch (Exception ignore){
-            System.out.println("CONVEVERSATION CONTROLLER " + ignore);
-        }
+        } catch (Exception ignore){}
     }
 
     @Override
@@ -38,20 +36,19 @@ public class ConversationController extends Thread {
         String encrypted;
         while(running){
             try {
+                System.out.println("je suis dans la conversation");
                 if((encrypted=bufferedReader.readLine()) != null){
-                    String[] splitmessage = encrypted.split(DELIMITER);
-                    if (splitmessage.length == 2) {
-                        String destinataire = splitmessage[0];
-                        String message = splitmessage[1];
-                        listener.sendMessage(message,user, destinataire);
-                    }
-                    else if (encrypted.equals("exit")){
+                    if (encrypted.equals("exit")){
+                        System.out.println("received message of disconnection");
                         disconnect();
+                        return;
                     }
+                    String[] splitmessage = encrypted.split(DELIMITER, 2);
+                    String destinataire = splitmessage[0];
+                    String message = splitmessage[1];
+                    listener.sendMessage(message, user, destinataire);
                 }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            } catch (IOException ignore) {}
         }
         try {
             socket.close();
@@ -67,8 +64,8 @@ public class ConversationController extends Thread {
 
     private void disconnect(){
         running = false;
-        listener.disconnectUser(user);
-        System.out.println("the socket has been terminated");
+        printWriter.println("disconnected");
+        listener.disconnectUser(user,socket);
     }
 
     public PrintWriter getPrintWrinter(){
@@ -83,7 +80,7 @@ public class ConversationController extends Thread {
 
 
     public interface ConversationListener {
-        void disconnectUser(User user);
+        void disconnectUser(User user, Socket socket);
         void sendMessage(String Message, User source, String destination);
 
     }
