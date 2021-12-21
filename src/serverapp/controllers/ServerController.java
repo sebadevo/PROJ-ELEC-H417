@@ -128,6 +128,15 @@ public class ServerController extends Thread implements ConnectionController.Con
     }
 
     @Override
+    public void keyExchange(String ga, User user, String destination){
+        for (ConversationController conversation:connectedControllers){
+            if (conversation.getUser().getUsername().equals(destination)){
+                conversation.getPrintWrinter().println("key"+DELIMITER+ga+DELIMITER+user.getUsername());
+            }
+        }
+    }
+
+    @Override
     public void addClientConversation(User user, Socket socket){
         ConversationController conversationController = new ConversationController(this, user, socket);
         connectedControllers.add(conversationController);

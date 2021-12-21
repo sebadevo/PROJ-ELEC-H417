@@ -29,4 +29,9 @@
         </image>
     </ImageView>
    <TextField fx:id="destinationTextField" layoutX="497.0" layoutY="206.0" promptText="Send to ..." />
+    <Label fx:id="errorMessageLabel" layoutX="450.0" layoutY="250.0" prefHeight="20.0" prefWidth="200.0" text="errorMessage" textFill="RED" visible="false" />
+   <Label fx:id="identificationLabel" alignment="TOP_LEFT" layoutX="450.0" layoutY="70.0" prefHeight="140.0" prefWidth="300.0" text="IdentificationLabel" textAlignment="CENTER" wrapText="true">
+      <font>
+         <Font size="20.0" />
+      </font></Label>
 </AnchorPane>

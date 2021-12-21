@@ -38,12 +38,17 @@ public class ConversationController extends Thread {
             try {
                 System.out.println("je suis dans la conversation");
                 if((encrypted=bufferedReader.readLine()) != null){
-                    if (encrypted.equals("exit")){
+                    String[] splitmessage = encrypted.split(DELIMITER);
+                    if (splitmessage[0].equals("exit")){
                         System.out.println("received message of disconnection");
                         disconnect();
                         return;
                     }
-                    String[] splitmessage = encrypted.split(DELIMITER, 2);
+                    else if (splitmessage[0].equals("key")){
+                        String destinataire = splitmessage[1];
+                        String ga = splitmessage[2];
+                        listener.keyExchange(ga, user, destinataire);
+                    }
                     String destinataire = splitmessage[0];
                     String message = splitmessage[1];
                     listener.sendMessage(message, user, destinataire);
@@ -80,6 +85,7 @@ public class ConversationController extends Thread {
 
 
     public interface ConversationListener {
+        void keyExchange(String ga, User user, String destination);
         void disconnectUser(User user, Socket socket);
         void sendMessage(String Message, User source, String destination);
 

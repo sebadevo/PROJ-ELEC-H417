@@ -1,6 +1,7 @@
 package clientapp.controllers;
 
 import clientapp.MainClient;
+import clientapp.models.FriendsKey;
 import clientapp.models.User;
 import clientapp.views.user.UserPageViewController;
 import javafx.fxml.FXMLLoader;
@@ -11,11 +12,12 @@ import javafx.stage.Stage;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.math.BigInteger;
 import java.net.Socket;
-import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 import static clientapp.MainClient.DELIMITER;
+import static clientapp.models.Crypto.decrypt;
 import static clientapp.models.Crypto.hashing;
 
 public class UserController extends Thread implements UserPageViewController.UserPageViewListener {
@@ -44,6 +46,7 @@ public class UserController extends Thread implements UserPageViewController.Use
      * @throws IOException erreur d'affichage
      */
     public void show() throws IOException {
+        System.out.println("JE SUIS "+user.getUsername());
         FXMLLoader loader = new FXMLLoader(UserPageViewController.class.getResource("UserPageView.fxml"));
         loader.load();
         userPageViewController = loader.getController();
@@ -51,6 +54,7 @@ public class UserController extends Thread implements UserPageViewController.Use
         Parent page = loader.getRoot();
         stage.setScene(new Scene(page));
         stage.show();
+        userPageViewController.setIdentificationLabel("Connected as : \n"+user.getUsername());
         onCloseRequest();
     }
 
@@ -86,39 +90,80 @@ public class UserController extends Thread implements UserPageViewController.Use
         listener.logOut();
     }
 
+    private void sendPublicKey(String destinataire) {
+        printWriter.println("key"+DELIMITER+destinataire+DELIMITER+user.getGa());
+    }
+
+    private void addNewFriend(String gb, String hashUsername) {
+        BigInteger gB = new BigInteger(gb) ;
+        for (FriendsKey friend : user.getFriends()){
+            if (friend.getFriendName().equals(hashUsername)){
+                friend.setKey(user.getGa(), gB);
+                return;
+            }
+        }
+        FriendsKey friend = new FriendsKey(hashUsername);
+        friend.setKey(user.getGa(), gB);
+        user.addFriends(friend);
+        sendPublicKey(hashUsername);
+    }
+
+
     @Override
-    public void onSendButtonPressed(String destinataire, String message) throws NoSuchAlgorithmException {
-        /*
-        if hashing(destinataire) is dans liste keys:
-            envoie message
-        sinon:
-            key = diffie-hellman()
-            store key
-            send message
-         */
-        // A -> B
-        // hash(B)
-        // encryption du message
-        if (!user.getUsername().equals(destinataire)) { // permet d'afficher qu'une seule fois les message envoyé à sois même
+    public void onSendButtonPressed(String username, String message) throws NoSuchAlgorithmException {
+        // TODO check si dans contact key
+        String destinataire = hashing(username);
+        if (!user.checkFriends(destinataire) && !user.getUsername().equals(username)){
+            //SecretKeySpec key = Crypto.generateKey(temp)
+            FriendsKey friend = new FriendsKey(destinataire);
+            user.addFriends(friend);
+            sendPublicKey(destinataire);
+            int temp = 0;
+            while(null == friend.getKey()){
+                System.out.println("est ce que je bug "+temp);
+                try{
+                    sleep(1000);
+                } catch (Exception ignore){}
+                temp++;
+                if (temp>10){ // wait 5 sec
+                    userPageViewController.setErrorMessage("Message not sent, user : "+ username +" did not answer.");
+                    user.removeFriend(destinataire);
+                    return;
+                }
+            }
+        }
+        if (!user.getUsername().equals(username)) { // permet d'afficher qu'une seule fois les message envoyé à sois même
             receiveText(user.getUsername() + " : " + message); // Feedback message
         }
-        message = hashing(destinataire) + DELIMITER + user.getUsername() + " : " + message;
+        message = destinataire + DELIMITER + user.getUsername() + " : " + message;
         printWriter.println(message);
+        userPageViewController.setErrorMessage("");
     }
+
+
 
     public void receiveText(String message) {
         System.out.println(message);
-        System.out.println("does forceExit = forceExit? : " + message.equals("forceExit"));
         // decrypter le message
+        String[] header = message.split(DELIMITER);
+        switch (header[0]) {
+            case "key":
+                String ga = header[1];
+                String hashusername = header[2];
+                addNewFriend(ga, hashusername);
+                break;
+            case "forceExit":
+                running = false;
+                listener.logOut();
+                return;
+            default:
 
-        if ("forceExit".equals(message)) {
-            running = false;
-            listener.logOut();
-            return;
+                //String decrypted = decrypt(message);
+                userPageViewController.addReadingArea(message);
         }
-
-        userPageViewController.addReadingArea(message);
     }
+
+
 
 
     @Override

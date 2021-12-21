@@ -1,7 +1,13 @@
 package clientapp.models;
 
 import java.io.Serializable;
+import java.math.BigInteger;
+import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 import java.util.Objects;
+
+import static clientapp.models.Crypto.hashing;
+import static clientapp.models.Crypto.letterTodigit;
 
 public class User implements Serializable {
     private static final long serialVersionUID = -3233133803033315L;
@@ -11,6 +17,9 @@ public class User implements Serializable {
     private final String emailAddress;
     private String password;
     private boolean isConnected = false;
+    private ArrayList<FriendsKey> friends;
+    private BigInteger ga;
+    private BigInteger a;
 
     /**
      * Crée un utilisateur
@@ -26,6 +35,17 @@ public class User implements Serializable {
         this.emailAddress = emailAddress;
         this.username = username;
         this.password = password;
+        friends = new ArrayList<>();
+        try {
+            setA();
+            setGa();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void setA() throws NoSuchAlgorithmException {
+        a = new BigInteger(letterTodigit(hashing(username+password)));
     }
 
     public User(User user){
@@ -35,6 +55,9 @@ public class User implements Serializable {
         this.username = user.username;
         this.password = user.password;
         this.isConnected = user.isConnected;
+        this.friends = user.friends;
+        this.ga = user.ga;
+        this.a = user.a;
     }
 
     /**
@@ -55,6 +78,23 @@ public class User implements Serializable {
         } else {
             return emailAddress.contains("@");
         }
+    }
+
+    public boolean checkFriends(String username){
+        for (FriendsKey friend: friends){
+            if (friend.getFriendName().equals(username)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void addFriends(FriendsKey friend){
+        friends.add(friend);
+    }
+
+    public ArrayList<FriendsKey> getFriends(){
+        return friends;
     }
 
     // Getters and setters
@@ -95,11 +135,33 @@ public class User implements Serializable {
         this.isConnected = bool;
     }
 
+    public BigInteger getGa(){
+        return ga;
+    }
+
+    public BigInteger getA(){
+        return a;
+    }
+
+    private void setGa() throws NoSuchAlgorithmException {
+        ga = Crypto.defineGa(a);
+    }
+
     /**
      * affiche le résultat entré dans les différents champs
      * @return string
      */
     public String toString(){
         return firstname + " " + lastname + " " + username + " " + emailAddress + " " + password + " " + isConnected;
+    }
+
+    public void removeFriend(String username) {
+        for (FriendsKey friend: friends){
+            if (friend.getFriendName().equals(username)){
+                friends.remove(friend);
+                return;
+            }
+        }
+
     }
 }
