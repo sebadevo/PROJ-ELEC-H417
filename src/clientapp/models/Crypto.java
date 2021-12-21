@@ -34,11 +34,11 @@ public class Crypto {
         return null;
     }
 
-    public static String Decryption(String encryptedMessage){
+    public static String Decryption(String encryptedmessage){
         return null;
     }
 
-    /*public static String() {
+    /*public static int (S) {
         // create 3 BigInteger objects
         BigInteger base, mod, result;
 
