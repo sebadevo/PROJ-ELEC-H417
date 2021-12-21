@@ -1,5 +1,6 @@
 package clientapp.controllers.visitor;
 
+import clientapp.models.Crypto;
 import clientapp.models.User;
 import clientapp.views.visitor.RegisterViewController;
 import javafx.fxml.FXMLLoader;
@@ -14,10 +15,12 @@ import java.net.Socket;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+import static clientapp.MainClient.DELIMITER;
+import static clientapp.models.Crypto.hashing;
+
 
 public class RegisterController implements RegisterViewController.RegisterViewListener {
 
-    private static final String DELIMITER = "-";
     private final RegisterListener listener;
     private final Stage stage;
     private RegisterViewController registerViewController;
@@ -83,28 +86,6 @@ public class RegisterController implements RegisterViewController.RegisterViewLi
         }else{
             registerViewController.setErrorMessage("One or more fields are empty");
         }
-    }
-
-    /**
-     * We hash the messages send for more security .
-     * @param message is the text send from a user to another.
-     * @return
-     * @throws NoSuchAlgorithmException
-     */
-    public String hashing(String message) throws NoSuchAlgorithmException {
-        MessageDigest md = MessageDigest.getInstance("SHA-256");
-
-        //Passing data to the created MessageDigest Object
-        md.update(message.getBytes());
-
-        //Compute the message digest
-        byte[] digest = md.digest();
-
-        //Converting the byte array in to HexString format
-        StringBuilder hexString = new StringBuilder();
-
-        for (byte b : digest) hexString.append(Integer.toHexString(0xFF & b));
-        return hexString.toString();
     }
 
 

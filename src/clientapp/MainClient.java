@@ -24,6 +24,7 @@ public class MainClient extends Application implements UserController.UserPageLi
     private Socket socket;
     private PrintWriter printWriter;
     private BufferedReader bufferedReader;
+    public static final String DELIMITER = "-";
 
     /**
      * Démarrage de l'application.

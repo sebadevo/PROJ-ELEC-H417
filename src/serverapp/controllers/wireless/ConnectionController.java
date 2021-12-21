@@ -26,7 +26,6 @@ public class ConnectionController extends Thread{
     public ConnectionController(ConnectionListener listener, Socket socket) {
         this.listener = listener;
         this.socket = socket;
-        running =true;
         try {
             printWriter = new PrintWriter(this.socket.getOutputStream(), true);
             bufferedReader = new BufferedReader(new InputStreamReader(this.socket.getInputStream()));

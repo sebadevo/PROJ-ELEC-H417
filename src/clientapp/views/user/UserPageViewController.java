@@ -7,7 +7,8 @@ import javafx.scene.control.TextArea;
 import java.security.NoSuchAlgorithmException;
 
 public class UserPageViewController {
-
+    @FXML
+    public TextField destinationTextField;
     @FXML
     private TextField writtingField;
     @FXML
@@ -27,19 +28,28 @@ public class UserPageViewController {
         listener.onLogOutButtonPressed();
     }
 
+    /**
+     * Détecte quand on appuie sur le bouton "Send" et vérifie si les fields destination et writing ne sont pas vide.
+     * S'ils ne sont pas vide, alors il notifiera le controller pour qu'ils puisse l'envoyé.
+     * @throws NoSuchAlgorithmException
+     */
     public void onSendButton() throws NoSuchAlgorithmException {
-        String message = writtingField.getText();
-        writtingField.setText("");
-        listener.onSendButtonPressed(message);
+        if (!destinationTextField.getText().equals("") && !writtingField.getText().equals("")){
+            String destination = destinationTextField.getText();
+            String message = writtingField.getText();
+            writtingField.setText("");
+            listener.onSendButtonPressed(destination, message);
+        }else{
+            System.out.println("no Senders precised...");
+        }
     }
 
     public void addReadingArea(String message){
-        // TODO check comment ça fonctionne
         readingArea.appendText(message + "\n");
     }
 
     public interface UserPageViewListener {
         void onLogOutButtonPressed() throws Exception;
-        void onSendButtonPressed(String message) throws NoSuchAlgorithmException;
+        void onSendButtonPressed(String destination, String message) throws NoSuchAlgorithmException;
     }
 }

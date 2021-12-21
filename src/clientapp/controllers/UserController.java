@@ -15,9 +15,10 @@ import java.net.Socket;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-public class UserController extends Thread implements UserPageViewController.UserPageViewListener {
+import static clientapp.MainClient.DELIMITER;
+import static clientapp.models.Crypto.hashing;
 
-    private static final String DELIMITER = "-";
+public class UserController extends Thread implements UserPageViewController.UserPageViewListener {
     private final UserPageListener listener;
     private final Stage stage;
     private UserPageViewController userPageViewController;
@@ -86,44 +87,39 @@ public class UserController extends Thread implements UserPageViewController.Use
     }
 
     @Override
-    public void onSendButtonPressed(String message) throws NoSuchAlgorithmException {
-        //printWriter.println(message);
-        message = hashing(user.getUsername())+DELIMITER+message + " (from " + user.getUsername() + ")";
+    public void onSendButtonPressed(String destinataire, String message) throws NoSuchAlgorithmException {
+        /*
+        if hashing(destinataire) is dans liste keys:
+            envoie message
+        sinon:
+            key = diffie-hellman()
+            store key
+            send message
+         */
+        // A -> B
+        // hash(B)
+        // encryption du message
+        if (!user.getUsername().equals(destinataire)) { // permet d'afficher qu'une seule fois les message envoyé à sois même
+            receiveText(user.getUsername() + " : " + message); // Feedback message
+        }
+        message = hashing(destinataire) + DELIMITER + user.getUsername() + " : " + message;
         printWriter.println(message);
-        receiveText(message);
     }
 
     public void receiveText(String message) {
         System.out.println(message);
         System.out.println("does forceExit = forceExit? : " + message.equals("forceExit"));
+        // decrypter le message
+
         if ("forceExit".equals(message)) {
             running = false;
             listener.logOut();
+            return;
         }
+
         userPageViewController.addReadingArea(message);
     }
 
-    /**
-     * We hash the messages send for more security .
-     * @param message is the text send from a user to another.
-     * @return
-     * @throws NoSuchAlgorithmException
-     */
-    public String hashing(String message) throws NoSuchAlgorithmException {
-        MessageDigest md = MessageDigest.getInstance("SHA-256");
-
-        //Passing data to the created MessageDigest Object
-        md.update(message.getBytes());
-
-        //Compute the message digest
-        byte[] digest = md.digest();
-
-        //Converting the byte array in to HexString format
-        StringBuilder hexString = new StringBuilder();
-
-        for (byte b : digest) hexString.append(Integer.toHexString(0xFF & b));
-        return hexString.toString();
-    }
 
     @Override
     public void run(){

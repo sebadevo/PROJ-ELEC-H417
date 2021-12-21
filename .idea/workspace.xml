@@ -2,33 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a2457536-8182-44bb-af5f-6d6859d358f9" name="Changes" comment="test">
+      <change afterPath="$PROJECT_DIR$/src/clientapp/models/FriendsKey.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/UserDB.serial" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/MainClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/MainClient.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/controllers/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/controllers/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/controllers/visitor/LogInController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/controllers/visitor/LogInController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/controllers/visitor/RegisterController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/controllers/visitor/RegisterController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/views/user/UserPageView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/views/user/UserPageView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/views/user/UserPageViewController$UserPageViewListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/views/user/UserPageViewController$UserPageViewListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/views/user/UserPageViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/views/user/UserPageViewController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/serverapp/controllers/ServerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/serverapp/controllers/ServerController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/serverapp/controllers/wireless/ConnectionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/serverapp/controllers/wireless/ConnectionController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/serverapp/controllers/wireless/ConversationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/serverapp/controllers/wireless/ConversationController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/clientapp/MainClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/MainClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/clientapp/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/controllers/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/clientapp/controllers/visitor/LogInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/controllers/visitor/LogInController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/clientapp/controllers/visitor/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/controllers/visitor/RegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clientapp/views/user/UserPageView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/views/user/UserPageView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/clientapp/views/user/UserPageViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/views/user/UserPageViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/serverapp/controllers/ServerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/serverapp/controllers/ServerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/serverapp/controllers/wireless/ConnectionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/serverapp/controllers/wireless/ConnectionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/serverapp/controllers/wireless/ConversationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/serverapp/controllers/wireless/ConversationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/serverapp/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/serverapp/models/User.java" afterDir="false" />
     </list>
     <list id="893766ae-7225-4231-a8b7-689e7c056833" name="Changes by Aurelien" comment="">
-      <change beforePath="$PROJECT_DIR$/src/clientapp/MainClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/MainClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/clientapp/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/serverapp/controllers/ServerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/serverapp/controllers/ServerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/serverapp/controllers/wireless/ConnectionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/serverapp/controllers/wireless/ConnectionController.java" afterDir="false" />
     </list>
-    <list id="deeb886f-6f92-4aef-97ee-d7745dd53def" name="Changes by takira" comment="">
-      <change beforePath="$PROJECT_DIR$/src/clientapp/controllers/visitor/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/controllers/visitor/RegisterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clientapp/views/user/UserPageView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/views/user/UserPageView.fxml" afterDir="false" />
-    </list>
+    <list id="deeb886f-6f92-4aef-97ee-d7745dd53def" name="Changes by takira" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,75 +52,16 @@
     </file-type-list>
   </component>
   <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/serverapp/controllers/ServerController.java">
-      <ranges>
-        <range start1="91" end1="92" start2="91" end2="91" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="93" end1="93" start2="92" end2="93" changelist="893766ae-7225-4231-a8b7-689e7c056833" />
-        <range start1="111" end1="112" start2="111" end2="112" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="116" end1="116" start2="116" end2="118" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="133" end1="133" start2="135" end2="136" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="161" end1="162" start2="164" end2="169" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/clientapp/MainClient.java">
-      <ranges>
-        <range start1="72" end1="75" start2="72" end2="72" changelist="893766ae-7225-4231-a8b7-689e7c056833" />
-        <range start1="78" end1="81" start2="75" end2="76" changelist="893766ae-7225-4231-a8b7-689e7c056833" />
-        <range start1="92" end1="92" start2="87" end2="94" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/clientapp/controllers/visitor/RegisterController.java">
-      <ranges>
-        <range start1="4" end1="5" start2="4" end2="4" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="14" end1="14" start2="13" end2="16" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="66" end1="67" start2="68" end2="69" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="68" end1="69" start2="70" end2="72" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="84" end1="84" start2="87" end2="110" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="105" end1="105" start2="131" end2="132" changelist="deeb886f-6f92-4aef-97ee-d7745dd53def" />
-      </ranges>
-    </file>
     <file path="$PROJECT_DIR$/src/clientapp/controllers/UserController.java">
       <ranges>
-        <range start1="14" end1="14" start2="14" end2="16" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="59" end1="60" start2="61" end2="64" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="78" end1="81" start2="82" end2="84" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="85" end1="86" start2="88" end2="91" changelist="893766ae-7225-4231-a8b7-689e7c056833" />
-        <range start1="87" end1="88" start2="92" end2="92" changelist="893766ae-7225-4231-a8b7-689e7c056833" />
-        <range start1="92" end1="92" start2="96" end2="102" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="94" end1="94" start2="104" end2="126" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="99" end1="101" start2="131" end2="132" changelist="893766ae-7225-4231-a8b7-689e7c056833" />
-        <range start1="102" end1="103" start2="133" end2="133" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="108" end1="108" start2="138" end2="139" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/serverapp/controllers/wireless/ConnectionController.java">
-      <ranges>
-        <range start1="23" end1="24" start2="23" end2="24" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="28" end1="28" start2="28" end2="29" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="35" end1="36" start2="36" end2="37" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="53" end1="56" start2="54" end2="55" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="57" end1="58" start2="56" end2="57" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="61" end1="61" start2="60" end2="61" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="63" end1="63" start2="63" end2="64" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="66" end1="66" start2="67" end2="68" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="67" end1="68" start2="69" end2="69" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="81" end1="82" start2="82" end2="83" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="94" end1="95" start2="95" end2="95" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="96" end1="97" start2="96" end2="97" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="99" end1="100" start2="99" end2="100" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="103" end1="104" start2="103" end2="104" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="113" end1="114" start2="113" end2="113" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="115" end1="116" start2="114" end2="114" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="117" end1="120" start2="115" end2="115" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="121" end1="122" start2="116" end2="116" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="124" end1="136" start2="118" end2="131" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="137" end1="140" start2="132" end2="135" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="141" end1="143" start2="136" end2="136" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="144" end1="146" start2="137" end2="138" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="147" end1="147" start2="139" end2="140" changelist="893766ae-7225-4231-a8b7-689e7c056833" />
-        <range start1="149" end1="151" start2="142" end2="143" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="155" end1="156" start2="147" end2="148" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
-        <range start1="163" end1="164" start2="155" end2="155" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="16" end1="16" start2="16" end2="19" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="18" end1="20" start2="21" end2="21" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="88" end1="91" start2="89" end2="100" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="92" end1="93" start2="101" end2="101" changelist="893766ae-7225-4231-a8b7-689e7c056833" />
+        <range start1="98" end1="98" start2="106" end2="108" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="101" end1="101" start2="111" end2="112" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="102" end1="102" start2="113" end2="114" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
+        <range start1="105" end1="126" start2="117" end2="117" changelist="a2457536-8182-44bb-af5f-6d6859d358f9" />
       </ranges>
     </file>
   </component>
@@ -139,6 +78,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/bin/serverapp/views" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />

@@ -122,9 +122,7 @@ public class ServerController extends Thread implements ConnectionController.Con
     public void sendMessage(String message, User user, String destination){
         for (ConversationController conversation:connectedControllers){
             if (conversation.getUser().getUsername().equals(destination)){
-                PrintWriter printWriter = conversation.getPrintWrinter();
-                printWriter.println(user.getUsername()+DELIMITER+message);
-                System.out.printf("Do I arrive here when I send a message ? ");
+                conversation.getPrintWrinter().println(message);
             }
         }
     }
