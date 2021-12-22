@@ -1,0 +1,13 @@
+clientapp
+clientapp.controllers
+clientapp.controllers.visitor
+clientapp.models
+clientapp.views.user
+clientapp.views.visitor
+serverapp
+serverapp.controllers
+serverapp.controllers.wireless
+serverapp.models
+serverapp.models.databases
+serverapp.models.databases.exceptions
+serverapp.views

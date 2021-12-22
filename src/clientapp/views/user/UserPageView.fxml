@@ -28,9 +28,9 @@
             <Image url="@meta.png" />
         </image>
     </ImageView>
-   <TextField fx:id="destinationTextField" layoutX="520.0" layoutY="210.0" promptText="Send to ..." />
-    <Label fx:id="errorMessageLabel" alignment="TOP_CENTER" contentDisplay="TOP" layoutX="450.0" layoutY="250.0" prefHeight="96.0" prefWidth="326.0" text="errorMessage" textAlignment="CENTER" textFill="RED" visible="false" wrapText="true" />
-   <Label fx:id="identificationLabel" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="450.0" layoutY="70.0" prefHeight="140.0" prefWidth="300.0" text="IdentificationLabel" textAlignment="CENTER" wrapText="true">
+   <TextField fx:id="destinationTextField" layoutX="525.0" layoutY="210.0" prefHeight="30.0" prefWidth="170.0" promptText="Send to ..." />
+    <Label fx:id="errorMessageLabel" alignment="TOP_CENTER" contentDisplay="TOP" layoutX="440.0" layoutY="250.0" prefHeight="100.0" prefWidth="340.0" text="errorMessage" textAlignment="CENTER" textFill="RED" visible="false" wrapText="true" />
+   <Label fx:id="identificationLabel" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="450.0" layoutY="80.0" prefHeight="130.0" prefWidth="300.0" text="IdentificationLabel" textAlignment="CENTER" wrapText="true">
       <font>
          <Font size="20.0" />
       </font></Label>

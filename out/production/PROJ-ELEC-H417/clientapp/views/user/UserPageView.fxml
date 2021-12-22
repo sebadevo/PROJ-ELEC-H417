@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="480.0" prefWidth="780.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.202-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clientapp.views.user.UserPageViewController">
+<AnchorPane prefHeight="480.0" prefWidth="780.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clientapp.views.user.UserPageViewController">
     <Button fx:id="logOutButton" layoutX="535.0" layoutY="435.0" mnemonicParsing="false" onAction="#onLogOutButton" prefHeight="25.0" prefWidth="150.0" text="Log Out" />
     <Label layoutX="549.0" layoutY="24.0" style="-fx-background-color: white;" text="META">
         <font>
@@ -28,9 +28,9 @@
             <Image url="@meta.png" />
         </image>
     </ImageView>
-   <TextField fx:id="destinationTextField" layoutX="520.0" layoutY="210.0" promptText="Send to ..." />
-    <Label fx:id="errorMessageLabel" layoutX="450.0" layoutY="250.0" prefHeight="20.0" prefWidth="200.0" text="errorMessage" textFill="RED" visible="false" />
-   <Label fx:id="identificationLabel" alignment="TOP_LEFT" layoutX="450.0" layoutY="70.0" prefHeight="140.0" prefWidth="300.0" text="IdentificationLabel" textAlignment="CENTER" wrapText="true">
+   <TextField fx:id="destinationTextField" layoutX="525.0" layoutY="210.0" prefHeight="30.0" prefWidth="170.0" promptText="Send to ..." />
+    <Label fx:id="errorMessageLabel" alignment="TOP_CENTER" contentDisplay="TOP" layoutX="440.0" layoutY="250.0" prefHeight="100.0" prefWidth="340.0" text="errorMessage" textAlignment="CENTER" textFill="RED" visible="false" wrapText="true" />
+   <Label fx:id="identificationLabel" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="450.0" layoutY="80.0" prefHeight="130.0" prefWidth="300.0" text="IdentificationLabel" textAlignment="CENTER" wrapText="true">
       <font>
          <Font size="20.0" />
       </font></Label>

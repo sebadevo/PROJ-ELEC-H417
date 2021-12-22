@@ -11,7 +11,8 @@ users. We more time we could have implemented Group Chats (thus communication wi
 # Requirement to launch the program (how to run the code)
 
 This project runs on JavaFX 1.8. Please download this version if you want the app to work on your device.
-You need to compile java with javafx, the best method is to simply use Intellij IDEA. Other methods 
+If you want to Compile yourself (.jar file are already prepared, read en section of requirements to see how to launch 
+app): You need to compile java with javafx, the best method is to simply use Intellij IDEA. Other methods 
 to compile seem to be more complicated. We tried making them with makefiles, but the compilation never included
 the fxml files with the .class files, we thus had error. To overcome this problem we let Intellij IDEA take
 care of the compilation and just enabled multiple instances of a given code to run. To do this left click on the application
@@ -20,7 +21,11 @@ in the menu, for the client app only go on the same level as "build and run" the
 a thick to allow multiple instances box. Once this done, apply the changes, and you can now run multiple instances 
 of client in IntelIJ IDEA.
 
-No compatibility issues. This project was tested on Ubuntu 20.04 and 
+No compatibility issues. This project was tested on Ubuntu 20.04 and Windows 10+11
+
+To Make it easier for a client to install the app, .jar files have been Created. They can be launched using the makefile
+command "make server" to launch the server and "make client" to launch the client. They have to be launch in SEPARATE 
+terminal. By default, the command line make launches the server.
 
 # Main features 
 
@@ -31,7 +36,10 @@ your information (firstname, lastname, email, password, username) have been save
 - An automatic check is run when you want to log in, you will not be able to  if you use wrong information (wrong username for instance)
 - An already connected username can't log in if he is already logged in. 
 - You can choose the recipient of your message. If the recipient is not connected, a security feature is built in to
-- To "kill" all the users we may just push the "RIP" button, appearing on the Server interface. This is equivalent to turn off the app. 
+prevent the exchange of key of a not connected user. There is a timer built in to wait 10 seconds for the key to be exchanged. 
+If this time is exceeded then the recipient will be forgotten and the message not sent.
+- To "kill" all the users we may just push the "RIP" button, appearing on the Server interface. This is equivalent to turn off the app and
+disconnect all user currently connected.
 - You can send messages to yourself (if you feel lonely), these messages will be encrypted following the same procedure.
 
 
