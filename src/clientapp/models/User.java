@@ -47,7 +47,6 @@ public class User implements Serializable {
 
     private void setA() throws NoSuchAlgorithmException {
         a = new BigInteger(letterTodigit(hashing(username+password)));
-        System.out.println("Valeur de a :"+ a);
     }
 
     public User(User user){

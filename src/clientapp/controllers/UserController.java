@@ -47,7 +47,6 @@ public class UserController extends Thread implements UserPageViewController.Use
      * @throws IOException display error.
      */
     public void show() throws IOException {
-        System.out.println("JE SUIS "+user.getUsername());
         FXMLLoader loader = new FXMLLoader(UserPageViewController.class.getResource("UserPageView.fxml"));
         loader.load();
         userPageViewController = loader.getController();
