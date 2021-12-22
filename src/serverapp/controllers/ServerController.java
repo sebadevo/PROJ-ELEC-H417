@@ -11,7 +11,6 @@ import serverapp.views.ServerViewController;
 import serverapp.models.databases.UserDatabase;
 
 
-import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
@@ -33,12 +32,20 @@ public class ServerController extends Thread implements ConnectionController.Con
     private boolean running = true;
 
 
-
+    /**
+     * Constructor receives the stage and his listener.
+     * @param listener the main class
+     * @param stage the stage where the gui will be
+     */
     public ServerController(ServerListener listener, Stage stage) {
         this.listener = listener;
         this.stage = stage;
     }
 
+
+    /**
+     * Starts the main thread of the server and launches the gui.
+     */
     public void startServer(){
         try {
             show();
@@ -48,6 +55,9 @@ public class ServerController extends Thread implements ConnectionController.Con
         }
     }
 
+    /**
+     * Main Thread of the server. Creates the server socket and enables the addition of client connections.
+     */
     @Override
     public void run() {
         try {
@@ -62,6 +72,11 @@ public class ServerController extends Thread implements ConnectionController.Con
         }
     }
 
+
+    /**
+     * Shows the gui. Holds a RIP button that shuts down everything
+     * @throws IOException exception in stage display
+     */
     public void show() throws IOException {
         FXMLLoader loader = new FXMLLoader(ServerViewController.class.getResource("ServerView.fxml"));
         loader.load();
@@ -74,6 +89,10 @@ public class ServerController extends Thread implements ConnectionController.Con
         onCloseRequest();
     }
 
+    /**
+     * When pressing on the cross button of the window it closes the application and shutdown everything, it will also
+     * disconnect all users curruntly connected and terminate their session.
+     */
     private void onCloseRequest() {
         stage.setOnCloseRequest(e -> {
             try {
@@ -85,6 +104,10 @@ public class ServerController extends Thread implements ConnectionController.Con
         });
     }
 
+    /**
+     * Will accept all client launching the app and will send them to the connection controller that will verify their
+     * information when trying to log in or will register a new user.
+     */
     public void addConnection(){
         while(running){
             try {
@@ -92,22 +115,25 @@ public class ServerController extends Thread implements ConnectionController.Con
                 if (socket.isConnected()) {
                     System.out.println("NEW CONNECTION CONTROLLER");
                     connectionController = new ConnectionController(this, socket);
-                    // todo conversationController = new ConversationController(this, socket);
-                    // todo ConversationController possède une fonction pour démarrer et le connectionController l'appel pour passer  relais;
                 }
             } catch (IOException ignored){}
         }
     }
 
 
+    /**
+     * interrupts the conversation of each client and sends them the message to shutdown on their side too.
+     */
     public void interuptAllConversation(){
         for (ConversationController conversation:connectedControllers) {
-            PrintWriter printWriter = conversation.getPrintWrinter();
-            printWriter.println("forceExit");
+            conversation.getPrintWrinter().println("forceExit");
             conversation.forceShutDown();
         }
     }
-
+    /**
+     * Sets the user as disconnected in the database and send the client to the connection controller if he wants to
+     * login with a different account.
+     */
     @Override
     public void disconnectUser(User user, Socket socket){
         if (user.isConnected()){
@@ -118,24 +144,44 @@ public class ServerController extends Thread implements ConnectionController.Con
 
     }
 
+    /**
+     * Send a message from the user to the user called "destination"
+     * @param message encrypted message
+     * @param user source
+     * @param destination destination
+     */
     @Override
     public void sendMessage(String message, User user, String destination){
         for (ConversationController conversation:connectedControllers){
             if (conversation.getUser().getUsername().equals(destination)){
-                conversation.getPrintWrinter().println(message);
+            conversation.getPrintWrinter().println(user.getUsername()+DELIMITER+message);
             }
         }
     }
 
+
+    /**
+     * first messages between 2 clients, they will exchange key using the Diffie-Hellman method.
+     * ga being g^a from the user "user" and send it the the user "destination"
+     * @param ga g^a
+     * @param user source
+     * @param destination destination
+     */
     @Override
     public void keyExchange(String ga, User user, String destination){
         for (ConversationController conversation:connectedControllers){
             if (conversation.getUser().getUsername().equals(destination)){
-                conversation.getPrintWrinter().println("key"+DELIMITER+ga+DELIMITER+user.getUsername());
+                conversation.getPrintWrinter().println("key"+DELIMITER+user.getUsername()+DELIMITER+ga);
             }
         }
     }
 
+    /**
+     * Once a client has loged in or registered, he is sent to the conversation controller which will take care of
+     * the conversation this client will have.
+     * @param user client connected
+     * @param socket socket
+     */
     @Override
     public void addClientConversation(User user, Socket socket){
         ConversationController conversationController = new ConversationController(this, user, socket);
@@ -144,21 +190,26 @@ public class ServerController extends Thread implements ConnectionController.Con
         conversationController.start();
     }
 
-
+    /**
+     * When pressing the RIP button, call the exterminateALL() function.
+     */
     @Override
     public void onDisconnectButton() {
        exterminateAll();
     }
 
+    /**
+     * Will kill the server app by correctly disconnecting each clients, will update the database and shut down
+     */
     public void exterminateAll(){
         try {
+            running = false;
+            interuptAllConversation();
             disconnectAllUser();
             listener.onClose();
-            running = false;
             if (connectionController != null) {
                 connectionController.forceShutDown();
             }
-            interuptAllConversation();
             serverSocket.close();
             stage.hide();
             System.out.println("i've killed everything that exists");
@@ -167,6 +218,9 @@ public class ServerController extends Thread implements ConnectionController.Con
         }
     }
 
+    /**
+     * Sets all currently connected users as disconected in the database.
+     */
     private void disconnectAllUser() {
         for (ConversationController conversation:connectedControllers){
             User user =conversation.getUser();
@@ -176,7 +230,6 @@ public class ServerController extends Thread implements ConnectionController.Con
             }
         }
     }
-
 
     public interface ServerListener {
         void onClose();

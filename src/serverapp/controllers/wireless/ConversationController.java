@@ -52,6 +52,8 @@ public class ConversationController extends Thread {
                     String destinataire = splitmessage[0];
                     String message = splitmessage[1];
                     listener.sendMessage(message, user, destinataire);
+                } else {
+                    return;
                 }
             } catch (IOException ignore) {}
         }

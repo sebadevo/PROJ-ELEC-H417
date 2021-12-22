@@ -1,5 +1,6 @@
 package clientapp.models;
 
+import javax.crypto.spec.SecretKeySpec;
 import java.io.Serializable;
 import java.math.BigInteger;
 import java.security.NoSuchAlgorithmException;
@@ -46,6 +47,7 @@ public class User implements Serializable {
 
     private void setA() throws NoSuchAlgorithmException {
         a = new BigInteger(letterTodigit(hashing(username+password)));
+        System.out.println("Valeur de a :"+ a);
     }
 
     public User(User user){
@@ -87,6 +89,15 @@ public class User implements Serializable {
             }
         }
         return false;
+    }
+
+    public SecretKeySpec getFriendsKey(String friendName){
+        for (FriendsKey friend: friends){
+            if (friend.getFriendName().equals(friendName)){
+                return friend.getKey();
+            }
+        }
+        return null;
     }
 
     public void addFriends(FriendsKey friend){

@@ -23,6 +23,11 @@ public class ConnectionController extends Thread{
 
     private volatile boolean running = true;
 
+    /**
+     * Constuctor receives it's lister and the socket of the client
+     * @param listener listener
+     * @param socket client socket
+     */
     public ConnectionController(ConnectionListener listener, Socket socket) {
         this.listener = listener;
         this.socket = socket;
@@ -33,13 +38,20 @@ public class ConnectionController extends Thread{
         this.start();
     }
 
+    /**
+     * Is called when a user tries to register (so when creating a new account). It will verify if the information sent
+     * are correct, such that no user with the same usernam can exist.
+     * If all the information are valid, the server will then notify the client that he can login and will Call the
+     * AndClientConversation and set the runnign thread to false.
+     * If some information the user sent are not valid, the server will notify the error to the client.
+     * @param message the information sent by the client.
+     */
     private void createNewUser(String[] message){
         String firstname = message[1];
         String lastname = message[2];
         String username = message[3];
         String email = message[4];
         String password = message[5];
-        System.out.println("Voici les infos du user:" + firstname +" "+ lastname +" "+ username +" "+ email +" "+ password);
         if (checkSyntax(firstname, lastname, username, email, password)) {
             User user = new User(firstname, lastname, username, email, password);
             if (!UserDatabase.getInstance().checkExistingUser(user)) {
@@ -51,8 +63,7 @@ public class ConnectionController extends Thread{
                         System.out.println("Error saving user to database");
                     }
                     printWriter.println(true);
-                    listener.addClientConversation(user, socket);  // TODO DEBUG
-                    // TODO DEBUG
+                    listener.addClientConversation(user, socket);
                     setRunning(false);
                 }
             } else if (UserDatabase.getInstance().checkExistingEmail(user.getEmailAddress())){
@@ -67,6 +78,7 @@ public class ConnectionController extends Thread{
             setRunning(true);
         }
     }
+
 
     public void disconnectUser(String username){
         User user = UserDatabase.getInstance().getUser(username);
@@ -113,8 +125,8 @@ public class ConnectionController extends Thread{
         try {
             while(running){
                 String completeMessage=bufferedReader.readLine();
-                if(completeMessage != null ) { // TODO see if this is useful :  && !completeMessage.equals("exit")
-                    String[] message = completeMessage.split(DELIMITER);  // séparer le message des destinataires
+                if(completeMessage != null ) {
+                    String[] message = completeMessage.split(DELIMITER);
                     switch (message[0]) {
                         case "1":
                             createNewUser(message);
@@ -126,7 +138,6 @@ public class ConnectionController extends Thread{
                             disconnectUser(message[1]);
                             break;
                         default:
-                            System.out.println("the user has sent something unexpected, it has thus been ignored");
                             break;
                     }
                 }else{

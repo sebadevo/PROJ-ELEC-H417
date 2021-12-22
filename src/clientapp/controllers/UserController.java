@@ -12,13 +12,14 @@ import javafx.stage.Stage;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;
 import java.net.Socket;
+import java.security.GeneralSecurityException;
 import java.security.NoSuchAlgorithmException;
 
 import static clientapp.MainClient.DELIMITER;
-import static clientapp.models.Crypto.decrypt;
-import static clientapp.models.Crypto.hashing;
+import static clientapp.models.Crypto.*;
 
 public class UserController extends Thread implements UserPageViewController.UserPageViewListener {
     private final UserPageListener listener;
@@ -98,12 +99,12 @@ public class UserController extends Thread implements UserPageViewController.Use
         BigInteger gB = new BigInteger(gb) ;
         for (FriendsKey friend : user.getFriends()){
             if (friend.getFriendName().equals(hashUsername)){
-                friend.setKey(user.getGa(), gB);
+                friend.setKey(user.getA(), gB);
                 return;
             }
         }
         FriendsKey friend = new FriendsKey(hashUsername);
-        friend.setKey(user.getGa(), gB);
+        friend.setKey(user.getA(), gB);
         user.addFriends(friend);
         sendPublicKey(hashUsername);
     }
@@ -111,16 +112,14 @@ public class UserController extends Thread implements UserPageViewController.Use
 
     @Override
     public void onSendButtonPressed(String username, String message) throws NoSuchAlgorithmException {
-        // TODO check si dans contact key
         String destinataire = hashing(username);
-        if (!user.checkFriends(destinataire) && !user.getUsername().equals(username)){
-            //SecretKeySpec key = Crypto.generateKey(temp)
+        if (!user.checkFriends(destinataire)){
             FriendsKey friend = new FriendsKey(destinataire);
             user.addFriends(friend);
             sendPublicKey(destinataire);
             int temp = 0;
             while(null == friend.getKey()){
-                System.out.println("est ce que je bug "+temp);
+                System.out.println("temps d'attent : "+temp);
                 try{
                     sleep(1000);
                 } catch (Exception ignore){}
@@ -133,9 +132,16 @@ public class UserController extends Thread implements UserPageViewController.Use
             }
         }
         if (!user.getUsername().equals(username)) { // permet d'afficher qu'une seule fois les message envoyé à sois même
-            receiveText(user.getUsername() + " : " + message); // Feedback message
+            userPageViewController.addReadingArea(user.getUsername() + " : " + message); // Feedback message
         }
-        message = destinataire + DELIMITER + user.getUsername() + " : " + message;
+        String encryptedMessage = null;
+        try {
+            encryptedMessage = encrypt(user.getUsername() + " : " + message,user.getFriendsKey(destinataire) );
+        } catch (GeneralSecurityException | UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+
+        message = destinataire + DELIMITER + encryptedMessage;
         printWriter.println(message);
         userPageViewController.setErrorMessage("");
     }
@@ -143,26 +149,35 @@ public class UserController extends Thread implements UserPageViewController.Use
 
 
     public void receiveText(String message) {
-        System.out.println(message);
         // decrypter le message
         String[] header = message.split(DELIMITER);
+        System.out.println("header :" + header[0]);
+
         switch (header[0]) {
             case "key":
-                String ga = header[1];
-                String hashusername = header[2];
+                String ga = header[2];
+                String hashusername = header[1];
                 addNewFriend(ga, hashusername);
                 break;
             case "forceExit":
+                System.out.println("je suis arrivé ici");
                 running = false;
-                listener.logOut();
+                System.exit(-1);
                 return;
             default:
-
-                //String decrypted = decrypt(message);
-                userPageViewController.addReadingArea(message);
+                String decrypted = decryptMessage(header[0], header[1]);
+                userPageViewController.addReadingArea(decrypted);
         }
     }
 
+    private String decryptMessage(String source, String encryptedMessage) {
+        try {
+            return decrypt(encryptedMessage, user.getFriendsKey(source));
+        } catch (GeneralSecurityException | IOException e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
 
 
 

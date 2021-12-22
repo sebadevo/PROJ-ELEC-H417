@@ -1,12 +1,31 @@
-# PROJ-ELEC-H417
-Project du cours de Network protocols de l'ULB
+# General project description.
 
-### Pour qu'un serveur puisse communiquer avec plusieurs clients en même temps:  
-* Il faut que le serveur soit capable d'attendre une connexion à tout moment. 
-  * Pour que le serveur puisse attendre une connection on fait appel à la méthode *accept()*
-  * Cette méthode *accept()* doit être dans une boucle infinie. 
-* A chaque fois qu'il y a une connexion il faut créer un nouveau thread associé à la socket du client connecté, puis attendre à nouveau une nouvelle connexion. 
-* Le thread créé doit s'occuper des opérations d'entrées/sorties ( *read()/write()* ) pour communiquer avec le client indépendamment des autres activités du serveur.
+Implement an application that enables private communication between 2 users (at least). 
+
+# Project status
+The project was brought to its end. Unfortunately because of the small time left before the deadline
+one of the necessary features could not be implemented: Save a conversation in the database between two 
+users. 
+
+# Requirement to launch the program (how to run the code)
+
+You need to compile java with javafx, the best method is to simply use Intellij IDEA. Other methods 
+to compile seem to be useless. 
+
+No compatibility issues. 
+
+# Main features 
+
+- Possibility to launch a conversation with as many users (you can launch as many as you want) as you want. 
+- The conversations are private as the messages are encrypted using the Diffie-Hellman procedure.
+- As a User you can log out from the app and come back later on (log in) without having to register again as all
+your information (firstname, lastname, email, password, username) have been saved in the database. 
+- An automatic check is run when you want to log in, you will not be able to  if you use wrong information (wrong username for instance)
+- An already connected username can't log in if he is already logged in. 
+- You can choose the recipient of your message. 
+- To "kill" all the users we may just push the "RIP" button, appearing on the Server interface. This is equivalent to turn off the app. 
+- You can send messages to yourself (if you feel lonely), these messages will be encrypted following the same procedure.
+
 
 ### Fonctionnement d'un serveur. 
 

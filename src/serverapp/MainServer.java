@@ -13,13 +13,17 @@ import javafx.application.Application;
 
 public class MainServer extends Application implements ServerController.ServerListener{
     private ServerController serverController;
-    public static final String DELIMITER = "-";
+    public static final String DELIMITER = "-%%-%%-%%-%%-";
 
 
     public static void main(String[] args){
         launch(args);
     }
 
+    /**
+     * If there is an error while trying to load an Stage, an page will show up saying where the error comes from.
+     * @param type
+     */
     public static void showError(String type) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Error");
@@ -29,6 +33,11 @@ public class MainServer extends Application implements ServerController.ServerLi
         Platform.exit();
     }
 
+    /**
+     * Launches the application. First it loads the database then it will
+     * show the server gui and launch the server connections.
+     * @param stage the stage in which the gui will reside.
+     */
     @Override
     public void start(Stage stage) {
         try {
@@ -41,6 +50,9 @@ public class MainServer extends Application implements ServerController.ServerLi
         serverController.startServer();
     }
 
+    /**
+     * Save the database before closing.
+     */
     @Override
     public void onClose() {
         try {
