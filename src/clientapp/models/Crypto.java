@@ -50,7 +50,6 @@ public class Crypto {
      * @param word is the word to convert in ASCII value, char by char
      * @return the translation of the input in ASCII (number)
      */
-    // e.g :"bon3jo(u6-r" -> "bon3jo(u6-r"
     public static String letterTodigit(String word) {
         String result="";
         char[] s = word.toCharArray();
@@ -91,7 +90,9 @@ public class Crypto {
 
     /**
      * Use MODULAR EXPONENTIATION to quickly compute exposant with a modulo -> Use in Diffie-Hellman
-     * @param exp ...
+     * With a define base (BASE) and a define modulo (BIG_PRIME)
+     * @param exp is the exponant use
+     * @return (BASE ^ exp) mod BIG_PRIME
      */
     public static BigInteger powMod(BigInteger exp) { // exposant < BIG_PRIME - 1
         // create a BigInteg
@@ -100,21 +101,32 @@ public class Crypto {
         return base.modPow(exp, mod);
     }
 
+    /**
+     * Use MODULAR EXPONENTIATION to quickly compute exposant with a modulo -> Use in Diffie-Hellman
+     * With a define modulo (BIG_PRIME)
+     * @param a is used as the exponent
+     * @param gb is the base use
+     * @return (gb ^ a) mod BIG_PRIME
+     */
     public static BigInteger getPrivateKey(BigInteger a, BigInteger gb) { // exposant < BIG_PRIME - 1
-
         BigInteger mod = new BigInteger(BIG_PRIME);
-        BigInteger rep = gb.modPow(a, mod);
-        System.out.println("(gb)^a : " + rep);
         return gb.modPow(a, mod);
     }
 
 
+    /**
+     * Use the key obtain with Diffie-Hellman Key Exchange to generate a SecretKeySpec
+     * @param diffieHellman secret key string which will generate the secret key
+     * @return a Secret key use for encryption/decryption
+     * @throws NoSuchAlgorithmException Exception
+     * @throws InvalidKeySpecException Exception
+     * @return the secret key.
+     */
     public static SecretKeySpec generateKey(String diffieHellman) throws NoSuchAlgorithmException, InvalidKeySpecException {
         String password = diffieHellman;
         if (password == null) {
             throw new IllegalArgumentException("Run with -Dpassword=<password>");
         }
-        // The salt (probably) can be stored along with the encrypted data
         byte[] salt = new String("TSAD").getBytes(); // TODO for Assistants : guess why. ^^
         // Decreasing this speeds down startup time and can be useful during testing, but it also makes it easier for brute force attackers
         int iterationCount = 40000;
@@ -124,6 +136,16 @@ public class Crypto {
         return key;
     }
 
+    /**
+     * Generate a SecretKeySpec from a password
+     * @param password use the define the key
+     * @param salt use to define the key
+     * @param iterationCount number of iteration (increase the security)
+     * @param keyLength define the length of the key
+     * @return a SecretKeySpec object
+     * @throws NoSuchAlgorithmException Exception
+     * @throws InvalidKeySpecException Exception
+     */
     private static SecretKeySpec createSecretKey(char[] password, byte[] salt, int iterationCount, int keyLength) throws NoSuchAlgorithmException, InvalidKeySpecException {
         SecretKeyFactory keyFactory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA512");
         PBEKeySpec keySpec = new PBEKeySpec(password, salt, iterationCount, keyLength);
@@ -131,6 +153,14 @@ public class Crypto {
         return new SecretKeySpec(keyTmp.getEncoded(), "AES");
     }
 
+    /**
+     * Encrypt the message with a key (AES Encryption)
+     * @param property message to encrypt
+     * @param key key use to encrypt
+     * @return ciphertext
+     * @throws GeneralSecurityException Exception
+     * @throws UnsupportedEncodingException Exception
+     */
     public static String encrypt(String property, SecretKeySpec key) throws GeneralSecurityException, UnsupportedEncodingException {
         Cipher pbeCipher = Cipher.getInstance("AES/CBC/PKCS5Padding"); // CTR a la place CBC
         pbeCipher.init(Cipher.ENCRYPT_MODE, key);
@@ -145,6 +175,14 @@ public class Crypto {
         return Base64.getEncoder().encodeToString(bytes);
     }
 
+    /**
+     * Decrypt a message with a key
+     * @param string cipher to decrypt
+     * @param key key use to decrypt the ciphertext
+     * @return plaintext
+     * @throws GeneralSecurityException Exception
+     * @throws IOException Exception
+     */
     public static String decrypt(String string, SecretKeySpec key) throws GeneralSecurityException, IOException {
         String iv = string.split(":")[0];
         String property = string.split(":")[1];

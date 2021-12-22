@@ -36,7 +36,7 @@ public class VisitorController implements ConditionsController.ConditionsListene
     }
 
     /**
-     * Demande à la classe LogInController d'afficher la page de connexion.
+     * Ask to LogInController class to show the connection page.
      */
     public void show() {
         logInController = new LogInController(this, stage, socket, printWriter, bufferedReader);
@@ -49,7 +49,7 @@ public class VisitorController implements ConditionsController.ConditionsListene
     }
 
     /**
-     * Demande au Main de connecter le user.
+     * Ask Main to connect the user.
      */
     @Override
     public void onLogInAsked(User user) {
@@ -57,7 +57,7 @@ public class VisitorController implements ConditionsController.ConditionsListene
     }
 
     /**
-     * Demande à la classe RegisterController d'afficher la page de register.
+     * Ask the RegisterController class to show the register interface.
      */
     @Override
     public void onRegisterLinkAsked() {
@@ -70,7 +70,7 @@ public class VisitorController implements ConditionsController.ConditionsListene
     }
 
     /**
-     * Deamnde à la classe LoginController d'afficher la page de connexion.
+     * Ask the LogInController to show the connection interface
      */
     @Override
     public void onRegisterAsked(User user) {
@@ -78,7 +78,7 @@ public class VisitorController implements ConditionsController.ConditionsListene
     }
 
     /**
-     * Demande à la classe LoginController d'afficher la page de connexion.
+     * Ask the LogInController class to show the connection interface.
      */
     @Override
     public void onBackToLogInAsked() {
@@ -90,7 +90,7 @@ public class VisitorController implements ConditionsController.ConditionsListene
     }
 
     /**
-     * Demande à la classe ConditionsController d'afficher la page de conditions d'utilisation.
+     * Ask to ConditionsController class to show the terms of use interface.
      */
     @Override
     public void onConditionsAsked() {
@@ -103,7 +103,7 @@ public class VisitorController implements ConditionsController.ConditionsListene
     }
 
     /**
-     * Demande à la classe RegisterController d'afficher la page de register.
+     * Ask to RegisterController class to show the register interface.
      */
     @Override
     public void onBackToRegisterAsked() {

@@ -43,8 +43,8 @@ public class UserController extends Thread implements UserPageViewController.Use
     }
 
     /**
-     * Permet l'affichage de UserPageView.
-     * @throws IOException erreur d'affichage
+     * Allow the display of the UserPageView interface.
+     * @throws IOException display error.
      */
     public void show() throws IOException {
         System.out.println("JE SUIS "+user.getUsername());
@@ -60,7 +60,7 @@ public class UserController extends Thread implements UserPageViewController.Use
     }
 
     /**
-     * Permet de détecter si on ferme la fenêtre et d'en notifier la classe UserController.
+     * Detect if we close the window and notify the UserController class.
      */
     private void onCloseRequest() {
         stage.setOnCloseRequest(e -> {
@@ -75,14 +75,14 @@ public class UserController extends Thread implements UserPageViewController.Use
     }
 
     /**
-     * Permet de fermer la page du menu principal.
+     * Allow the closure of the main menu interface.
      */
     public void hide() {
         stage.hide();
     }
 
     /**
-     * Permet de déconnecter un User et de demander à la classe UserController de changer de fenêtre.
+     * Deconnect a user and ask to the UserController class to change window.
      */
     @Override
     public void onLogOutButtonPressed() {
@@ -91,10 +91,22 @@ public class UserController extends Thread implements UserPageViewController.Use
         listener.logOut();
     }
 
+    /**
+     * Sends the public key in a specific format that the server can understand.
+     * @param destinataire the user with want to exchange key with.
+     */
     private void sendPublicKey(String destinataire) {
         printWriter.println("key"+DELIMITER+destinataire+DELIMITER+user.getGa());
     }
 
+    /**
+     * Will create a new friend or update one if this one had already been created. It will store the encryption key in
+     * of the friend and the hashed username in the object FriendsKey, which is stored in a list of Firendskey.
+     * If was not originaly created, it means it's is the first time we are communicating together and thus we have
+     * to send him our public key. (this is part of the KeyExchange protocol)
+     * @param gb g^b
+     * @param hashUsername hashed username of the sender.
+     */
     private void addNewFriend(String gb, String hashUsername) {
         BigInteger gB = new BigInteger(gb) ;
         for (FriendsKey friend : user.getFriends()){
@@ -110,6 +122,17 @@ public class UserController extends Thread implements UserPageViewController.Use
     }
 
 
+    /**
+     * Allow the sending of a message to a designated recipient. If the message is sent for the first time, a key
+     * exchange protocol will take place where the user sending the message will first send it's public key, then will
+     * wait for the other client to send it's key. if the key is not received in the next 10 seconds the key exchange
+     * protocol will end and show a fail message on the gui. In the case where the key exchange protocol did work,
+     * the Client encryption key will be stored in a "friends list" so that it can decrypt and encrypt all the following
+     * messages from and to the given client.
+     * @param username username of the client we are sending the message to
+     * @param message not encrypted message
+     * @throws NoSuchAlgorithmException
+     */
     @Override
     public void onSendButtonPressed(String username, String message) throws NoSuchAlgorithmException {
         String destinataire = hashing(username);
@@ -119,7 +142,6 @@ public class UserController extends Thread implements UserPageViewController.Use
             sendPublicKey(destinataire);
             int temp = 0;
             while(null == friend.getKey()){
-                System.out.println("temps d'attent : "+temp);
                 try{
                     sleep(1000);
                 } catch (Exception ignore){}
@@ -131,7 +153,7 @@ public class UserController extends Thread implements UserPageViewController.Use
                 }
             }
         }
-        if (!user.getUsername().equals(username)) { // permet d'afficher qu'une seule fois les message envoyé à sois même
+        if (!user.getUsername().equals(username)) {
             userPageViewController.addReadingArea(user.getUsername() + " : " + message); // Feedback message
         }
         String encryptedMessage = null;
@@ -140,19 +162,19 @@ public class UserController extends Thread implements UserPageViewController.Use
         } catch (GeneralSecurityException | UnsupportedEncodingException e) {
             e.printStackTrace();
         }
-
         message = destinataire + DELIMITER + encryptedMessage;
         printWriter.println(message);
         userPageViewController.setErrorMessage("");
     }
 
 
-
+    /**
+     * Receive the message and manage it depending on the header of the message. if no header is specified, then it is
+     * supposed to be a direct message from another client that has been encrypted.
+     * @param message Message received from the server
+     */
     public void receiveText(String message) {
-        // decrypter le message
         String[] header = message.split(DELIMITER);
-        System.out.println("header :" + header[0]);
-
         switch (header[0]) {
             case "key":
                 String ga = header[2];
@@ -160,7 +182,6 @@ public class UserController extends Thread implements UserPageViewController.Use
                 addNewFriend(ga, hashusername);
                 break;
             case "forceExit":
-                System.out.println("je suis arrivé ici");
                 running = false;
                 System.exit(-1);
                 return;
@@ -170,6 +191,13 @@ public class UserController extends Thread implements UserPageViewController.Use
         }
     }
 
+    /**
+     * Try to decrypt the encryptedMessage using the hashed username "source" to know wich key is needed to decrypt the
+     * the message, if it is not successful an error is launched.
+     * @param source hashed username of the sender.
+     * @param encryptedMessage encrypted message
+     * @return the decrypted message or nothing if it failed.
+     */
     private String decryptMessage(String source, String encryptedMessage) {
         try {
             return decrypt(encryptedMessage, user.getFriendsKey(source));
@@ -180,7 +208,9 @@ public class UserController extends Thread implements UserPageViewController.Use
     }
 
 
-
+    /**
+     * Thread that receives all the message from the server and sends them to the receiveText() method.
+     */
     @Override
     public void run(){
         while(running){

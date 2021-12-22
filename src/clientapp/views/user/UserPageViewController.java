@@ -38,8 +38,8 @@ public class UserPageViewController {
     }
 
     /**
-     * Détecte quand on appuie sur le bouton "Send" et vérifie si les fields destination et writing ne sont pas vide.
-     * S'ils ne sont pas vide, alors il notifiera le controller pour qu'ils puisse l'envoyé.
+     * Détects when we press on the send button and checks that the destination field and writing fields are not empty.
+     * If they are not empty, then we notify the controller so that he can send them.
      */
     public void onSendButton() throws NoSuchAlgorithmException, InterruptedException {
         if (!destinationTextField.getText().equals("") && !writtingField.getText().equals("")){
@@ -53,7 +53,7 @@ public class UserPageViewController {
     }
 
     /**
-     * Affiche les messages d'erreur sur la page de Log In
+     * Displays the error messages on the Main user page.
      * @param errorMessage string message d'erreur
      */
     public void setErrorMessage(String errorMessage) {
@@ -61,6 +61,10 @@ public class UserPageViewController {
         errorMessageLabel.setVisible(true);
     }
 
+    /**
+     * Appends a message to the message Area
+     * @param message message to append
+     */
     public void addReadingArea(String message){
         readingArea.appendText(message + "\n");
     }

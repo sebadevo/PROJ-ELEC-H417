@@ -21,8 +21,8 @@ public class LogInViewController {
     }
 
     /**
-     * Bouton pour rentrer dans l'application
-     * @throws Exception execption lié à la connection
+     * Button to log in
+     * @throws Exception exception tied with the login
      */
     public void onLogInButton() throws Exception {
         String username = usernameTextField.getText();
@@ -35,8 +35,8 @@ public class LogInViewController {
     }
 
     /**
-     * Affiche les messages d'erreur sur la page de Log In
-     * @param errorMessage string message d'erreur
+     * Displays the error messages on the login page
+     * @param errorMessage error message string
      */
     public void setErrorMessage(String errorMessage) {
         errorMessageLabel.setText(errorMessage);

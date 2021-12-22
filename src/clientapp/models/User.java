@@ -82,6 +82,11 @@ public class User implements Serializable {
         }
     }
 
+    /**
+     * Check if a username is already in our list of friends.
+     * @param username the username we want to check.
+     * @return boolean
+     */
     public boolean checkFriends(String username){
         for (FriendsKey friend: friends){
             if (friend.getFriendName().equals(username)){
@@ -91,6 +96,11 @@ public class User implements Serializable {
         return false;
     }
 
+    /**
+     * Will get the Encryption and Decryption key of a given username in argument
+     * @param friendName the name of the user we want ot get the key.
+     * @return the key used to encrypt/decrypt the messages from the user
+     */
     public SecretKeySpec getFriendsKey(String friendName){
         for (FriendsKey friend: friends){
             if (friend.getFriendName().equals(friendName)){
@@ -100,6 +110,10 @@ public class User implements Serializable {
         return null;
     }
 
+    /**
+     * adds a friend to the list of friends
+     * @param friend new friend
+     */
     public void addFriends(FriendsKey friend){
         friends.add(friend);
     }
@@ -159,13 +173,17 @@ public class User implements Serializable {
     }
 
     /**
-     * affiche le résultat entré dans les différents champs
+     * methode to display the different fields of a user.
      * @return string
      */
     public String toString(){
         return firstname + " " + lastname + " " + username + " " + emailAddress + " " + password + " " + isConnected;
     }
 
+    /**
+     * removes a friend of the list of friends.
+     * @param username friend to remove
+     */
     public void removeFriend(String username) {
         for (FriendsKey friend: friends){
             if (friend.getFriendName().equals(username)){

@@ -19,8 +19,14 @@ public class ConversationController extends Thread {
     private BufferedReader bufferedReader;
     private User user;
     private Socket socket;
-    private boolean running = true;
+    private volatile boolean running = true;
 
+    /**
+     * Constructor sets the user which owns this controller and the socket associated.
+     * @param listener listener
+     * @param user connected client
+     * @param socket client socket
+     */
     public ConversationController(ConversationListener listener, User user, Socket socket) {
         this.user = user;
         this.listener = listener;
@@ -31,16 +37,20 @@ public class ConversationController extends Thread {
         } catch (Exception ignore){}
     }
 
+    /**
+     * Thread that will receive the message from the client and treat them apropriately such that when a client connect
+     * send a message for the first time to the user, an automatic message with the key exchange protocol will take
+     * place and thus it will derive in the key section of the thread.
+     * This also handles the disconnection of a user.
+     */
     @Override
     public void run(){
         String encrypted;
         while(running){
             try {
-                System.out.println("je suis dans la conversation");
                 if((encrypted=bufferedReader.readLine()) != null){
                     String[] splitmessage = encrypted.split(DELIMITER);
                     if (splitmessage[0].equals("exit")){
-                        System.out.println("received message of disconnection");
                         disconnect();
                         return;
                     }
@@ -62,6 +72,9 @@ public class ConversationController extends Thread {
         } catch (IOException ignore) {}
     }
 
+    /**
+     * forces the conversation thread of the client to shutdown
+     */
     public void forceShutDown(){
         running = false;
         try {
@@ -69,6 +82,9 @@ public class ConversationController extends Thread {
         } catch (IOException ignored) {}
     }
 
+    /**
+     * Disconnect the user and create a new Connection controller to handle new connection.
+     */
     private void disconnect(){
         running = false;
         printWriter.println("disconnected");
@@ -82,8 +98,6 @@ public class ConversationController extends Thread {
     public User getUser(){
         return user;
     }
-
-
 
 
     public interface ConversationListener {

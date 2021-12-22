@@ -21,8 +21,8 @@ public class ConditionsController implements ConditionsViewController.Conditions
     }
 
     /**
-     * Permet d'afficher la page des conditions d'utilisation.
-     * @throws IOException erreur d'affichage
+     * Display the interface of the user conditions.
+     * @throws IOException display error.
      */
     public void show() throws IOException {
         FXMLLoader loader = new FXMLLoader(ConditionsViewController.class.getResource("ConditionsView.fxml"));
@@ -35,14 +35,14 @@ public class ConditionsController implements ConditionsViewController.Conditions
     }
 
     /**
-     * Permet de fermer la page de conditions d'utilisation
+     * Allow the closure of the condition user interface.
      */
     public void hide() {
         stage.hide();
     }
 
     /**
-     * demande au VisitorController d'afficher la page de register.
+     * Ask to VisitorController to display the register interface.
      */
     @Override
     public void onBackButton() {

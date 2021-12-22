@@ -42,7 +42,7 @@ public class ConnectionController extends Thread{
      * Is called when a user tries to register (so when creating a new account). It will verify if the information sent
      * are correct, such that no user with the same usernam can exist.
      * If all the information are valid, the server will then notify the client that he can login and will Call the
-     * AndClientConversation and set the runnign thread to false.
+     * AndClientConversation and set the running thread to false.
      * If some information the user sent are not valid, the server will notify the error to the client.
      * @param message the information sent by the client.
      */
@@ -67,30 +67,26 @@ public class ConnectionController extends Thread{
                     setRunning(false);
                 }
             } else if (UserDatabase.getInstance().checkExistingEmail(user.getEmailAddress())){
-                printWriter.println("Email already taken");
+                sendErrorMessage("Email already taken");
                 setRunning(true);
             } else {
-                printWriter.println("Username already taken");
+                sendErrorMessage("Username already taken");
                 setRunning(true);
             }
         } else {
-            printWriter.println("Wrong email address or empty fields");
+            sendErrorMessage("Wrong email address or empty fields");
             setRunning(true);
         }
     }
 
-
-    public void disconnectUser(String username){
-        User user = UserDatabase.getInstance().getUser(username);
-        if(user.getUsername().equals(username)){
-            printWriter.println("dce");
-        }
-        else{
-            System.out.println("Error can't log out"); //TODO, deal with the error.
-        }
-    }
-
-
+    /**
+     * Is called when a user tries to login. It will verify if the information sent are correct, the password
+     * corresponds to the username.
+     * If all the information are valid, the server will then notify the client that he can login and will Call the
+     * AndClientConversation and set the running thread to false.
+     * If some information the user sent are not valid, the server will notify the error to the client.
+     * @param message the information sent by the client.
+     */
     private void checkValidConnect(String[] message) {
         String username = message[1];
         String password = message[2];
@@ -116,10 +112,17 @@ public class ConnectionController extends Thread{
         }
     }
 
+    /**
+     * Send the error message to the user
+     * @param message error message
+     */
     private void sendErrorMessage(String message){
         printWriter.println(message);
     }
 
+    /**
+     * Will cycle through the loop until the client has provided valid information or will stop if the user disconnects.
+     */
     @Override
     public void run() {
         try {
@@ -133,9 +136,6 @@ public class ConnectionController extends Thread{
                             break;
                         case "0":
                             checkValidConnect(message);
-                            break;
-                        case "exit()":
-                            disconnectUser(message[1]);
                             break;
                         default:
                             break;
@@ -153,14 +153,16 @@ public class ConnectionController extends Thread{
         running = bool;
     }
 
+    /**
+     * Forces the socket to close.
+     */
     public void forceShutDown(){
-        System.out.println("SHUTDOWN");
+
         running = false;
         try {
             socket.close();
         } catch (IOException ignored) {}
     }
-
 
     public interface ConnectionListener {
         void addClientConversation(User user, Socket socket);

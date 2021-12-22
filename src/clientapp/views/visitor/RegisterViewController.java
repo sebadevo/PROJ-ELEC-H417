@@ -29,8 +29,8 @@ public class RegisterViewController {
     }
 
     /**
-     * Bouton pour sauver les données une fois qu'on s'est inscrits
-     * @throws Exception exception lié à l'ajout dans la database.
+     * Button to send the data to register to the server
+     * @throws Exception exception tied to sending the message to the server.
      */
     public void onRegisterButton() throws Exception {
         String username = usernameTextField.getText();
@@ -42,7 +42,7 @@ public class RegisterViewController {
     }
 
     /**
-     * Permet de rendre le bouton "Register" accessible quand on a coché la checkBox
+     * enables the button register to be available when the checkbox is ticked.
      */
     public void onConditionsCheckBox() {
         registerButton.setDisable(!registerButton.disableProperty().getValue());
@@ -57,7 +57,7 @@ public class RegisterViewController {
     }
 
     /**
-     * Affiche les messages d'erreur sur la page de Register
+     * Displays the error message on the register page
      * @param errorMessage string message d'erreur
      */
     public void setErrorMessage(String errorMessage){

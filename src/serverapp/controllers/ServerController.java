@@ -29,7 +29,7 @@ public class ServerController extends Thread implements ConnectionController.Con
     private final Stage stage;
     private final List<ConversationController> connectedControllers = new ArrayList<>(); // Liste de sockets.
     private ServerSocket serverSocket;
-    private boolean running = true;
+    private volatile boolean running = true;
 
 
     /**
@@ -65,7 +65,6 @@ public class ServerController extends Thread implements ConnectionController.Con
             try{
                 addConnection();
             }catch (Exception ignored){
-                System.out.println("sheh2");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -113,7 +112,6 @@ public class ServerController extends Thread implements ConnectionController.Con
             try {
                 Socket socket = serverSocket.accept();
                 if (socket.isConnected()) {
-                    System.out.println("NEW CONNECTION CONTROLLER");
                     connectionController = new ConnectionController(this, socket);
                 }
             } catch (IOException ignored){}
@@ -186,7 +184,6 @@ public class ServerController extends Thread implements ConnectionController.Con
     public void addClientConversation(User user, Socket socket){
         ConversationController conversationController = new ConversationController(this, user, socket);
         connectedControllers.add(conversationController);
-        System.out.println("client :" + connectedControllers.size() + " is connected");
         conversationController.start();
     }
 
@@ -212,7 +209,7 @@ public class ServerController extends Thread implements ConnectionController.Con
             }
             serverSocket.close();
             stage.hide();
-            System.out.println("i've killed everything that exists");
+            System.out.println("killed everything");
         }catch (Exception ignore){
             // do nothing
         }

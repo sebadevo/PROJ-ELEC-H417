@@ -1,6 +1,6 @@
 package clientapp.controllers.visitor;
 
-import clientapp.models.Crypto;
+
 import clientapp.models.User;
 import clientapp.views.visitor.RegisterViewController;
 import javafx.fxml.FXMLLoader;
@@ -12,7 +12,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.Socket;
-import java.security.MessageDigest;
+
 import java.security.NoSuchAlgorithmException;
 
 import static clientapp.MainClient.DELIMITER;
@@ -39,8 +39,8 @@ public class RegisterController implements RegisterViewController.RegisterViewLi
     }
 
     /**
-     * Permet d'afficher la page register
-     * @throws IOException erreur d'affichage
+     * Allow the display of the register interface.
+     * @throws IOException display error.
      */
     public void show() throws IOException {
         FXMLLoader loader = new FXMLLoader(RegisterViewController.class.getResource("RegisterView.fxml"));
@@ -53,15 +53,15 @@ public class RegisterController implements RegisterViewController.RegisterViewLi
     }
 
     /**
-     * Permet de fermer la page de register
+     * Allow the closure of the register interface.
      */
     public void hide() {
         stage.hide();
     }
 
     /**
-     * Crée un User si les champs entrés sont valides et de demander au VisitorController d'afficher la page de
-     * connexion.
+     * Create a user if the entered fields are correct and ask to VisitorController to display the connection interface.
+     * displays error message in the case where the information are not valid (ex: username already taken).
      * @param firstname string
      * @param lastname string
      * @param username string
@@ -90,7 +90,7 @@ public class RegisterController implements RegisterViewController.RegisterViewLi
 
 
     /**
-     * Demande au VisitorController d'afficher la page de connexion.
+     * Ask to VisitorController to display the connection interface.
      */
     @Override
     public void onBackButton() {
@@ -98,7 +98,7 @@ public class RegisterController implements RegisterViewController.RegisterViewLi
     }
 
     /**
-     * Demande au VisitorController d'afficher la page de conditions d'utilisation.
+     * Ask to the VisitorController to display the term of agreements.
      */
     @Override
     public void onConditionsButton() {

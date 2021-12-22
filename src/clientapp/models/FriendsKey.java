@@ -18,6 +18,11 @@ public class FriendsKey {
         this.friendName = username;
     }
 
+    /**
+     * Sets the Encryption and Decryption key associated to the friendName.
+     * @param a exponent a
+     * @param gb base g (in our case 3) exponent b
+     */
     public void setKey(BigInteger a, BigInteger gb){
         try {
             key = generateKey(getPrivateKey(a, gb).toString());

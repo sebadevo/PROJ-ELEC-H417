@@ -27,16 +27,16 @@ public class MainClient extends Application implements UserController.UserPageLi
     public static final String DELIMITER = "-%%-%%-%%-%%-";
 
     /**
-     * Démarrage de l'application.
-     * @param args argument passer en ligne de commande
+     * Launches the applications
+     * @param args arguments send by command line.
      */
     public static void main(String[] args) {
         launch(args);
     }
 
     /**
-     * Demande à la classe VisitorController d'afficher la page de connexion.
-     * @param stage le stage de l'application
+     * Asks the VisitorController class to display the connection page.
+     * @param stage the stage of the application
      */
     @Override
     public void start(Stage stage) {
@@ -51,9 +51,9 @@ public class MainClient extends Application implements UserController.UserPageLi
     }
 
     /**
-     * Crée une fenêtre d'erreur s'il existe un problème
-     * issu du projet MVCFX-Demineur de Frédéric Pluquet : https://gitlab.com/devexos/mvcfx-demineur
-     * @param type nom de la page qui n'a pas pu être chargée
+     * Creates an error window if an error exists.
+     * Source : MVCFX-Demineur project of Frédéric Pluquet : https://gitlab.com/devexos/mvcfx-demineur
+     * @param type name of the page that couldn't be loaded.
      */
     public static void showError(String type) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -65,8 +65,7 @@ public class MainClient extends Application implements UserController.UserPageLi
     }
 
     /**
-     * Permet d'assigner à l'attribut user du main le user qui est connecté et demande à la classe UserCotnroller
-     * d'afficher la page du menu principal.
+     * When logging, creates a UserController object that will display the main menu of the communication application.
      */
     @Override
     public void logIn(User user) {
@@ -78,7 +77,7 @@ public class MainClient extends Application implements UserController.UserPageLi
     }
 
     /**
-     * Demande à la classe VisitorController d'afficher la page de connexion.
+     * Logs out and calls the visitorController to load the visitor page.
      */
     @Override
     public void logOut() {
@@ -87,6 +86,9 @@ public class MainClient extends Application implements UserController.UserPageLi
         } catch (Exception e) { System.out.println(e); }
     }
 
+    /**
+     * Closes the socket once the application is shutdown.
+     */
     @Override
     public void onClose(){
         try{

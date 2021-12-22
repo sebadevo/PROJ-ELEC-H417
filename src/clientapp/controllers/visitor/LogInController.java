@@ -37,8 +37,8 @@ public class LogInController implements LogInViewController.LogInViewListener {
     }
 
     /**
-     * Permet l'affichage de la page de connexion.
-     * @throws IOException erreur d'affichage
+     * Allow the display of the connexion interface.
+     * @throws IOException display error
      */
     public void show() throws IOException {
         FXMLLoader loader = new FXMLLoader(LogInViewController.class.getResource("LogInView.fxml"));
@@ -52,14 +52,17 @@ public class LogInController implements LogInViewController.LogInViewListener {
     }
 
     /**
-     * Permet de fermer la page de connexion.
+     * Allow the closure of the connexion interface.
      */
     public void hide() {
         stage.hide();
     }
 
     /**
-     * Permet de connecter un user à la l'application et demande de changer de page au VisitorController
+     * Send to the server the Information the client inserted in the fields to log in. This method will expect an
+     * Answer from the server telling him if the information provided are valid.
+     * If they are valid will proceed to log the client in and will ask it's listener to change pages to the main page.
+     * If the information are not valid, an error message will be displayed on the page.
      * @param username string
      * @param password string
      */
@@ -79,7 +82,8 @@ public class LogInController implements LogInViewController.LogInViewListener {
                         User user = new User(firstname, lastname, username, email, password);
                         listener.onLogInAsked(user);
                     } else {
-                        //TODO gerer le faite que le packet à pris trop de temps pour être envoyé.
+                        logInViewController.setErrorMessage("The connection with the server took too long, connection" +
+                                "restarting...");
                     }
                 } else {
                     logInViewController.setErrorMessage(answer);
@@ -91,7 +95,7 @@ public class LogInController implements LogInViewController.LogInViewListener {
     }
 
     /**
-     * Demande à la classe VisitorCotroller d'afficher la page de register.
+     * Ask to the VisitorController class to display the register interface.
      */
     @Override
     public void onRegisterLink() {
