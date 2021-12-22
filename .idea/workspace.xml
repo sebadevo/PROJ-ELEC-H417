@@ -11,32 +11,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2457536-8182-44bb-af5f-6d6859d358f9" name="Changes" comment="test">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/ClientApp_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/serverapp/MainServer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/serverapp/controllers/ServerController$ServerListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/serverapp/controllers/ServerController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/serverapp/controllers/connection/ConnectionController$ConnectionListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/serverapp/controllers/connection/ConnectionController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/serverapp/models/Conversation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/serverapp/models/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/serverapp/models/databases/Database.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/serverapp/models/databases/UserDatabase.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/serverapp/models/databases/exceptions/DatabaseLoadException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/serverapp/models/databases/exceptions/DatabaseSaveException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/serverapp/views/ServerViewController$ServerViewListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/serverapp/views/ServerViewController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/UserDB.serial" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/controllers/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/controllers/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/models/Crypto.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/models/Crypto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/models/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/models/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/views/user/UserPageView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/clientapp/views/user/UserPageView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/serverapp/controllers/ServerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/serverapp/controllers/ServerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/serverapp/controllers/wireless/ConnectionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PROJ-ELEC-H417/serverapp/controllers/wireless/ConnectionController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clientapp/views/user/UserPageView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/clientapp/views/user/UserPageView.fxml" afterDir="false" />
     </list>
     <list id="8e34381b-bc68-4d97-bc6b-c1ea952b9326" name="Changes by Aurelien" comment="" />
     <list id="b97a5e7b-edab-44e5-8b35-b9470da258cf" name="Changes by takira" comment="" />
@@ -180,7 +155,7 @@
       <workItem from="1640077494280" duration="8462000" />
       <workItem from="1640122067300" duration="9203000" />
       <workItem from="1640131327359" duration="6172000" />
-      <workItem from="1640163756711" duration="4043000" />
+      <workItem from="1640163756711" duration="5707000" />
     </task>
     <servers />
   </component>
